@@ -1,0 +1,14 @@
+name: Themenliste prüfen
+
+on:
+  push:
+    branches: [main]
+    paths: ['reels/themen.md']
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 check_themen.py reels/themen.md
