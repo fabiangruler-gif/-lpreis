@@ -9,9 +9,10 @@ Ergebnis: out/reels/<slug>.mp4, out/reels/<slug>_storyboard.jpg
 import hashlib, html, json, os, pathlib, re, shutil, subprocess, sys, urllib.error, urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-FPS, GAP, TAIL, LEAD = 30, 0.22, 0.7, 0.12
-TRIM = ("silenceremove=start_periods=1:start_threshold=-42dB:start_duration=0.03,areverse,"
-        "silenceremove=start_periods=1:start_threshold=-42dB:start_duration=0.03,areverse")
+FPS, GAP, TAIL, LEAD = 30, 0.28, 0.7, 0.15
+# Nur echte Stille vorn/hinten kappen und je etwas Luft lassen, damit leise Wortanfänge/-enden nicht abgeschnitten werden
+TRIM = ("silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.10,areverse,"
+        "silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.14,areverse")
 VOICE = os.environ.get("ELEVENLABS_VOICE_ID") or "8aPaMtDocayOBFDFyWHp"  # Markus
 MODEL = os.environ.get("ELEVENLABS_MODEL") or "eleven_multilingual_v2"
 
