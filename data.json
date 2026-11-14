@@ -1,29 +1,77 @@
 {
-  "datum": "Montag, 9. November 2026 • 07:40 MEZ",
-  "headline": "Diplomatie bremst – Hormus bleibt Risikofaktor",
-  "subline": "Ölpreise zum Wochenstart nahezu stabil; Liefer- und Angebotsrisiken bleiben gegensätzlich",
-  "brent": {"preis": "98,35", "diff": "+0,03", "pct": "+0,03", "dir": "up"},
-  "wti": {"preis": "91,30", "diff": "+0,47", "pct": "+0,52", "dir": "up"},
-  "preis_hinweis": "Reuters-Kursstand 05:27 MEZ • Frontmonat-Futures • Vergleich mit Freitagsschluss 06.11. • kein Livekurs um 07:40",
+  "datum": "Samstag, 14. November 2026 • 14:15 MEZ",
+  "headline": "Ölmarkt ruht: Zweiter Wochenverlust in Folge",
+  "subline": "Überschuss und US-Blockade dämpfen Preise; Berichte über Angriffe am Golf bleiben offen",
+  "brent": {
+    "preis": "95,84",
+    "diff": "+0,02",
+    "pct": "+0,02",
+    "dir": "up"
+  },
+  "wti": {
+    "preis": "88,56",
+    "diff": "-0,18",
+    "pct": "-0,20",
+    "dir": "down"
+  },
+  "preis_hinweis": "Reuters-Daten • Schlusskurse Fr., 13.11. • Frontmonat-Futures • Vergleich mit Donnerstag • kein Livekurs",
   "news": [
-    {"icon": "bank", "titel": "Trump signalisiert Zurückhaltung", "text": "Neue US-Angriffe auf Iran seien bei Fortschritten in Gesprächen höchst unwahrscheinlich. Ein umfassendes Abkommen liegt aber nicht vor."},
-    {"icon": "ship", "titel": "Hormus: Navigation weiter unsicher", "text": "Ein iranischer Marinevertreter meldet zerstörte Navigationshilfen und keine nicht genehmigten Durchfahrten über Nacht. Angaben nicht unabhängig bestätigt."},
-    {"icon": "barrel", "titel": "Irak sucht Exportkorridor", "text": "Bagdad meldet eine Verständigung mit Washington über mögliche Ölexporte durch Hormus nahe Oman. Umsetzung und sichere Passage bleiben offen."},
-    {"icon": "chart", "titel": "Angebotsüberschuss bleibt Gegenwind", "text": "JPMorgan schätzt das globale Überangebot auf 1,1 Mio. Barrel/Tag im September und 1,4 Mio. im Oktober; schwache Nachfrage und höhere Zuflüsse belasten."}
+    {
+      "icon": "bank",
+      "titel": "Trump hält an Blockade fest",
+      "text": "Trump schrieb, die USA bräuchten keinen Iran-Deal. Die Blockade iranischer Ölexporte bleibt, das dämpft die Sorge vor neuen Kämpfen."
+    },
+    {
+      "icon": "ship",
+      "titel": "Angriffsmeldungen am Golf",
+      "text": "Huthi melden Angriffe auf saudische Ölanlagen, Iran Explosionen auf vier Tankern in Hormus. Beides war zum Handelsschluss nicht unabhängig bestätigt."
+    },
+    {
+      "icon": "chart",
+      "titel": "IEA: Überangebot wächst",
+      "text": "Der IEA-Monatsbericht vom Freitag deutet auf einen größeren Angebotsüberschuss hin. Auch die OPEC+ fördert mehr."
+    },
+    {
+      "icon": "barrel",
+      "titel": "US-Lagerbestände steigen",
+      "text": "Laut EIA stiegen die Rohöl- und Kraftstoffvorräte der USA, bei schwächerer Produktnachfrage und höheren Ölimporten."
+    }
   ],
-  "prognose_kurz": {"label": "Seitwärts, hohe Volatilität", "text": "Diplomatie begrenzt den Risikoaufschlag. Bestätigte Tanker- oder Exportausfälle könnten die Preise jedoch rasch nach oben treiben."},
-  "prognose_mittel": {"label": "Neutral bis leicht abwärts", "text": "Ein wachsender Angebotsüberschuss und mögliche Exportnormalisierung sprechen für Druck. Eine längere Hormus-Störung würde diese Einschätzung umkehren."},
+  "prognose_kurz": {
+    "label": "Seitwärts, hohe Volatilität",
+    "text": "Der Markt wartet auf Signale aus Iran. Bestätigte Angriffe könnten die Preise schnell treiben, Ruhe am Golf drückt sie."
+  },
+  "prognose_mittel": {
+    "label": "Neutral bis leicht abwärts",
+    "text": "Der wachsende Angebotsüberschuss spricht für Druck. Bestätigte Ausfälle am Golf würden diese Einschätzung umkehren."
+  },
   "szenarien": {
-    "up": "Neue bestätigte Angriffe, längere Sperren oder reale Exportausfälle.",
-    "side": "Gespräche ohne Durchbruch; Risiken und Angebotsüberschuss gleichen sich aus.",
-    "down": "Glaubwürdige Deeskalation, sichere Durchfahrten und steigende Liefermengen."
+    "up": "Bestätigte Angriffe auf Saudi-Anlagen oder Tanker; Hormus-Verkehr bricht ein.",
+    "side": "Blockade hält, keine neue Eskalation; Überschuss und Risiko gleichen sich aus.",
+    "down": "Entspannung am Golf, weiter steigende Lager und höhere Fördermengen."
   },
   "watch": [
-    {"icon": "ship", "titel": "Hormus-Verkehr", "text": "Tankerpassagen, Navigationshilfen und unabhängige Bestätigung von Vorfällen."},
-    {"icon": "hand", "titel": "US-Iran-Gespräche", "text": "Konkrete Fortschritte oder neue militärische Drohungen."},
-    {"icon": "barrel", "titel": "Irak-Exporte", "text": "Ob der Korridor nahe Oman tatsächlich genutzt werden kann."},
-    {"icon": "chart", "titel": "Kursmarken", "text": "Brent: 97 / 100 $ • WTI: 90 / 92 $."}
+    {
+      "icon": "ship",
+      "titel": "Golf-Sicherheit",
+      "text": "Unabhängige Bestätigung der Angriffsmeldungen und Tankerverkehr."
+    },
+    {
+      "icon": "hand",
+      "titel": "US-Blockade",
+      "text": "Bleibt die Blockade, oder starten neue Gespräche mit Iran?"
+    },
+    {
+      "icon": "barrel",
+      "titel": "Lagerdaten",
+      "text": "EIA-Wochenbericht am Mittwoch: Setzt sich der Vorratsaufbau fort?"
+    },
+    {
+      "icon": "chart",
+      "titel": "Kursmarken",
+      "text": "Brent: 91 / 98 $ • WTI: 86 / 92 $. Runde Orientierungszonen."
+    }
   ],
-  "einschaetzung": "Der Markt wägt diplomatische Hoffnung gegen reale Liefergefahren ab.\nKurzfristig seitwärts und volatil; mittelfristig mahnt der Angebotsüberschuss zur Vorsicht.",
-  "quellen": "Quellen: Reuters (09.11.2026, Ölpreise & Hormus) • Reuters (08.11.2026, Irak-Exporte) • JPMorgan via Reuters (09.11.2026)\nPreisvergleich: Freitagsschluss 06.11.2026 • Kurszeit 05:27 MEZ am 09.11.2026"
+  "einschaetzung": "Der Markt wägt Überangebot und US-Blockade gegen unbestätigte Angriffsmeldungen ab.\nKurzfristig seitwärts und volatil; mittelfristig überwiegt der Angebotsdruck.",
+  "quellen": "Quellen: Reuters (13.11.2026, Ölpreise & Iran-Blockade) • Reuters/EIA (12.11.2026) • IEA via Reuters (13.11.2026)\nPreisvergleich: Schlusskurse Fr., 13.11.2026 vs. Do., 12.11. • Stand 14.11.2026, 14:15 MEZ"
 }
