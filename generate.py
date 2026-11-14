@@ -204,6 +204,73 @@ body::before{{content:"";position:absolute;inset:0;background:
 .ein h3{{text-shadow:0 2px 0 #7a5a0c,0 5px 8px rgba(0,0,0,.5),0 0 14px rgba(247,210,91,.4)}}
 .ein .bi{{filter:drop-shadow(0 0 10px rgba(247,210,91,.85)) drop-shadow(0 4px 4px rgba(0,0,0,.5))}}
 .corner{{position:absolute;right:0;bottom:0;width:70px;height:70px;background:linear-gradient(135deg,transparent 50%,#19d9ea 50% 62%,transparent 62% 69%,#1b7fd0 69%);filter:drop-shadow(0 0 8px rgba(25,217,234,.7))}}
+
+/* ===== LESBAR: große Schrift, weniger Inhalt (Handy-Story) ===== */
+.headline{{top:248px;width:890px}} .headline h1{{font:700 35px/1.18 Poppins}}
+.card h2{{font:700 29px Poppins;top:12px;left:16px}} .num{{width:46px;height:46px;font-size:27px}}
+/* 1 Preise */
+#c1{{top:344px;height:196px}} #c1 .prices{{top:70px}}
+.price{{height:92px;gap:14px;padding:0 14px 0 26px}}
+.pname{{font:700 26px Poppins}} .pval{{font:800 50px/1.05 Poppins}}
+.pdiff{{font:700 23px/1.15 Poppins}} .ar{{font-size:26px}}
+.drop{{width:48px;height:62px}}
+.phint{{font:500 16.5px Inter;bottom:10px;white-space:normal;padding:0 20px;line-height:1.25}}
+.phint svg{{width:22px;height:22px;flex:none}}
+/* 2 News */
+#c2{{top:556px;height:412px}} #c2 .ngrid{{top:68px;height:336px;grid-template-columns:1fr}}
+.news{{border-left:none!important;border-top:1.5px solid rgba(25,217,234,.45)!important;padding:10px 22px 8px 20px;gap:18px;align-items:center}}
+.news:first-child{{border-top:none!important}}
+.nic{{width:64px;height:64px;padding:12px}}
+.nt{{font:700 26px/1.1 Poppins;margin-bottom:5px}} .nx{{font:400 22.5px/1.26 Inter}}
+/* 3 Prognose */
+#c3{{top:982px;height:268px}} #c3 .pg{{top:64px;height:196px}}
+.pc{{padding:0 18px 0 22px}}
+.ph2{{font:600 19.5px Poppins;height:44px}} .ph2 svg{{width:42px;height:42px}}
+.pill{{font:700 22px Poppins;margin:4px 0 9px 0!important;padding:2px 20px;white-space:normal;line-height:1.2}}
+.pc:nth-child(2) .ph2{{margin-left:0}}
+.pt{{font:400 21.5px/1.25 Inter}}
+/* 4 Szenarien */
+#c4{{top:1264px;height:238px}} #c4 .sg{{top:62px;height:170px;grid-template-columns:1fr}}
+.sc{{align-items:center;padding:0 24px 0 20px;gap:16px;background-size:100% 100%}}
+.sc+.sc{{border-left:none;border-top:1.5px solid rgba(25,217,234,.4)}}
+.sc>div:last-child{{display:flex;align-items:center;gap:18px}}
+.sic{{width:42px;height:42px;font-size:24px}}
+.sl{{font:700 23px/1 Poppins;width:158px;flex:none;margin:0}} .sx{{font:400 21px/1.2 Inter}}
+/* Einschätzung + Fuß */
+.ein{{top:1516px;height:98px;gap:18px;padding:0 22px 0 18px}} .ein .bi{{width:56px;height:56px}}
+.ein h3{{font:700 19px Poppins;margin-bottom:2px}} .ein p{{font:600 21.5px/1.22 Inter}}
+.foot{{top:1622px;height:50px;padding:0 60px 0 18px}} .foot .fd{{display:none}}
+.foot .q{{font-size:11.6px;line-height:1.3}} .foot .dis{{font-size:11.6px;width:110px;padding-left:12px}}
+
+/* ===== KLARE KANTEN + KONTRAST ===== */
+body{{background:#000f1d!important}} body::before{{background:repeating-linear-gradient(0deg,rgba(25,217,234,.025) 0 1px,transparent 1px 40px),repeating-linear-gradient(90deg,rgba(25,217,234,.025) 0 1px,transparent 1px 40px)!important}}
+.head{{background:linear-gradient(90deg,#000f1d 0%,#00203a 55%,transparent 100%)!important}}
+.head::before{{display:none}}
+.t1,.t3,.t2,.headline h1,.card h2,.ein h3,.pval,.pdiff,.ar,.sl{{text-shadow:0 2px 0 rgba(0,0,0,.85)!important}}
+.t2{{text-shadow:0 3px 0 #0b5d7a!important}}
+.card{{background:#04182b!important;border:3px solid #2eeaf8!important;border-radius:16px!important;box-shadow:0 5px 0 #000b15!important}}
+.card::before{{display:none}}
+.ein{{background:#0b1f2c!important;border:3px solid #ffd34d!important;box-shadow:0 5px 0 #000b15!important}}
+.num{{background:#2eeaf8!important;color:#001726!important;box-shadow:0 3px 0 #06607c!important}}
+.price{{background:none!important}} .price+.price,.pc+.pc,.sc+.sc,.news{{border-color:rgba(46,234,248,.7)!important}}
+.nic,.wic,.ph2 svg{{background:#0a3350!important;border:2px solid #2eeaf8!important;box-shadow:0 3px 0 #000b15!important;color:#e9fcff!important}}
+.nic svg,.wic svg,.drop svg,.dropH svg{{filter:none!important}}
+.pill{{background:#2eeaf8!important;color:#001726!important;box-shadow:0 3px 0 #06607c!important;text-decoration:none!important}}
+.sic.g{{background:#4ade80!important;box-shadow:0 3px 0 #0f5f33!important}}
+.sic.y{{background:#ffd34d!important;box-shadow:0 3px 0 #7a5a0c!important}}
+.sic.r{{background:#ff7570!important;box-shadow:0 3px 0 #77201e!important}}
+.sc{{background:none!important}}
+.nt,.card h2,.ph2{{color:#2eeaf8!important}} .nx,.pt,.sx,.ein p,.phint,.foot .q,.foot .dis{{color:#ffffff!important}}
+.sl.g,.pdiff.up,.ar.up{{color:#5cf28f!important}} .sl.r,.pdiff.down,.ar.down{{color:#ff8480!important}} .sl.y{{color:#ffd34d!important}}
+.corner{{display:none}}
+
+/* Feinschliff */
+#c1{{top:332px;height:216px}} #c1 .prices{{top:66px}} .phint{{bottom:12px;font-size:17px}}
+#c2{{top:562px;height:410px}}
+#c3{{top:986px;height:232px}} #c3 .pg{{top:62px;height:164px}} .pt{{font-size:24px}} .pill{{font-size:23px}} .ph2{{font-size:20px}}
+#c4{{top:1232px;height:244px}} #c4 .sg{{top:64px;height:174px}} .sx{{font-size:23px}} .sl{{font-size:24px;width:172px}}
+.ein{{top:1490px;height:106px}} .ein p{{font-size:23px}}
+.foot{{top:1608px;height:64px}}
 </style></head><body>
 <svg width="0" height="0" style="position:absolute"><defs><linearGradient id="gDrop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a6f6ff"/><stop offset=".5" stop-color="#19d9ea"/><stop offset="1" stop-color="#0a7fa8"/></linearGradient></defs></svg><div class="corner"></div>
 <div class="head"><div class="ph"></div>
@@ -212,35 +279,32 @@ body::before{{content:"";position:absolute;inset:0;background:
   <div class="t3">BRENT &amp; WTI • NEWS • ANALYSE • PROGNOSE</div>
   <div class="dt">{ICONS["cal"]}<span>{e(data["datum"])}</span></div></div>
 
-<div class="headline"><h1>{e(data["headline"])}</h1><p>{e(data["subline"])}</p></div>
+<div class="headline"><h1>{e(data["headline"])}</h1></div>
 
 <div class="card" id="c1"><h2><span class="num">1</span>Aktuelle Ölpreise</h2>
   <div class="prices">{price("Brent", data["brent"])}{price("WTI", data["wti"])}</div>
   <div class="phint">{ICONS["clock"]}<span>{e(data["preis_hinweis"])}</span></div></div>
 
-<div class="card" id="c2"><h2><span class="num">2</span>Die wichtigsten Nachrichten</h2>
-  <div class="ngrid">{"".join(newsitem(x) for x in n)}</div></div>
+<div class="card" id="c2"><h2><span class="num">2</span>Das bewegt den Markt</h2>
+  <div class="ngrid">{"".join(newsitem(x) for x in n[:3])}</div></div>
 
 <div class="card" id="c3"><h2><span class="num">3</span>Prognose</h2>
   <div class="pg">
-    <div class="pc"><div class="ph2">{ICONS["clock"]}<span>Kurzfristig – nächste 24 bis 72 Stunden</span></div>
+    <div class="pc"><div class="ph2">{ICONS["clock"]}<span>Kurzfristig · 24–72 Std.</span></div>
       <div class="pill">{e(k["label"])}</div><div class="pt">{e(k["text"])}</div></div>
-    <div class="pc"><div class="ph2">{ICONS["cal"]}<span>Mittelfristig – nächste 1 bis 4 Wochen</span></div>
+    <div class="pc"><div class="ph2">{ICONS["cal"]}<span>Mittelfristig · 1–4 Wochen</span></div>
       <div class="pill">{e(m["label"])}</div><div class="pt">{e(m["text"])}</div></div></div></div>
 
-<div class="card" id="c4"><h2><span class="num">4</span>Mögliche Szenarien</h2>
+<div class="card" id="c4"><h2><span class="num">4</span>Szenarien</h2>
   <div class="sg">
     <div class="sc"><div class="sic g">↑</div><div><div class="sl g">AUFWÄRTS</div><div class="sx">{e(s["up"])}</div></div></div>
     <div class="sc"><div class="sic y">↔</div><div><div class="sl y">SEITWÄRTS</div><div class="sx">{e(s["side"])}</div></div></div>
     <div class="sc"><div class="sic r">↓</div><div><div class="sl r">ABWÄRTS</div><div class="sx">{e(s["down"])}</div></div></div></div></div>
 
-<div class="card" id="c5"><h2><span class="num">5</span>Worauf ich als Nächstes achten würde</h2>
-  <div class="wg">{"".join(watchitem(w) for w in data["watch"])}</div></div>
-
-<div class="ein"><div class="bi">{ICONS["bulb"]}</div><div><h3>Meine Einschätzung für heute</h3><p>{e(data["einschaetzung"])}</p></div></div>
+<div class="ein"><div class="bi">{ICONS["bulb"]}</div><div><h3>Einschätzung</h3><p>{e(data["einschaetzung"])}</p></div></div>
 
 <div class="foot"><div class="fd">{ICONS["drop"]}</div><div class="q">{e(data["quellen"])}</div>
-  <div class="dis">Markteinschätzung,<br>keine Anlageberatung.</div></div>
+  <div class="dis">Keine<br>Anlageberatung.</div></div>
 </body></html>'''
 
 (ROOT / f"{out_name}.html").write_text(page, encoding="utf-8")
