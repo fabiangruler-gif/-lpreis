@@ -131,24 +131,10 @@ svg{display:block}
 .foot .fd{width:24px;height:32px;flex:none}
 .foot .q{font:400 12.4px/1.35 Inter;flex:1}
 
-/* ===== GLOW statt Schatten ===== */
-.card{box-shadow:0 0 14px rgba(46,234,248,.55),0 0 34px rgba(46,234,248,.22),inset 0 0 22px rgba(46,234,248,.10)}
-.ein{box-shadow:0 0 14px rgba(255,211,77,.55),0 0 34px rgba(255,211,77,.22),inset 0 0 22px rgba(255,211,77,.09)}
-.num{box-shadow:0 0 14px rgba(46,234,248,.9)}
-.nic,.ph2 svg{box-shadow:0 0 10px rgba(46,234,248,.5),inset 0 0 8px rgba(46,234,248,.18)}
-.pill{box-shadow:0 0 14px rgba(46,234,248,.65)}
-.pill.green{box-shadow:0 0 14px rgba(92,242,143,.65)}.pill.yellow{box-shadow:0 0 14px rgba(255,211,77,.65)}.pill.red{box-shadow:0 0 14px rgba(255,132,128,.65)}
-.sic.g{box-shadow:0 0 14px rgba(92,242,143,.8)}.sic.y{box-shadow:0 0 14px rgba(255,211,77,.8)}.sic.r{box-shadow:0 0 14px rgba(255,132,128,.8)}
-.t1,.t2,.t3,.headline h1,.card h2,.ein h3{text-shadow:0 0 12px rgba(46,234,248,.55)}
-.ein h3{text-shadow:0 0 12px rgba(255,211,77,.55)}
-.t2{text-shadow:0 0 16px rgba(46,234,248,.5)}
-.pval{text-shadow:0 0 14px rgba(255,255,255,.35)}
-.pdiff,.ar,.sl{text-shadow:0 0 10px currentColor}
-.drop svg,.dropH svg,.fd svg{filter:drop-shadow(0 0 7px rgba(46,234,248,.8))}
-.nic svg,.ph2 svg{filter:drop-shadow(0 0 4px rgba(46,234,248,.7))}
-.ein .bi{filter:drop-shadow(0 0 8px rgba(255,211,77,.8))}
-.wn{box-shadow:0 0 8px rgba(46,234,248,.8)}
-.card h2 .num{text-shadow:none}
+/* ===== FLACH: kein Glow, keine Schatten ===== */
+.card,.ein,.num,.nic,.ph2 svg,.pill,.sic,.wn{box-shadow:none!important}
+.t1,.t2,.t3,.headline h1,.card h2,.ein h3,.pval,.pdiff,.ar,.sl{text-shadow:none!important}
+svg,.drop svg,.dropH svg,.fd svg,.nic svg,.ph2 svg,.ein .bi{filter:none!important}
 '''
 photo = base64.b64encode((ROOT / "assets/header_photo.png").read_bytes()).decode()
 n = data["news"]; s = data["szenarien"]; k = data["prognose_kurz"]; m = data["prognose_mittel"]
