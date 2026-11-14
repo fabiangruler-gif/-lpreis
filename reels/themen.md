@@ -26,6 +26,7 @@ Status: neu
 - Anfang November: Diesel rund 2,24 €, E10 unter 2 €
 - Normal ist Diesel ca. 15 Cent günstiger (niedrigere Steuer)
 - Deutschland importiert mehr fertigen Diesel, dadurch krisenanfälliger
+- Typ: Karussell
 
 ## Straße von Hormus: Das Nadelöhr der Weltwirtschaft
 Status: neu
@@ -37,6 +38,7 @@ Status: neu
 Status: neu
 - Raffinerie, Transport, Steuern, Euro-Dollar-Kurs
 - Sinkender Rohölpreis kommt nicht 1:1 an der Zapfsäule an
+- Typ: Karussell
 
 ## Wie setzt sich der Spritpreis zusammen?
 Status: neu
