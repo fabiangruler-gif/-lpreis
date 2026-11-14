@@ -278,8 +278,8 @@ def make_audio(spec, work, fake):
         sh("ffmpeg", "-y", "-loglevel", "error", "-i", p, "-filter:a", "anull" if fake else TRIM, "-ar", "44100", "-ac", "1", t)
         trimmed.append(t)
     natural = sum(dur(p) for p in trimmed) + GAP * (len(raw) - 1) + LEAD + TAIL
-    ziel = float(spec.get("ziel_sekunden", 23))
-    f = min(1.25, max(1.0, natural / ziel))
+    ziel = float(spec.get("ziel_sekunden", 27))
+    f = min(1.2, max(1.0, natural / ziel))
     print(f"Sprechdauer natürlich {natural:.1f}s, Ziel {ziel:.0f}s -> Tempo x{f:.2f}")
     segs, durs = [], []
     for i, p in enumerate(trimmed):
