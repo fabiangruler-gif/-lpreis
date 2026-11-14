@@ -6,6 +6,10 @@ on:
       slug:
         description: 'Name der Spec-Datei in reels/specs (ohne .json)'
         required: true
+      voice:
+        description: 'Optional: ElevenLabs-Stimmen-ID (leer = Markus)'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -26,6 +30,7 @@ jobs:
       - name: Reel bauen (Slides, Ton, Video)
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ inputs.voice }}
         run: python3 reels/build_reel.py "${{ inputs.slug }}"
       - name: Vorschau ins Repo legen
         run: |

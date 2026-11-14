@@ -10,8 +10,8 @@ import hashlib, html, json, os, pathlib, re, shutil, subprocess, sys, urllib.err
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FPS, GAP, TAIL, LEAD = 30, 0.22, 0.7, 0.12
-VOICE = os.environ.get("ELEVENLABS_VOICE_ID", "8aPaMtDocayOBFDFyWHp")  # Markus
-MODEL = os.environ.get("ELEVENLABS_MODEL", "eleven_multilingual_v2")
+VOICE = os.environ.get("ELEVENLABS_VOICE_ID") or "8aPaMtDocayOBFDFyWHp"  # Markus
+MODEL = os.environ.get("ELEVENLABS_MODEL") or "eleven_multilingual_v2"
 
 
 def sh(*a):
