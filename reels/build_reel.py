@@ -156,8 +156,8 @@ h1,.big{font-family:'Poppins',sans-serif;font-weight:700}
 .s-stat .photo{height:860px}
 .rank{font:700 58px 'Poppins';color:var(--gold)}
 .s-stat .t{top:330px}
-.s-stat .bigflag{position:absolute;right:70px;top:330px;font-size:300px;transform:rotate(-6deg);filter:drop-shadow(0 8px 14px rgba(0,0,0,.6))}
-.s-stat .nm{font:700 170px/1 'Poppins';margin-top:6px}
+.s-stat .bigflag{position:absolute;right:50px;top:330px;font-size:270px;transform:rotate(-6deg);filter:drop-shadow(0 8px 14px rgba(0,0,0,.6))}
+.s-stat .nm{font:700 150px/1 'Poppins';margin-top:6px}
 .s-stat .val{font:700 158px/1 'Poppins';color:var(--gold);margin-top:34px}
 .s-stat .unit{font:600 62px 'Inter';margin-top:16px}
 .s-stat .note{font:400 40px 'Inter';color:var(--mut);margin-top:12px}

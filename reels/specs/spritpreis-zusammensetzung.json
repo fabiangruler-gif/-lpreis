@@ -1,0 +1,79 @@
+{
+  "titel": "Was steckt wirklich im Spritpreis?",
+  "ziel_sekunden": 23,
+  "slides": [
+    {
+      "typ": "hook",
+      "titel": "Was steckt wirklich im *Spritpreis*?",
+      "sub": "Mehr Steuern, als viele denken.",
+      "sprech": "Was steckt eigentlich im Spritpreis?"
+    },
+    {
+      "typ": "stat",
+      "emoji": "🏛️",
+      "label": "Energiesteuer",
+      "name": "Benzin",
+      "wert": "65,45 Cent",
+      "einheit": "pro Liter, fest",
+      "note": "Diesel: 47,04 Cent pro Liter (Stand Juli 2026)",
+      "sprech": "Allein die Energiesteuer beträgt bei Benzin über fünfundsechzig Cent pro Liter."
+    },
+    {
+      "typ": "list",
+      "titel": "Was *dazukommt*",
+      "foot": "Die Mehrwertsteuer wird auf alles erhoben.",
+      "zeilen": [
+        {
+          "emoji": "🌍",
+          "name": "CO2-Preis, steigt jährlich"
+        },
+        {
+          "emoji": "💶",
+          "name": "MwSt: 19 Prozent"
+        },
+        {
+          "emoji": "🛢️",
+          "name": "Produktpreis, Transport, Marge"
+        }
+      ],
+      "sprech": "Dazu kommen CO2-Preis, Mehrwertsteuer, Produktpreis und Marge."
+    },
+    {
+      "typ": "stat",
+      "emoji": "📊",
+      "label": "Steueranteil",
+      "name": "Benzin",
+      "wert": "über 50 %",
+      "einheit": "vom Tankstellenpreis",
+      "note": "Bei Diesel etwas weniger als die Hälfte",
+      "sprech": "Bei Benzin gehen meist über fünfzig Prozent an Steuern und Abgaben."
+    },
+    {
+      "typ": "points",
+      "titel": "Der *12-Uhr*-Tipp",
+      "punkte": [
+        {
+          "icon": "clock",
+          "text": "Seit April: Preise steigen nur um 12 Uhr"
+        },
+        {
+          "icon": "chart",
+          "text": "Kurz vor 12 Uhr oft am günstigsten"
+        },
+        {
+          "icon": "euro",
+          "text": "Tankrabatt lief Ende Juni aus"
+        }
+      ],
+      "sprech": "Tipp: Kurz vor zwölf Uhr ist der Preis meist am niedrigsten."
+    },
+    {
+      "typ": "cta",
+      "titel": "Wann *tankst* du?",
+      "kommentar": "Schreib es in die Kommentare!",
+      "quelle": "Quellen: ADAC (Energiesteuer, Stand 1.7.2026), Finanztip (Steueranteil, 12-Uhr-Regel). Zahlen gerundet.",
+      "sprech": "Wann tankst du? Schreib es in die Kommentare!"
+    }
+  ],
+  "caption": "Was steckt wirklich im Spritpreis? ⛽\n\nDie Energiesteuer liegt bei Benzin bei 65,45 Cent pro Liter, bei Diesel bei 47,04 Cent. Dazu kommen der CO2-Preis, 19 % Mehrwertsteuer auf alles sowie Produktpreis, Transport und Marge. Bei Benzin machen Steuern und Abgaben meist mehr als die Hälfte des Preises aus, bei Diesel etwas weniger.\n\n🕛 Seit dem 1. April 2026 dürfen Tankstellen ihre Preise nur noch einmal täglich um 12 Uhr erhöhen. Kurz vor 12 Uhr sind die Preise im Schnitt am niedrigsten.\n\nWann tankst du? Schreib es in die Kommentare! 👇\n\nFolge @oil_preis_daily für das tägliche Ölpreis-Update.\n\nQuellen: ADAC (Energiesteuer, Stand 1.7.2026), Finanztip (Steueranteil, 12-Uhr-Regel). Zahlen gerundet. Keine Anlageberatung.\n\n#spritpreis #benzin #diesel #tanken #energiesteuer #steuern #adac #ölpreis #wirtschaft #finanzen"
+}

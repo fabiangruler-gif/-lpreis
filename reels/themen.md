@@ -29,7 +29,7 @@ Status: neu
 - Typ: Karussell
 
 ## Straße von Hormus: Das Nadelöhr der Weltwirtschaft
-Status: neu
+Status: in arbeit
 - Anteil am weltweiten Ölhandel
 - Iran-Krieg und Wiederöffnung der Route
 - Warum schon Gerüchte den Preis bewegen
@@ -41,7 +41,7 @@ Status: neu
 - Typ: Karussell
 
 ## Wie setzt sich der Spritpreis zusammen?
-Status: neu
+Status: in arbeit
 - Steuern, CO₂-Abgabe, Marge
 - 12-Uhr-Regel seit 1. April 2026 (Preiserhöhung nur einmal täglich)
 - Ende des Tankrabatts im Juli

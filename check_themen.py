@@ -3,7 +3,7 @@
 Exit-Code 1 bei Fehlern."""
 import re, sys
 
-STATUS = {"neu", "in arbeit", "vorschau", "veröffentlicht"}
+STATUS = {"neu", "in arbeit", "vorschau", "geplant", "veröffentlicht"}
 TYPEN = {"reel", "karussell"}
 text = open(sys.argv[1] if len(sys.argv) > 1 else "reels/themen.md", encoding="utf-8").read()
 liste = text.split("\n---", 1)[1] if "\n---" in text else text
@@ -16,6 +16,8 @@ for b in blocks:
     status, typ, punkte = "neu", "reel", []
     for z in zeilen[1:]:
         z = z.strip()
+        if z.startswith("-") and z[1:].strip().lower().startswith(("status:", "typ:")):
+            z = z[1:].strip()
         if z.lower().startswith("status:"):
             status = z.split(":", 1)[1].strip().lower()
         elif z.lower().startswith("typ:"):

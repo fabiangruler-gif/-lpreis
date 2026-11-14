@@ -1,0 +1,96 @@
+{
+  "titel": "Warum ist die Straße von Hormus so wichtig?",
+  "ziel_sekunden": 23,
+  "slides": [
+    {
+      "typ": "hook",
+      "titel": "Warum ist *Hormus* so wichtig?",
+      "sub": "Die Meerenge, durch die ein Viertel des Seeöls fließt.",
+      "sprech": "Warum ist die Straße von Hormus so wichtig?"
+    },
+    {
+      "typ": "stat",
+      "emoji": "🛢️",
+      "label": "Täglich",
+      "name": "Hormus",
+      "wert": "20 Mio.",
+      "einheit": "Barrel Öl pro Tag",
+      "note": "Mehr als ein Viertel des Ölhandels auf See",
+      "sprech": "Hier fließen täglich rund zwanzig Millionen Barrel Öl durch."
+    },
+    {
+      "typ": "compare",
+      "a": {
+        "emoji": "🚢",
+        "label": "Breite",
+        "name": "Nur",
+        "wert": "33 km",
+        "einheit": "an der engsten Stelle"
+      },
+      "b": {
+        "emoji": "🔀",
+        "label": "Umgehung",
+        "name": "Pipelines",
+        "wert": "6,5 Mio.",
+        "einheit": "Barrel pro Tag, maximal"
+      },
+      "foot": "Alternativrouten ersetzen nur einen Teil des Transits.",
+      "sprech": "An der engsten Stelle nur 33 Kilometer breit, Umgehungen gibt es kaum."
+    },
+    {
+      "typ": "list",
+      "titel": "Wohin das Öl *geht*",
+      "foot": "Mio. Barrel Rohöl pro Tag, gerundet.",
+      "zeilen": [
+        {
+          "emoji": "🇨🇳",
+          "name": "China",
+          "wert": "5,4 Mio."
+        },
+        {
+          "emoji": "🇮🇳",
+          "name": "Indien",
+          "wert": "2,1 Mio."
+        },
+        {
+          "emoji": "🇰🇷",
+          "name": "Südkorea",
+          "wert": "1,7 Mio."
+        },
+        {
+          "emoji": "🇯🇵",
+          "name": "Japan",
+          "wert": "1,6 Mio."
+        }
+      ],
+      "sprech": "Das meiste Öl geht nach China, Indien, Südkorea und Japan."
+    },
+    {
+      "typ": "points",
+      "titel": "Bei einer *Sperrung*",
+      "punkte": [
+        {
+          "icon": "chart",
+          "text": "Ölpreise steigen sofort"
+        },
+        {
+          "icon": "globe",
+          "text": "Asien bezieht rund 80 % des Öls und Gases"
+        },
+        {
+          "icon": "euro",
+          "text": "Europa spürt höhere Energiepreise"
+        }
+      ],
+      "sprech": "Eine Sperrung treibt die Preise, auch in Europa."
+    },
+    {
+      "typ": "cta",
+      "titel": "Wird die Meerenge *wieder frei*?",
+      "kommentar": "Schreib es in die Kommentare!",
+      "quelle": "Quellen: EIA/GTAI, Statista (Ziele des Rohöls), Stuttgarter Zeitung. Zahlen gerundet.",
+      "sprech": "Glaubst du, die Meerenge wird wieder frei? Schreib es in die Kommentare!"
+    }
+  ],
+  "caption": "Warum ist die Straße von Hormus so wichtig? 🌍\n\nTäglich fließen rund 20 Millionen Barrel Öl durch die Meerenge, mehr als ein Viertel des Ölhandels auf See. An der engsten Stelle ist sie nur etwa 33 Kilometer breit. Umgehungsrouten könnten selbst im besten Fall nur gut 6,5 Millionen Barrel pro Tag transportieren.\n\nDas meiste Öl geht nach Asien: China (5,4 Mio. Barrel pro Tag), Indien (2,1), Südkorea (1,7) und Japan (1,6). Eine Sperrung treibt die Ölpreise, Europa spürt vor allem höhere Energiepreise.\n\nGlaubst du, die Meerenge wird wieder frei? Schreib es in die Kommentare! 👇\n\nFolge @oil_preis_daily für das tägliche Ölpreis-Update.\n\nQuellen: GTAI, Statista, Stuttgarter Zeitung. Zahlen gerundet. Keine Anlageberatung.\n\n#hormus #straßevonhormus #ölpreis #rohöl #iran #energie #geopolitik #wirtschaft #brent #finanzen"
+}
