@@ -10,6 +10,8 @@ import hashlib, html, json, os, pathlib, re, shutil, subprocess, sys, urllib.err
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FPS, GAP, TAIL, LEAD = 30, 0.22, 0.7, 0.12
+TRIM = ("silenceremove=start_periods=1:start_threshold=-42dB:start_duration=0.03,areverse,"
+        "silenceremove=start_periods=1:start_threshold=-42dB:start_duration=0.03,areverse")
 VOICE = os.environ.get("ELEVENLABS_VOICE_ID") or "8aPaMtDocayOBFDFyWHp"  # Markus
 MODEL = os.environ.get("ELEVENLABS_MODEL") or "eleven_multilingual_v2"
 
@@ -269,12 +271,17 @@ def make_audio(spec, work, fake):
         else:
             tts(t, sents[i - 1] if i else "", sents[i + 1] if i + 1 < len(sents) else "", p, cache)
         raw.append(p)
-    natural = sum(dur(p) for p in raw) + GAP * (len(raw) - 1) + LEAD + TAIL
-    ziel = float(spec.get("ziel_sekunden", 20))
-    f = min(1.3, max(1.0, natural / ziel))
+    trimmed = []
+    for i, p in enumerate(raw):
+        t = work / f"trim{i}.wav"
+        sh("ffmpeg", "-y", "-loglevel", "error", "-i", p, "-filter:a", "anull" if fake else TRIM, "-ar", "44100", "-ac", "1", t)
+        trimmed.append(t)
+    natural = sum(dur(p) for p in trimmed) + GAP * (len(raw) - 1) + LEAD + TAIL
+    ziel = float(spec.get("ziel_sekunden", 23))
+    f = min(1.25, max(1.0, natural / ziel))
     print(f"Sprechdauer natürlich {natural:.1f}s, Ziel {ziel:.0f}s -> Tempo x{f:.2f}")
     segs, durs = [], []
-    for i, p in enumerate(raw):
+    for i, p in enumerate(trimmed):
         w = work / f"seg{i}.wav"
         sh("ffmpeg", "-y", "-loglevel", "error", "-i", p, "-filter:a", f"atempo={f:.4f}", "-ar", "44100", "-ac", "1", w)
         segs.append(w); durs.append(dur(w))
