@@ -20,3 +20,57 @@ Status: neu
 - Wie tief wird gebohrt
 - Kosten pro Tag
 - Wie viele Menschen arbeiten dort
+
+## Warum ist Diesel plötzlich teurer als Benzin?
+Status: neu
+- Anfang November: Diesel rund 2,24 €, E10 unter 2 €
+- Normal ist Diesel ca. 15 Cent günstiger (niedrigere Steuer)
+- Deutschland importiert mehr fertigen Diesel, dadurch krisenanfälliger
+
+## Straße von Hormus: Das Nadelöhr der Weltwirtschaft
+Status: neu
+- Anteil am weltweiten Ölhandel
+- Iran-Krieg und Wiederöffnung der Route
+- Warum schon Gerüchte den Preis bewegen
+
+## Rohöl fällt, Sprit nicht: Warum?
+Status: neu
+- Raffinerie, Transport, Steuern, Euro-Dollar-Kurs
+- Sinkender Rohölpreis kommt nicht 1:1 an der Zapfsäule an
+
+## Wie setzt sich der Spritpreis zusammen?
+Status: neu
+- Steuern, CO₂-Abgabe, Marge
+- 12-Uhr-Regel seit 1. April 2026 (Preiserhöhung nur einmal täglich)
+- Ende des Tankrabatts im Juli
+
+## Wo tankt man in Europa am günstigsten?
+Status: neu
+- Polen, Tschechien, Österreich im Vergleich zu Deutschland
+- Tipp für Urlaubsfahrten
+
+## OPEC+ erklärt: Wer entscheidet über die Förderung?
+Status: neu
+- Mitglieder, Quoten, Treffen
+- Förderziele für Dezember 2026 unverändert
+- Warum ein Treffen den Preis bewegt
+
+## Kommt 2027 die große Ölschwemme?
+Status: neu
+- IEA: starker Angebotsanstieg 2027, kleiner Nachfrageanstieg
+- Was das für Preise und Autofahrer bedeuten könnte
+
+## Strategische Ölreserven: Wie lange reicht das Öl?
+Status: neu
+- Reserven der großen Länder, Vorrat in Tagen
+- Überschuss 2027 als Chance, Lager aufzufüllen
+
+## Russland und die Sanktionen: Wie viel Öl fließt noch?
+Status: neu
+- Sanktionen gegen Rosneft und Lukoil, Exporteinnahmen
+- Wer kauft das Öl jetzt (Indien, China)
+
+## Ölpreis und Inflation: Warum alles teurer wird
+Status: neu
+- Energiepreise als Teil des Preisanstiegs
+- Nachfrage schrumpft 2026, Folgen für die Wirtschaft
