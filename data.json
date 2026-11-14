@@ -1,7 +1,7 @@
 {
   "datum": "Samstag, 14. November 2026 • 14:15 MEZ",
   "headline": "Ölmarkt ruht: Zweiter Wochenverlust in Folge",
-  "subline": "Überschuss und US-Blockade dämpfen Preise; Berichte über Angriffe am Golf bleiben offen",
+  "subline": "Überschuss und US-Blockade dämpfen Preise, Golf-Meldungen bleiben offen",
   "brent": {
     "preis": "95,84",
     "diff": "+0,02",
@@ -14,59 +14,64 @@
     "pct": "-0,20",
     "dir": "down"
   },
-  "preis_hinweis": "Schlusskurse Fr., 13.11. • Reuters-Daten • kein Livekurs",
+  "preis_hinweis": "Frontmonat-Futures • Schlusskurse Fr., 13.11.2026 • keine Livekurse",
   "news": [
     {
       "icon": "bank",
-      "titel": "Trump hält Blockade aufrecht",
-      "text": "Kein Iran-Deal nötig, sagt Trump. Das dämpft die Kampfsorgen."
+      "titel": "Trump hält an Blockade fest",
+      "text": "Die USA brauchten keinen Iran-Deal, schrieb Trump. Die Blockade bleibt, das dämpft die Kampfsorgen."
     },
     {
       "icon": "ship",
       "titel": "Angriffsmeldungen am Golf",
-      "text": "Huthi und Iran melden Angriffe. Unabhängig bestätigt ist noch nichts."
+      "text": "Huthi und Iran melden Angriffe auf Ölanlagen und Tanker. Unabhängig bestätigt ist das nicht."
     },
     {
       "icon": "chart",
       "titel": "IEA: Überangebot wächst",
-      "text": "Monatsbericht: mehr Angebot. Auch die OPEC+ fördert mehr."
+      "text": "Der Monatsbericht deutet auf mehr Angebot. Auch die OPEC+ fördert mehr."
+    },
+    {
+      "icon": "barrel",
+      "titel": "US-Lagerbestände steigen",
+      "text": "Laut EIA stiegen Rohöl- und Kraftstoffvorräte, bei schwächerer Nachfrage."
     }
   ],
   "prognose_kurz": {
-    "label": "Seitwärts, schwankend",
-    "text": "Markt wartet auf Signale aus Iran."
+    "label": "Seitwärts, hohe Volatilität",
+    "text": "Der Markt wartet auf Signale aus Iran. Bestätigte Angriffe könnten die Preise rasch treiben."
   },
   "prognose_mittel": {
-    "label": "Neutral bis abwärts",
-    "text": "Überangebot belastet die Preise."
+    "label": "Neutral bis leicht abwärts",
+    "text": "Das Überangebot spricht für Druck; bestätigte Golf-Ausfälle würden das umkehren."
   },
   "szenarien": {
-    "up": "Angriffe bestätigt, Hormus gestört",
-    "side": "Blockade hält, keine Eskalation",
-    "down": "Entspannung, Lager steigen"
+    "up": "Bestätigte Angriffe auf Saudi-Anlagen oder Tanker; Hormus-Verkehr bricht ein.",
+    "side": "Blockade hält, keine neue Eskalation; Überschuss und Risiko gleichen sich aus.",
+    "down": "Entspannung am Golf, weiter steigende Lager und höhere Fördermengen."
   },
   "watch": [
     {
       "icon": "ship",
       "titel": "Golf-Sicherheit",
-      "text": "Unabhängige Bestätigung der Angriffsmeldungen und Tankerverkehr."
+      "text": "Bestätigung der Angriffsmeldungen, Tankerverkehr"
     },
     {
       "icon": "hand",
       "titel": "US-Blockade",
-      "text": "Bleibt die Blockade, oder starten neue Gespräche mit Iran?"
+      "text": "Bleibt sie, oder starten neue Gespräche mit Iran?"
     },
     {
       "icon": "barrel",
       "titel": "Lagerdaten",
-      "text": "EIA-Wochenbericht am Mittwoch: Setzt sich der Vorratsaufbau fort?"
+      "text": "EIA-Bericht am Mittwoch: Baut sich der Vorrat weiter auf?"
     },
     {
       "icon": "chart",
       "titel": "Kursmarken",
-      "text": "Brent: 91 / 98 $ • WTI: 86 / 92 $. Runde Orientierungszonen."
+      "text": "Brent: 91 / 98 $ • WTI: 86 / 92 $ (runde Orientierungszonen)"
     }
   ],
-  "einschaetzung": "Überangebot gegen Golf-Risiko: kurzfristig seitwärts,\nmittelfristig überwiegt der Angebotsdruck.",
-  "quellen": "Quellen: Reuters (13.11.2026) • Reuters/EIA (12.11.2026) • IEA via Reuters (13.11.2026)\nVergleich mit Do., 12.11. • Stand 14.11.2026, 14:15 MEZ"
+  "einschaetzung": "Der Markt wägt Überangebot und US-Blockade gegen unbestätigte Angriffe ab.\nKurzfristig seitwärts und volatil; mittelfristig überwiegt der Angebotsdruck.",
+  "quellen": "Quellen: Reuters (13.11.2026, Ölpreise & Iran-Blockade) • Reuters/EIA (12.11.2026) • IEA via Reuters (13.11.2026)\nPreisvergleich: Schlusskurse Fr., 13.11.2026 vs. Do., 12.11. • Stand 14.11.2026, 14:15 MEZ"
 }
