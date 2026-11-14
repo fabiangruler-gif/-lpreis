@@ -2,6 +2,10 @@ name: Reel veröffentlichen
 
 on:
   workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Name des gebauten Reels (out/reels/<slug>.mp4)'
+        required: true
 
 jobs:
   reel:
@@ -13,4 +17,4 @@ jobs:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
         run: |
-          python3 publish_reel.py --video-url "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/out/reel_oelfoerderung.mp4" --caption-file reel_caption.txt
+          python3 publish_reel.py --video-url "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/out/reels/${{ inputs.slug }}.mp4" --caption-file "out/reels/${{ inputs.slug }}.txt"
