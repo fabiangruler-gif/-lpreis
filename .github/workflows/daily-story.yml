@@ -1,0 +1,55 @@
+name: Tägliche Öl-Story
+
+on:
+  push:
+    branches: [main]
+    paths: ['data.json']        # Claude (oder du) aktualisiert data.json -> Workflow startet
+  workflow_dispatch:            # manuell starten = Bild erzeugen UND veröffentlichen
+
+permissions:
+  contents: write
+
+jobs:
+  story:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Abhängigkeiten
+        run: pip install pillow playwright
+
+      - name: Bild rendern (PNG + JPEG, 1080x1920)
+        run: python generate.py data.json post
+
+      - name: Vorschau als Artefakt bereitstellen
+        uses: actions/upload-artifact@v4
+        with:
+          name: story-vorschau
+          path: |
+            post.png
+            post.jpg
+
+      - name: JPEG ins Repo legen (öffentliche URL für Instagram)
+        run: |
+          mkdir -p out
+          cp post.jpg out/story.jpg
+          git config user.name  "story-bot"
+          git config user.email "story-bot@users.noreply.github.com"
+          git add out/story.jpg
+          git commit -m "Story-Bild $(date -u +%F)" || echo "Keine Änderung am Bild"
+          git push
+          echo "SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      # Automatisch nur, wenn die Repo-Variable AUTO_PUBLISH = true gesetzt ist.
+      # Sonst: Vorschau prüfen und den Workflow manuell starten (workflow_dispatch).
+      - name: Als Story veröffentlichen
+        if: ${{ vars.AUTO_PUBLISH == 'true' || github.event_name == 'workflow_dispatch' }}
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: |
+          python publish_story.py --image-url "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${SHA}/out/story.jpg"
