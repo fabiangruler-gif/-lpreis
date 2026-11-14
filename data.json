@@ -39,11 +39,13 @@
   ],
   "prognose_kurz": {
     "label": "Seitwärts, hohe Volatilität",
-    "text": "Der Markt wartet auf Signale aus Iran. Bestätigte Angriffe könnten die Preise rasch treiben."
+    "text": "Der Markt wartet auf Signale aus Iran. Bestätigte Angriffe könnten die Preise rasch treiben.",
+    "farbe": "yellow"
   },
   "prognose_mittel": {
     "label": "Neutral bis leicht abwärts",
-    "text": "Das Überangebot spricht für Druck; bestätigte Golf-Ausfälle würden das umkehren."
+    "text": "Das Überangebot spricht für Druck; bestätigte Golf-Ausfälle würden das umkehren.",
+    "farbe": "red"
   },
   "szenarien": {
     "up": "Bestätigte Angriffe auf Saudi-Anlagen oder Tanker; Hormus-Verkehr bricht ein.",
