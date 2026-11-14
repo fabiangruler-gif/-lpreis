@@ -1,0 +1,20 @@
+name: Instagram-Token verlängern
+
+on:
+  schedule:
+    - cron: '0 6 1,15 * *'    # 1. und 15. des Monats (Token hält 60 Tage)
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Token verlängern und Secret aktualisieren
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}   # Personal Access Token mit Recht "Secrets: read/write" für dieses Repo
+        run: |
+          NEW=$(python3 refresh_token.py)
+          echo "::add-mask::$NEW"
+          gh secret set IG_TOKEN --body "$NEW" --repo "$GITHUB_REPOSITORY"
