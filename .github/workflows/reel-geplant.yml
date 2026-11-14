@@ -1,0 +1,19 @@
+name: Reel geplant (So 15.11.2026 09:00)
+
+on:
+  schedule:
+    - cron: "0 8 15 11 *"   # 08:00 UTC = 09:00 MEZ
+  workflow_dispatch:
+
+jobs:
+  reel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reel veröffentlichen
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(date -u +%Y)" != "2026" ]; then echo "Nur 2026 geplant, übersprungen."; exit 0; fi
+          python3 publish_reel.py --video-url "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/out/reel_oelverbrauch.mp4" --caption-file reel_caption_verbrauch.txt
