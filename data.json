@@ -95,15 +95,15 @@
   "szenarien_vergleich": {
     "up": {
       "trend": "same",
-      "text": "Wie gestern: Angriffe weiter unbestätigt"
+      "text": "Angriffe weiter unbestätigt"
     },
     "side": {
       "trend": "same",
-      "text": "Wie gestern: bleibt das Basisszenario"
+      "text": "bleibt das Basisszenario"
     },
     "down": {
       "trend": "same",
-      "text": "Wie gestern: Lager und Förderung stützen es"
+      "text": "Lager und Förderung stützen es"
     }
   }
 }
