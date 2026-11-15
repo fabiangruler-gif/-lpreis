@@ -79,9 +79,9 @@ jobs:
           name: story-vorschau
           path: story_*.png
 
-      # Nur wenn die Repo-Variable AUTO_PUBLISH = true gesetzt ist (oder beim manuellen Start "true" gewählt wurde).
+      # Zeitgesteuerte Läufe veröffentlichen immer; beim manuellen Start nur mit veroeffentlichen=true.
       - name: Als Story veröffentlichen
-        if: ${{ steps.zeit.outputs.go == 'true' && ((github.event_name == 'schedule' && vars.AUTO_PUBLISH == 'true') || inputs.veroeffentlichen == 'true') }}
+        if: ${{ steps.zeit.outputs.go == 'true' && (github.event_name == 'schedule' || inputs.veroeffentlichen == 'true') }}
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
