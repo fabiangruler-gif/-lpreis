@@ -19,22 +19,38 @@
     {
       "icon": "bank",
       "titel": "Trump hält an Blockade fest",
-      "text": "Die USA brauchten keinen Iran-Deal, schrieb Trump. Die Blockade bleibt, das dämpft die Kampfsorgen."
+      "text": "Die USA brauchten keinen Iran-Deal, schrieb Trump. Die Blockade bleibt, das dämpft die Kampfsorgen.",
+      "quelle": "CNBC",
+      "quelle_datum": "13.11.",
+      "link_anzeige": "cnbc.com",
+      "link": "https://www.cnbc.com/2026/11/13/oil-prices-set-for-second-weekly-decline-as-trump-to-stay-with-iran-blockade.html"
     },
     {
       "icon": "ship",
       "titel": "Angriffsmeldungen am Golf",
-      "text": "Huthi und Iran melden Angriffe auf Ölanlagen und Tanker. Unabhängig bestätigt ist das nicht."
+      "text": "Huthi und Iran melden Angriffe auf Ölanlagen und Tanker. Unabhängig bestätigt ist das nicht.",
+      "quelle": "EnergyNow",
+      "quelle_datum": "14.11.",
+      "link_anzeige": "energynow.com",
+      "link": "https://energynow.com/2026/11/oil-prices-slip-as-u-s-maintains-iran-blockade-and-global-supply-outlook-weakens-wti-near-88-brent-below-96/"
     },
     {
       "icon": "chart",
       "titel": "IEA: Überangebot wächst",
-      "text": "Der Monatsbericht deutet auf mehr Angebot. Auch die OPEC+ fördert mehr."
+      "text": "Der Monatsbericht deutet auf mehr Angebot. Auch die OPEC+ fördert mehr.",
+      "quelle": "IEA",
+      "quelle_datum": "13.11.",
+      "link_anzeige": "iea.org",
+      "link": "https://www.iea.org/reports/oil-market-report-november-2026"
     },
     {
       "icon": "barrel",
       "titel": "US-Lagerbestände steigen",
-      "text": "Laut EIA stiegen Rohöl- und Kraftstoffvorräte, bei schwächerer Nachfrage."
+      "text": "Laut EIA stiegen Rohöl- und Kraftstoffvorräte, bei schwächerer Nachfrage.",
+      "quelle": "EIA",
+      "quelle_datum": "12.11.",
+      "link_anzeige": "eia.gov",
+      "link": "https://www.eia.gov/petroleum/supply/weekly/"
     }
   ],
   "prognose_kurz": {
@@ -75,5 +91,19 @@
     }
   ],
   "einschaetzung": "Der Markt wägt Überangebot und US-Blockade gegen unbestätigte Angriffe ab.\nKurzfristig seitwärts und volatil; mittelfristig überwiegt der Angebotsdruck.",
-  "quellen": "Quellen: CNBC (13.11.2026) • EnergyNow (14.11.2026) • Invezz/IEA (13.11.2026)\nPreisvergleich: Schlusskurse Fr., 13.11.2026 vs. Do., 12.11. • Stand 15.11.2026, 10:00 MEZ"
+  "quellen": "Quellen: CNBC (13.11.2026) • EnergyNow (14.11.2026) • IEA (13.11.2026) • EIA (12.11.2026)\nPreisvergleich: Schlusskurse Fr., 13.11.2026 vs. Do., 12.11. • Stand 15.11.2026, 10:00 MEZ",
+  "szenarien_vergleich": {
+    "up": {
+      "trend": "same",
+      "text": "Wie gestern: Angriffe weiter unbestätigt"
+    },
+    "side": {
+      "trend": "same",
+      "text": "Wie gestern: bleibt das Basisszenario"
+    },
+    "down": {
+      "trend": "same",
+      "text": "Wie gestern: Lager und Förderung stützen es"
+    }
+  }
 }

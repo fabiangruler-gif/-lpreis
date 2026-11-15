@@ -1,10 +1,7 @@
 name: Tägliche Öl-Story
 
 on:
-  push:
-    branches: [main]
-    paths: ['data.json']        # Claude (oder du) aktualisiert data.json -> Workflow startet
-  workflow_dispatch:            # manuell starten = Bild erzeugen UND veröffentlichen
+  workflow_dispatch:            # nur noch manuell (alte Einzel-Story); Tagesablauf: story-serie.yml
 
 permissions:
   contents: write

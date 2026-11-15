@@ -1,0 +1,89 @@
+name: Öl-Stories (3 pro Tag)
+
+# Teil 1 = 06:00, Teil 2 = 12:00, Teil 3 = 18:00 (Europa/Berlin), Montag bis Samstag.
+# GitHub-Cron kennt nur UTC: je Termin zwei Einträge (Winter-/Sommerzeit),
+# der Schritt "Zeit prüfen" lässt nur den passenden durch.
+on:
+  schedule:
+    - cron: "0 4,5 * * 1-6"
+    - cron: "0 10,11 * * 1-6"
+    - cron: "0 16,17 * * 1-6"
+  workflow_dispatch:
+    inputs:
+      teil:
+        description: "Welcher Teil? 1 = Preise, 2 = Nachrichten, 3 = Ausblick"
+        required: true
+        default: "1"
+      veroeffentlichen:
+        description: "Auf Instagram veröffentlichen? (true/false)"
+        required: true
+        default: "false"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: story-serie
+  cancel-in-progress: false
+
+jobs:
+  story:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Zeit prüfen
+        id: zeit
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "teil=${{ inputs.teil }}" >> "$GITHUB_OUTPUT"
+            echo "go=true" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          H=$(TZ=Europe/Berlin date +%H); D=$(TZ=Europe/Berlin date +%u)
+          case "$H" in 06) T=1;; 12) T=2;; 18) T=3;; *) T="";; esac
+          if [ -z "$T" ] || [ "$D" = "7" ]; then echo "go=false" >> "$GITHUB_OUTPUT"; echo "Nicht der richtige Zeitpunkt (Berlin $H Uhr, Tag $D)."; exit 0; fi
+          echo "teil=$T" >> "$GITHUB_OUTPUT"; echo "go=true" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+        if: steps.zeit.outputs.go == 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.zeit.outputs.go == 'true'
+        with:
+          python-version: '3.12'
+
+      - name: Abhängigkeiten
+        if: steps.zeit.outputs.go == 'true'
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-core fonts-noto-color-emoji
+          pip install pillow playwright
+
+      - name: Bilder rendern
+        if: steps.zeit.outputs.go == 'true'
+        run: python generate_split.py data.json story
+
+      - name: Bild ins Repo legen (öffentliche URL für Instagram)
+        if: steps.zeit.outputs.go == 'true'
+        run: |
+          mkdir -p out
+          cp story_${{ steps.zeit.outputs.teil }}.jpg out/story_${{ steps.zeit.outputs.teil }}.jpg
+          git config user.name  "story-bot"
+          git config user.email "story-bot@users.noreply.github.com"
+          git add out/story_${{ steps.zeit.outputs.teil }}.jpg
+          git commit -m "Story Teil ${{ steps.zeit.outputs.teil }} $(date -u +%F-%H)" || echo "Keine Änderung am Bild"
+          git pull --rebase origin main
+          git push
+          echo "SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - uses: actions/upload-artifact@v4
+        if: steps.zeit.outputs.go == 'true'
+        with:
+          name: story-vorschau
+          path: story_*.png
+
+      # Nur wenn die Repo-Variable AUTO_PUBLISH = true gesetzt ist (oder beim manuellen Start "true" gewählt wurde).
+      - name: Als Story veröffentlichen
+        if: ${{ steps.zeit.outputs.go == 'true' && ((github.event_name == 'schedule' && vars.AUTO_PUBLISH == 'true') || inputs.veroeffentlichen == 'true') }}
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: |
+          python publish_story.py --image-url "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${SHA}/out/story_${{ steps.zeit.outputs.teil }}.jpg"
