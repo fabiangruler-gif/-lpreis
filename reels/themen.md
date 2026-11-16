@@ -80,4 +80,12 @@ Status: neu
 ## Wusstest du dass Öl in Deutschland gefördert wird
 Status: neu
 - bestehen Projekte
-- geplante Projekte
+- geplante Projekte (laut BVEG-Jahresbericht 2025 keine neuen genannt, vor Veröffentlichung nachrecherchieren)
+- Förderung 2025: rund 1,55 Mio. Tonnen, 2024 waren es 1,63 Mio. (ca. 4 % weniger)
+- Deckt nur etwa 1,75 % des deutschen Bedarfs (Hook: Überraschung und Kontrast)
+- Größtes Feld: Mittelplate im Wattenmeer vor Schleswig-Holstein, rund 0,69 Mio. Tonnen
+- Nach Ländern: Schleswig-Holstein ca. 55 %, Niedersachsen ca. 33 %
+- Reserven reichen bei heutiger Förderung etwa 13 Jahre
+- Warum kaum Neues dazukommt: Felder werden leer, neue lohnen sich selten
+- Quelle: BVEG-Jahresbericht 2025 (bveg.de)
+- Typ: Reel
