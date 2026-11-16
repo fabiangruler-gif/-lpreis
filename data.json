@@ -1,7 +1,7 @@
 {
-  "datum": "Sonntag, 15. November 2026 • 10:00 MEZ",
-  "headline": "Ölmarkt ruht: Zweiter Wochenverlust in Folge",
-  "subline": "Überschuss und US-Blockade dämpfen Preise, Golf-Meldungen bleiben offen",
+  "datum": "Montag, 16. November 2026 • 05:30 MEZ",
+  "headline": "Ölpreise unter Druck: IEA sieht Überschuss",
+  "subline": "Brent bei 95,84 $: Angebot wächst, Golf-Meldungen bleiben unbestätigt",
   "brent": {
     "preis": "95,84",
     "diff": "+0,02",
@@ -18,83 +18,83 @@
   "news": [
     {
       "icon": "bank",
-      "titel": "Trump hält an Blockade fest",
-      "text": "Die USA brauchten keinen Iran-Deal, schrieb Trump. Die Blockade bleibt, das dämpft die Kampfsorgen.",
+      "titel": "Trump bleibt bei Blockade",
+      "text": "Trump: Die USA brauchten keinen Iran-Deal. Die Blockade bleibt, Gespräche stocken.",
       "quelle": "CNBC",
       "quelle_datum": "13.11.",
       "link_anzeige": "cnbc.com",
-      "link": "https://www.cnbc.com/2026/11/13/oil-prices-set-for-second-weekly-decline-as-trump-to-stay-with-iran-blockade.html"
+      "link": "https://www.cnbc.com/amp/2026/11/13/oil-prices-set-for-second-weekly-decline-as-trump-to-stay-with-iran-blockade.html"
     },
     {
       "icon": "ship",
-      "titel": "Angriffsmeldungen am Golf",
-      "text": "Huthi und Iran melden Angriffe auf Ölanlagen und Tanker. Unabhängig bestätigt ist das nicht.",
-      "quelle": "EnergyNow",
-      "quelle_datum": "14.11.",
-      "link_anzeige": "energynow.com",
-      "link": "https://energynow.com/2026/11/oil-prices-slip-as-u-s-maintains-iran-blockade-and-global-supply-outlook-weakens-wti-near-88-brent-below-96/"
+      "titel": "Rekord bei Schiffsangriffen",
+      "text": "Im Oktober gab es 36 Angriffe auf Handelsschiffe am Golf, so viele wie nie im Krieg.",
+      "quelle": "Rigzone",
+      "quelle_datum": "13.11.",
+      "link_anzeige": "rigzone.com",
+      "link": "https://www.rigzone.com/news/wire/crude_fluctuates_as_iran_tensions_persist-13-nov-2026-185085-article/"
     },
     {
       "icon": "chart",
-      "titel": "IEA: Überangebot wächst",
-      "text": "Der Monatsbericht deutet auf mehr Angebot. Auch die OPEC+ fördert mehr.",
-      "quelle": "IEA",
-      "quelle_datum": "13.11.",
-      "link_anzeige": "iea.org",
-      "link": "https://www.iea.org/reports/oil-market-report-november-2026"
+      "titel": "IEA: Überschuss im Q4",
+      "text": "Die IEA erwartet 1,7 Mio. Barrel pro Tag mehr Angebot als Nachfrage.",
+      "quelle": "HDFC Sky",
+      "quelle_datum": "16.11.",
+      "link_anzeige": "hdfcsky.com",
+      "link": "https://hdfcsky.com/news/brent-crude-oil-price-today-november-16-2026-brent-falls-1percent-to-94-86-wti-slips-below-88-as-supply-surplus-looms"
     },
     {
       "icon": "barrel",
-      "titel": "US-Lagerbestände steigen",
-      "text": "Laut EIA stiegen Rohöl- und Kraftstoffvorräte, bei schwächerer Nachfrage.",
-      "quelle": "EIA",
-      "quelle_datum": "12.11.",
-      "link_anzeige": "eia.gov",
-      "link": "https://www.eia.gov/petroleum/supply/weekly/"
+      "titel": "Houthi-Angriffe unbestätigt",
+      "text": "Riad bestätigt keine Schäden an Pipeline und Yanbu; US-Lagerbestände stiegen zuletzt.",
+      "quelle": "FinanceFeeds",
+      "quelle_datum": "14.11.",
+      "link_anzeige": "financefeeds.com",
+      "link": "https://financefeeds.com/brent-crude-oil-price-95-84-saturday-week-ahead-second-weekly-loss-bull-98-bear-91/"
     }
   ],
   "prognose_kurz": {
-    "label": "Seitwärts, hohe Volatilität",
-    "text": "Der Markt wartet auf Signale aus Iran. Bestätigte Angriffe könnten die Preise rasch treiben.",
+    "label": "Seitwärts, Spanne 91–98 $",
+    "text": "Überschuss drückt, Golf-Risiken stützen. Montags starten die Futures leicht schwächer.",
     "farbe": "yellow"
   },
   "prognose_mittel": {
     "label": "Neutral bis leicht abwärts",
-    "text": "Das Überangebot spricht für Druck; bestätigte Golf-Ausfälle würden das umkehren.",
+    "text": "IEA-Überschuss und höhere Förderung sprechen für Druck; Golf-Ausfälle würden das drehen.",
     "farbe": "red"
   },
   "szenarien": {
-    "up": "Bestätigte Angriffe auf Saudi-Anlagen oder Tanker; Hormus-Verkehr bricht ein.",
-    "side": "Blockade hält, keine neue Eskalation; Überschuss und Risiko gleichen sich aus.",
-    "down": "Entspannung am Golf, weiter steigende Lager und höhere Fördermengen."
+    "up": "Bestätigte Schäden an Saudi-Pipeline oder Tankern; Hormus-Verkehr stockt.",
+    "side": "Blockade hält, keine Eskalation; Überschuss und Risiko gleichen sich aus.",
+    "down": "Hormus-Öffnung, weiter steigende Lager und mehr OPEC+-Förderung."
   },
   "watch": [
     {
       "icon": "ship",
       "titel": "Golf-Sicherheit",
-      "text": "Bestätigung der Angriffsmeldungen, Tankerverkehr"
+      "text": "Minen- und Angriffsmeldungen, Tankerverkehr"
     },
     {
       "icon": "hand",
       "titel": "US-Blockade",
-      "text": "Bleibt sie, oder starten neue Gespräche mit Iran?"
+      "text": "Bleibt sie, oder gibt es neue Iran-Gespräche?"
     },
     {
       "icon": "barrel",
-      "titel": "Lagerdaten",
-      "text": "EIA-Bericht am Mittwoch: Baut sich der Vorrat weiter auf?"
+      "titel": "EIA-Lagerdaten",
+      "text": "Mittwoch: Bauen sich die Vorräte weiter auf?"
     },
     {
       "icon": "chart",
       "titel": "Kursmarken",
-      "text": "Brent: 91 / 98 $ • WTI: 86 / 92 $ (runde Orientierungszonen)"
+      "text": "Brent 91/98 $ • WTI 86/92 $ (Orientierungszonen)"
     }
   ],
-  "einschaetzung": "Der Markt wägt Überangebot und US-Blockade gegen unbestätigte Angriffe ab.\nKurzfristig seitwärts und volatil; mittelfristig überwiegt der Angebotsdruck.",
-  "quellen": "Quellen: CNBC (13.11.2026) • EnergyNow (14.11.2026) • IEA (13.11.2026) • EIA (12.11.2026)\nPreisvergleich: Schlusskurse Fr., 13.11.2026 vs. Do., 12.11. • Stand 15.11.2026, 10:00 MEZ",
+  "einschaetzung": "Überangebot und Blockade dämpfen den Markt, Golf-Risiken stützen ihn.\nKurzfristig seitwärts mit Abwärtstendenz; Golf-Meldungen bleiben der Joker.",
+  "quellen": "Quellen: CNBC (13.11.) • Rigzone (13.11.) • HDFC Sky (16.11.) • FinanceFeeds (14.11.)\nPreisvergleich: Schlusskurse Fr., 13.11.2026 vs. Do., 12.11. • Stand 16.11.2026, 05:30 MEZ",
   "szenarien_vergleich": {
     "up": {
-      "trend": "same",
+      "trend": "less",
       "text": "Angriffe weiter unbestätigt"
     },
     "side": {
@@ -102,8 +102,8 @@
       "text": "bleibt das Basisszenario"
     },
     "down": {
-      "trend": "same",
-      "text": "Lager und Förderung stützen es"
+      "trend": "more",
+      "text": "IEA-Überschuss, Montag schwächer"
     }
   }
 }
