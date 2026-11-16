@@ -4,6 +4,11 @@ name: Ersatzstimmen testen
 # Die Hörproben liegen danach als Artefakt "stimmen" im Lauf.
 on:
   workflow_dispatch:
+    inputs:
+      piper_stimmen:
+        description: "Piper-Stimmen zum Testen (Leerzeichen getrennt), leer = Standardliste"
+        required: false
+        default: ""
   schedule:
     - cron: "17 5 1 * *"   # monatlich, damit Ausfälle früh auffallen
 
@@ -33,10 +38,45 @@ jobs:
         id: piper
         continue-on-error: true
         run: python3 reels/build_reel.py strasse-von-hormus --tts-test piper
+      # Weitere Stimmen: probiert mehrere Piper-Stimmen und alle deutschen Edge-Stimmen aus.
+      # Ergebnis steht in der Zusammenfassung des Laufs (Tabelle), die Hörproben im Artefakt "stimmen".
+      - name: Weitere Stimmen ausprobieren
+        id: weitere
+        continue-on-error: true
+        shell: bash
+        run: |
+          mkdir -p proben
+          {
+            echo "## Stimmen im Test"; echo
+            echo "| Anbieter | Stimme | Ergebnis |"; echo "|---|---|---|"
+          } >> "$GITHUB_STEP_SUMMARY"
+          PIPER_LISTE="${PIPER_STIMMEN:-de_DE-thorsten-medium de_DE-thorsten-high de_DE-thorsten_emotional-medium de_DE-kerstin-low de_DE-eva_k-x_low de_DE-karlsson-low de_DE-ramona-low de_DE-pavoque-low de_DE-mls-medium}"
+          for v in $PIPER_LISTE; do
+            if PIPER_VOICE="$v" python3 reels/build_reel.py strasse-von-hormus --tts-test piper > out.log 2>&1; then
+              cp _work/strasse-von-hormus/test_piper.mp3 "proben/piper_$v.mp3"
+              echo "| Piper | $v | OK ($(tail -n1 out.log)) |" >> "$GITHUB_STEP_SUMMARY"
+            else
+              echo "| Piper | $v | nicht verfügbar |" >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
+          EDGE_LISTE=$(python3 -m edge_tts --list-voices 2>/dev/null | awk '/^de-DE-/{print $1}')
+          echo "Edge-Stimmen de-DE laut edge-tts: $EDGE_LISTE"
+          for v in $EDGE_LISTE; do
+            if EDGE_VOICE="$v" python3 reels/build_reel.py strasse-von-hormus --tts-test edge > out.log 2>&1; then
+              cp _work/strasse-von-hormus/test_edge.mp3 "proben/edge_$v.mp3"
+              echo "| Edge-TTS | $v | OK |" >> "$GITHUB_STEP_SUMMARY"
+            else
+              echo "| Edge-TTS | $v | Fehler |" >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
+        env:
+          PIPER_STIMMEN: ${{ inputs.piper_stimmen }}
       - uses: actions/upload-artifact@v4
         with:
           name: stimmen
-          path: _work/strasse-von-hormus/test_*.mp3
+          path: |
+            proben/*.mp3
+            _work/strasse-von-hormus/test_*.mp3
           if-no-files-found: warn
       - name: Ergebnis
         env:
