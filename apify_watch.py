@@ -38,16 +38,21 @@ def main():
     day = datetime.date.today().isoformat()
     os.makedirs("watch", exist_ok=True)
 
-    posts = run(HASHTAG_ACTOR, {"hashtags": hashtags, "resultsType": "posts", "resultsLimit": limit}, token)
-    json.dump(posts, open(f"watch/{day}_hashtags.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    posts = []
+    if hashtags:
+        posts = run(HASHTAG_ACTOR, {"hashtags": hashtags, "resultsType": "posts", "resultsLimit": limit}, token)
+        json.dump(posts, open(f"watch/{day}_hashtags.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     profs = run(PROFILE_ACTOR, {"usernames": profile}, token)
     json.dump(profs, open(f"watch/{day}_profile.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
     # Übersicht (defensiv: Feldnamen können je nach Actor-Version abweichen; die Rohdaten bleiben gespeichert)
     good = [p for p in posts if not p.get("error")]
     L = [f"# Wochenübersicht {day}", "", f"Hashtag-Beiträge: {len(good)} brauchbar von {len(posts)} Zeilen | Profile: {len(profs)}", ""]
-    L += ["## Hashtags", ""]
-    if not good:
+    if hashtags:
+        L += ["## Hashtags", ""]
+    if not hashtags:
+        pass
+    elif not good:
         L += ["Der Hashtag-Scraper lieferte keine Beiträge (Fehler: " + ", ".join(sorted({str(p.get('error')) for p in posts})) + ").",
               "Mögliche Gründe: Instagram blockiert Hashtag-Seiten ohne Login, oder das Free-Limit greift. Rohdaten prüfen."]
     else:
