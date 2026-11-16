@@ -10,7 +10,7 @@ So funktioniert es:
 ---
 
 ## Wer verbraucht das meiste Öl der Welt?
-Status: neu
+Status: veröffentlicht
 - Top-Verbraucherländer (USA, China, Indien)
 - Verbrauch pro Kopf im Vergleich
 - Trend: China und Indien wachsen
@@ -41,7 +41,7 @@ Status: neu
 - Typ: Karussell
 
 ## Wie setzt sich der Spritpreis zusammen?
-Status: in arbeit
+Status: geplant
 - Steuern, CO₂-Abgabe, Marge
 - 12-Uhr-Regel seit 1. April 2026 (Preiserhöhung nur einmal täglich)
 - Ende des Tankrabatts im Juli

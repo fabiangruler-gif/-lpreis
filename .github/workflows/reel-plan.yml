@@ -1,0 +1,105 @@
+name: Reel veröffentlichen (Plan Di/Do/Fr/So)
+
+# Veröffentlicht um 09:00 (Berlin) das für den Tag vorbereitete Reel aus reels/plan.json.
+# Das Reel wird am Vortag gebaut und liegt zur Prüfung im Repo (out/reels/<slug>.mp4).
+# Status "stopp" im Plan hält es zurück. GitHub-Cron ist UTC und oft verspätet:
+# je Termin zwei Einträge (Sommer-/Winterzeit), Fenster 09-11 Uhr Berlin, doppelte Läufe fängt der Status ab.
+on:
+  schedule:
+    - cron: "0 7,8 * * 0,2,4,5"
+  workflow_dispatch:
+    inputs:
+      datum:
+        description: "Datum im Plan (YYYY-MM-DD), leer = heute"
+        required: false
+        default: ""
+      veroeffentlichen:
+        description: "Wirklich auf Instagram veröffentlichen? (false = nur prüfen)"
+        required: true
+        default: "false"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: reel-plan
+  cancel-in-progress: false
+
+jobs:
+  reel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Zeit prüfen
+        id: zeit
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "go=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+          H=$(TZ=Europe/Berlin date +%H)
+          case "$H" in 09|10|11) echo "go=true" >> "$GITHUB_OUTPUT";; *) echo "go=false" >> "$GITHUB_OUTPUT"; echo "Nicht im Zeitfenster (Berlin $H Uhr).";; esac
+
+      - uses: actions/checkout@v4
+        if: steps.zeit.outputs.go == 'true'
+
+      - name: Reel für heute suchen
+        id: plan
+        if: steps.zeit.outputs.go == 'true'
+        shell: bash
+        run: |
+          SLUG=$(python3 reel_plan.py heute "${{ inputs.datum }}")
+          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
+          echo "Reel: ${SLUG:-keines}"
+
+      - name: Dateien prüfen
+        if: steps.plan.outputs.slug != ''
+        shell: bash
+        run: |
+          S="${{ steps.plan.outputs.slug }}"
+          for f in "out/reels/$S.mp4" "out/reels/$S.txt"; do test -f "$f" || { echo "Fehlt: $f"; exit 1; }; done
+          test -f "out/reels/${S}_cover.jpg" || echo "WARNUNG: kein Cover vorhanden"
+
+      - name: Veröffentlichen
+        id: publish
+        if: ${{ steps.plan.outputs.slug != '' && (github.event_name == 'schedule' || inputs.veroeffentlichen == 'true') }}
+        shell: bash
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: |
+          S="${{ steps.plan.outputs.slug }}"
+          RAW="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/out/reels"
+          COVER=""; [ -f "out/reels/${S}_cover.jpg" ] && COVER="$RAW/${S}_cover.jpg"
+          python3 publish_reel.py --video-url "$RAW/$S.mp4" --caption-file "out/reels/$S.txt" --cover-url "$COVER" 2>&1 | tee publish.log
+
+      - name: Plan aktualisieren
+        if: steps.publish.conclusion == 'success'
+        shell: bash
+        run: |
+          python3 reel_plan.py status "${{ steps.plan.outputs.slug }}" veröffentlicht
+          git config user.name  "story-bot"
+          git config user.email "story-bot@users.noreply.github.com"
+          git add reels/plan.json reels/themen.md
+          git commit -m "Reel veröffentlicht: ${{ steps.plan.outputs.slug }}" || true
+          for i in 1 2 3 4; do git pull --rebase origin main && git push && break; sleep $((i*5)); done
+
+      - name: Hinweis bei fehlendem Reel (Issue)
+        if: ${{ github.event_name == 'schedule' && steps.zeit.outputs.go == 'true' && steps.plan.outputs.slug == '' }}
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="Heute kein Reel veröffentlicht"
+          BODY="$(TZ=Europe/Berlin date +%d.%m.%Y): Im Plan (reels/plan.json) ist kein Reel mit Status \"bereit\" eingetragen, oder es steht auf \"stopp\". Lauf: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          N=$(gh issue list --state open --search "$TITLE in:title" --json number -q '.[0].number' 2>/dev/null || true)
+          if [ -n "$N" ]; then gh issue comment "$N" --body "$BODY" || true; else gh issue create --title "$TITLE" --body "$BODY" || true; fi
+
+      - name: Fehler melden (Issue)
+        if: failure()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="Reel-Veröffentlichung fehlgeschlagen"
+          { echo "Reel ${{ steps.plan.outputs.slug }} konnte nicht veröffentlicht werden. Lauf: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"; echo; echo '```'; tail -n 15 publish.log 2>/dev/null; echo '```'; } > issue.md
+          N=$(gh issue list --state open --search "$TITLE in:title" --json number -q '.[0].number' 2>/dev/null || true)
+          if [ -n "$N" ]; then gh issue comment "$N" --body-file issue.md || true; else gh issue create --title "$TITLE" --body-file issue.md || true; fi
