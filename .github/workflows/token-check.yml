@@ -1,0 +1,40 @@
+name: Instagram-Token prüfen
+
+# Täglich vor dem ersten Story-Termin (04:00/05:00 Berlin): Funktioniert das Token noch?
+# Bei einem Problem entsteht ein Issue, und du hast Zeit bis 06:00 Uhr.
+on:
+  schedule:
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Token prüfen
+        shell: bash
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python publish_story.py --check 2>&1 | tee check.log
+      - name: Problem melden (Issue)
+        if: failure()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="Instagram-Token ungültig"
+          {
+            echo "Die tägliche Token-Prüfung ist fehlgeschlagen. Die Stories um 06/12/18 Uhr würden nicht veröffentlicht."
+            echo; echo "Lauf: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo; echo '```'; tail -n 15 check.log 2>/dev/null; echo '```'
+            echo; echo "Prüfen: neues Token im Instagram-Business-Login erzeugen und Secret IG_TOKEN ersetzen; ausstehende Identitätsprüfung bei Meta abschließen."
+          } > issue.md
+          N=$(gh issue list --state open --search "$TITLE in:title" --json number -q '.[0].number' 2>/dev/null || true)
+          if [ -n "$N" ]; then gh issue comment "$N" --body-file issue.md || true
+          else gh issue create --title "$TITLE" --body-file issue.md || true; fi

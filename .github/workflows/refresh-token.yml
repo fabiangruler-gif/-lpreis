@@ -2,8 +2,12 @@ name: Instagram-Token verlängern
 
 on:
   schedule:
-    - cron: '0 6 1,15 * *'    # 1. und 15. des Monats (Token hält 60 Tage)
+    - cron: '0 6 * * 1'       # jeden Montag (Token hält 60 Tage; so bleibt viel Puffer bei Ausfällen)
   workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
 
 jobs:
   refresh:
@@ -18,3 +22,13 @@ jobs:
           NEW=$(python3 refresh_token.py)
           echo "::add-mask::$NEW"
           gh secret set IG_TOKEN --body "$NEW" --repo "$GITHUB_REPOSITORY"
+      - name: Problem melden (Issue)
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="Token-Verlängerung fehlgeschlagen"
+          BODY="Lauf: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}. Mögliche Ursachen: Token abgelaufen oder ungültig, Secret GH_PAT fehlt oder ist abgelaufen, Meta-Verifizierung offen."
+          N=$(gh issue list --state open --search "$TITLE in:title" --json number -q '.[0].number' 2>/dev/null || true)
+          if [ -n "$N" ]; then gh issue comment "$N" --body "$BODY" || true
+          else gh issue create --title "$TITLE" --body "$BODY" || true; fi

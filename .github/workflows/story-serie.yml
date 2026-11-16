@@ -21,6 +21,7 @@ on:
 
 permissions:
   contents: write
+  issues: write      # bei Fehlern wird ein Issue angelegt (Mail an den Repo-Besitzer)
 
 concurrency:
   group: story-serie
@@ -69,8 +70,11 @@ jobs:
           git config user.email "story-bot@users.noreply.github.com"
           git add out/story_${{ steps.zeit.outputs.teil }}.jpg
           git commit -m "Story Teil ${{ steps.zeit.outputs.teil }} $(date -u +%F-%H)" || echo "Keine Änderung am Bild"
-          git pull --rebase origin main
-          git push
+          for i in 1 2 3 4; do
+            git pull --rebase origin main && git push && break
+            echo "Push fehlgeschlagen, neuer Versuch $i ..."; sleep $((i*5))
+          done
+          git status -sb | head -1
           echo "SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
 
       - uses: actions/upload-artifact@v4
@@ -81,9 +85,32 @@ jobs:
 
       # Zeitgesteuerte Läufe veröffentlichen immer; beim manuellen Start nur mit veroeffentlichen=true.
       - name: Als Story veröffentlichen
+        id: publish
         if: ${{ steps.zeit.outputs.go == 'true' && (github.event_name == 'schedule' || inputs.veroeffentlichen == 'true') }}
+        shell: bash
         env:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
         run: |
-          python publish_story.py --image-url "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${SHA}/out/story_${{ steps.zeit.outputs.teil }}.jpg"
+          python publish_story.py --image-url "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${SHA}/out/story_${{ steps.zeit.outputs.teil }}.jpg" 2>&1 | tee publish.log
+
+      # Bei Fehlern: ein offenes Issue pro Problem (weitere Fehler werden als Kommentar angehängt),
+      # GitHub schickt dem Repo-Besitzer dazu eine Mail.
+      - name: Fehler melden (Issue)
+        if: ${{ failure() && steps.publish.conclusion == 'failure' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          TITLE="Story-Veröffentlichung fehlgeschlagen"
+          RUN="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          {
+            echo "Teil ${{ steps.zeit.outputs.teil }} ($(TZ=Europe/Berlin date '+%d.%m.%Y %H:%M')) konnte nicht veröffentlicht werden."
+            echo; echo "Lauf: $RUN"
+            echo; echo "Die Bilder liegen als Artefakt \"story-vorschau\" im Lauf und können von Hand gepostet werden."
+            echo; echo '```'; tail -n 15 publish.log 2>/dev/null; echo '```'
+            echo; echo "Häufige Ursache: Token ungültig oder Meta verlangt eine Identitätsprüfung (developers.facebook.com)."
+          } > issue.md
+          N=$(gh issue list --state open --search "$TITLE in:title" --json number -q '.[0].number' 2>/dev/null || true)
+          if [ -n "$N" ]; then gh issue comment "$N" --body-file issue.md || true
+          else gh issue create --title "$TITLE" --body-file issue.md || true; fi
