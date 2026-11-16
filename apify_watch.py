@@ -44,22 +44,38 @@ def main():
     json.dump(profs, open(f"watch/{day}_profile.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
     # Übersicht (defensiv: Feldnamen können je nach Actor-Version abweichen; die Rohdaten bleiben gespeichert)
-    L = [f"# Wochenübersicht {day}", "", f"Beiträge gelesen: {len(posts)} | Profile gelesen: {len(profs)}", ""]
-    tags = Counter()
-    likes, cnt = Counter(), Counter()
-    for p in posts:
-        for h in p.get("hashtags") or []:
-            tags[str(h).lower()] += 1
-        src = p.get("inputUrl") or p.get("hashtag") or ""
-        likes[src] += num(p.get("likesCount"))
-        cnt[src] += 1
-    L += ["## Häufigste Begleit-Hashtags in den gefundenen Beiträgen", ""]
-    L += [f"- #{t}: {n}x" for t, n in tags.most_common(20)] or ["- (keine Hashtag-Felder in den Daten)"]
-    L += ["", "## Durchschnittliche Likes pro gesuchtem Hashtag", ""]
-    L += [f"- {s}: {likes[s] / cnt[s]:.0f} Likes (n={cnt[s]})" for s in cnt if s] or ["- (keine Like-Zahlen verfügbar)"]
-    L += ["", "## Profile", ""]
-    for p in profs:
-        L.append(f"- @{p.get('username')}: {p.get('followersCount', '?')} Follower, {p.get('postsCount', '?')} Beiträge")
+    good = [p for p in posts if not p.get("error")]
+    L = [f"# Wochenübersicht {day}", "", f"Hashtag-Beiträge: {len(good)} brauchbar von {len(posts)} Zeilen | Profile: {len(profs)}", ""]
+    L += ["## Hashtags", ""]
+    if not good:
+        L += ["Der Hashtag-Scraper lieferte keine Beiträge (Fehler: " + ", ".join(sorted({str(p.get('error')) for p in posts})) + ").",
+              "Mögliche Gründe: Instagram blockiert Hashtag-Seiten ohne Login, oder das Free-Limit greift. Rohdaten prüfen."]
+    else:
+        tags, likes, cnt = Counter(), Counter(), Counter()
+        for p in good:
+            for h in p.get("hashtags") or []:
+                tags[str(h).lower()] += 1
+            src = p.get("inputUrl") or ""
+            likes[src] += num(p.get("likesCount"))
+            cnt[src] += 1
+        L += [f"- #{t}: {n}x" for t, n in tags.most_common(20)]
+        L += ["", "Durchschnittliche Likes je gesuchtem Hashtag:"]
+        L += [f"- {s_.rsplit('/', 1)[-1]}: {likes[s_] / cnt[s_]:.0f} Likes (n={cnt[s_]})" for s_ in cnt if s_]
+    L += ["", "## Konkurrenz-Profile (letzte Beiträge)", "",
+          "| Profil | Follower | Ø Likes | Ø Kommentare | Interaktion | Beiträge/Woche | Formate |", "|---|---|---|---|---|---|---|"]
+    for p in sorted(profs, key=lambda x: -num(x.get("followersCount"))):
+        ps = p.get("latestPosts") or []
+        lk = [q["likesCount"] for q in ps if isinstance(q.get("likesCount"), int) and q["likesCount"] >= 0]
+        cm = [num(q.get("commentsCount")) for q in ps]
+        ts = sorted(q["timestamp"][:10] for q in ps if q.get("timestamp"))
+        days = max((datetime.date.fromisoformat(ts[-1]) - datetime.date.fromisoformat(ts[0])).days + 1, 1) if len(ts) > 1 else 0
+        fol = num(p.get("followersCount"))
+        al = sum(lk) / len(lk) if lk else 0
+        ac = sum(cm) / len(cm) if cm else 0
+        rate = f"{(al + ac) / fol * 100:.2f} %" if fol else "?"
+        wk = f"{len(ps) / days * 7:.1f}" if days else "?"
+        fm = ", ".join(f"{k} {v}" for k, v in Counter(q.get("type") for q in ps).most_common())
+        L.append(f"| @{p.get('username')} | {format(fol, ',').replace(',', '.')} | {al:.0f} | {ac:.0f} | {rate} | {wk} | {fm} |")
     open(f"watch/{day}_uebersicht.md", "w", encoding="utf-8").write("\n".join(L) + "\n")
     print("\n".join(L))
 
