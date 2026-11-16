@@ -1,0 +1,92 @@
+[
+ {
+  "url": "https://www.instagram.com/explore/tags/brent",
+  "inputUrl": "https://www.instagram.com/explore/tags/brent",
+  "requestErrorMessages": [
+   "HTTP 404 Not found"
+  ],
+  "error": "no_items",
+  "errorDescription": "Empty or private data for provided input"
+ },
+ {
+  "url": "https://www.instagram.com/explore/tags/börse",
+  "inputUrl": "https://www.instagram.com/explore/tags/börse",
+  "requestErrorMessages": [
+   "HTTP 404 Not found"
+  ],
+  "error": "no_items",
+  "errorDescription": "Empty or private data for provided input"
+ },
+ {
+  "url": "https://www.instagram.com/explore/tags/ölpreis",
+  "inputUrl": "https://www.instagram.com/explore/tags/ölpreis",
+  "requestErrorMessages": [
+   "HTTP 404 Not found"
+  ],
+  "error": "no_items",
+  "errorDescription": "Empty or private data for provided input"
+ },
+ {
+  "url": "https://www.instagram.com/explore/tags/finanzen",
+  "inputUrl": "https://www.instagram.com/explore/tags/finanzen",
+  "requestErrorMessages": [
+   "HTTP 404 Not found"
+  ],
+  "error": "no_items",
+  "errorDescription": "Empty or private data for provided input"
+ },
+ {
+  "url": "https://www.instagram.com/explore/tags/geopolitik",
+  "inputUrl": "https://www.instagram.com/explore/tags/geopolitik",
+  "requestErrorMessages": [
+   "HTTP 404 Not found"
+  ],
+  "error": "no_items",
+  "errorDescription": "Empty or private data for provided input"
+ },
+ {
+  "url": "https://www.instagram.com/explore/tags/energiepreise",
+  "inputUrl": "https://www.instagram.com/explore/tags/energiepreise",
+  "requestErrorMessages": [
+   "HTTP 404 Not found"
+  ],
+  "error": "no_items",
+  "errorDescription": "Empty or private data for provided input"
+ },
+ {
+  "url": "https://www.instagram.com/explore/tags/opec",
+  "inputUrl": "https://www.instagram.com/explore/tags/opec",
+  "requestErrorMessages": [
+   "HTTP 404 Not found"
+  ],
+  "error": "no_items",
+  "errorDescription": "Empty or private data for provided input"
+ },
+ {
+  "url": "https://www.instagram.com/explore/tags/rohstoffe",
+  "inputUrl": "https://www.instagram.com/explore/tags/rohstoffe",
+  "requestErrorMessages": [
+   "HTTP 404 Not found"
+  ],
+  "error": "no_items",
+  "errorDescription": "Empty or private data for provided input"
+ },
+ {
+  "url": "https://www.instagram.com/explore/tags/rohöl",
+  "inputUrl": "https://www.instagram.com/explore/tags/rohöl",
+  "requestErrorMessages": [
+   "HTTP 404 Not found"
+  ],
+  "error": "no_items",
+  "errorDescription": "Empty or private data for provided input"
+ },
+ {
+  "url": "https://www.instagram.com/explore/tags/wti",
+  "inputUrl": "https://www.instagram.com/explore/tags/wti",
+  "requestErrorMessages": [
+   "HTTP 404 Not found"
+  ],
+  "error": "no_items",
+  "errorDescription": "Empty or private data for provided input"
+ }
+]
