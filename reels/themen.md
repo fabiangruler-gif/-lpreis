@@ -76,3 +76,8 @@ Status: neu
 Status: neu
 - Energiepreise als Teil des Preisanstiegs
 - Nachfrage schrumpft 2026, Folgen für die Wirtschaft
+
+## Wusstest du dass Öl in Deutschland gefördert wird
+Status: neu
+- bestehen Projekte
+- geplante Projekte
