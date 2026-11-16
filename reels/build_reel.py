@@ -276,7 +276,7 @@ def build_html(spec, TL, path):
 # Stimmen-Reihenfolge: ElevenLabs (beste Qualität, Gratis-Kontingent begrenzt) -> Edge-TTS (kostenlos, Microsoft-Stimmen)
 # -> Piper (kostenlos, offline, Open Source). Pro Reel wird EINE Stimme für alle Sätze verwendet (keine Mischung).
 # Erzwingen: TTS_PROVIDER=edge  oder  TTS_PROVIDER=elevenlabs,edge,piper (Reihenfolge)
-EDGE_VOICE = os.environ.get("EDGE_VOICE") or "de-DE-ConradNeural"
+EDGE_VOICE = os.environ.get("EDGE_VOICE") or "de-DE-ChristophNeural"
 PIPER_VOICE = os.environ.get("PIPER_VOICE") or "de_DE-thorsten-medium"
 PROVIDERS = [x.strip() for x in (os.environ.get("TTS_PROVIDER") or "elevenlabs,edge,piper").split(",") if x.strip()]
 
