@@ -1,0 +1,52 @@
+name: Ersatzstimmen testen
+
+# Prüft, ob die kostenlosen Ersatzstimmen (Edge-TTS, Piper) funktionieren. Verbraucht kein ElevenLabs-Kontingent.
+# Die Hörproben liegen danach als Artefakt "stimmen" im Lauf.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 5 1 * *"   # monatlich, damit Ausfälle früh auffallen
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Abhängigkeiten
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          pip install pillow playwright
+          pip install edge-tts || echo "edge-tts nicht installierbar"
+          pip install piper-tts || echo "piper-tts nicht installierbar"
+      - name: Edge-TTS
+        id: edge
+        continue-on-error: true
+        run: python3 reels/build_reel.py strasse-von-hormus --tts-test edge
+      - name: Piper
+        id: piper
+        continue-on-error: true
+        run: python3 reels/build_reel.py strasse-von-hormus --tts-test piper
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stimmen
+          path: _work/strasse-von-hormus/test_*.mp3
+          if-no-files-found: warn
+      - name: Ergebnis
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Edge-TTS: ${{ steps.edge.outcome }} | Piper: ${{ steps.piper.outcome }}"
+          if [ "${{ steps.edge.outcome }}" != "success" ] && [ "${{ steps.piper.outcome }}" != "success" ]; then
+            TITLE="Keine Ersatzstimme verfügbar"
+            BODY="Weder Edge-TTS noch Piper funktioniert. Lauf: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            N=$(gh issue list --state open --search "$TITLE in:title" --json number -q '.[0].number' 2>/dev/null || true)
+            if [ -n "$N" ]; then gh issue comment "$N" --body "$BODY" || true; else gh issue create --title "$TITLE" --body "$BODY" || true; fi
+            exit 1
+          fi

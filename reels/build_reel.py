@@ -5,6 +5,7 @@ Aufruf:
   python3 reels/build_reel.py <slug>                 # echte Vertonung (ELEVENLABS_API_KEY nötig)
   python3 reels/build_reel.py <slug> --fake-audio    # Testlauf ohne Ton-API (Stille nach Wortzahl)
   python3 reels/build_reel.py <slug> --cover-only    # nur das Profil-Vorschaubild
+  python3 reels/build_reel.py <slug> --tts-test edge # Stimme testen (elevenlabs | edge | piper)
 Ergebnis: out/reels/<slug>.mp4, <slug>_storyboard.jpg, <slug>_cover.jpg (Profil-Vorschau, wird per cover_url gesetzt)
 """
 import hashlib, html, json, os, pathlib, re, shutil, subprocess, sys, urllib.error, urllib.request
@@ -272,15 +273,22 @@ def build_html(spec, TL, path):
 
 
 # ---------- Ton ----------
-def tts(text, prev, nxt, out, cache):
-    key = hashlib.sha1(f"{VOICE}|{MODEL}|{text}".encode()).hexdigest()[:12]
-    c = cache / f"{key}.mp3"
-    if c.exists():
-        shutil.copy(c, out)
-        return
+# Stimmen-Reihenfolge: ElevenLabs (beste Qualität, Gratis-Kontingent begrenzt) -> Edge-TTS (kostenlos, Microsoft-Stimmen)
+# -> Piper (kostenlos, offline, Open Source). Pro Reel wird EINE Stimme für alle Sätze verwendet (keine Mischung).
+# Erzwingen: TTS_PROVIDER=edge  oder  TTS_PROVIDER=elevenlabs,edge,piper (Reihenfolge)
+EDGE_VOICE = os.environ.get("EDGE_VOICE") or "de-DE-ConradNeural"
+PIPER_VOICE = os.environ.get("PIPER_VOICE") or "de_DE-thorsten-medium"
+PROVIDERS = [x.strip() for x in (os.environ.get("TTS_PROVIDER") or "elevenlabs,edge,piper").split(",") if x.strip()]
+
+
+class TTSError(Exception):
+    pass
+
+
+def tts_eleven(text, prev, nxt, out):
     token = os.environ.get("ELEVENLABS_API_KEY")
     if not token:
-        sys.exit("ELEVENLABS_API_KEY fehlt (Repo-Secret) – oder mit --fake-audio testen.")
+        raise TTSError("ELEVENLABS_API_KEY fehlt")
     body = {"text": text, "model_id": MODEL}
     if prev:
         body["previous_text"] = prev
@@ -293,22 +301,85 @@ def tts(text, prev, nxt, out, cache):
         with urllib.request.urlopen(req, timeout=120) as r:
             out.write_bytes(r.read())
     except urllib.error.HTTPError as e:
-        sys.exit(f"ElevenLabs-Fehler {e.code}: {e.read().decode(errors='replace')[:400]}")
+        raise TTSError(f"ElevenLabs-Fehler {e.code}: {e.read().decode(errors='replace')[:300]}")
+    except Exception as e:
+        raise TTSError(f"ElevenLabs nicht erreichbar: {e}")
+
+
+def tts_edge(text, prev, nxt, out):
+    try:
+        subprocess.run([sys.executable, "-m", "edge_tts", "--voice", EDGE_VOICE, "--text", text, "--write-media", str(out)],
+                       check=True, capture_output=True, text=True, timeout=120)
+    except Exception as e:
+        raise TTSError(f"Edge-TTS fehlgeschlagen: {getattr(e, 'stderr', None) or e}"[:300])
+    if not out.exists() or out.stat().st_size < 1000:
+        raise TTSError("Edge-TTS lieferte keine Audiodatei")
+
+
+def tts_piper(text, prev, nxt, out):
+    d = ROOT / "_work" / "piper"; d.mkdir(parents=True, exist_ok=True)
+    try:
+        if not (d / f"{PIPER_VOICE}.onnx").exists():
+            subprocess.run([sys.executable, "-m", "piper.download_voices", PIPER_VOICE, "--download-dir", str(d)],
+                           check=True, capture_output=True, text=True, timeout=300)
+        wav = out.with_suffix(".piper.wav")
+        subprocess.run([sys.executable, "-m", "piper", "-m", PIPER_VOICE, "--data-dir", str(d), "-f", str(wav)],
+                       input=text, check=True, capture_output=True, text=True, timeout=180)
+        sh("ffmpeg", "-y", "-loglevel", "error", "-i", wav, "-q:a", "2", out)
+    except Exception as e:
+        raise TTSError(f"Piper fehlgeschlagen: {getattr(e, 'stderr', None) or e}"[:300])
+
+
+TTS_FUNCS = {"elevenlabs": tts_eleven, "edge": tts_edge, "piper": tts_piper}
+
+
+def tts(provider, text, prev, nxt, out, cache):
+    voice = {"elevenlabs": f"{VOICE}|{MODEL}", "edge": EDGE_VOICE, "piper": PIPER_VOICE}[provider]
+    key = hashlib.sha1(f"{provider}|{voice}|{text}".encode()).hexdigest()[:12]
+    c = cache / f"{key}.mp3"
+    if c.exists():
+        shutil.copy(c, out)
+        return
+    TTS_FUNCS[provider](text, prev, nxt, out)
     shutil.copy(out, c)
+
+
+def synth_all(sents, work, cache):
+    """Vertont alle Sätze mit der ersten funktionierenden Stimme. Gibt (Dateien, Anbieter) zurück."""
+    fehler = []
+    for provider in PROVIDERS:
+        try:
+            raw = []
+            for i, t in enumerate(sents):
+                p = work / f"seg{i}.mp3"
+                tts(provider, t, sents[i - 1] if i else "", sents[i + 1] if i + 1 < len(sents) else "", p, cache)
+                raw.append(p)
+            print(f"Stimme: {provider}" + (f" (Ersatz, weil: {fehler[-1]})" if fehler else ""))
+            return raw, provider, fehler
+        except TTSError as e:
+            print(f"WARNUNG {provider}: {e}", file=sys.stderr)
+            fehler.append(f"{provider}: {e}")
+    sys.exit("Keine Stimme verfügbar:\n" + "\n".join(fehler))
+
+
+STIMME = ""
 
 
 def make_audio(spec, work, fake):
     sents = [s["sprech"] for s in spec["slides"]]
     raw = []
     cache = work / "cache"; cache.mkdir(exist_ok=True)
-    for i, t in enumerate(sents):
-        p = work / f"seg{i}.mp3"
-        if fake:
+    if fake:
+        for i, t in enumerate(sents):
+            p = work / f"seg{i}.mp3"
             sh("ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono",
                "-t", f"{max(1.2, len(t.split()) * 0.36):.2f}", "-q:a", "5", p)
-        else:
-            tts(t, sents[i - 1] if i else "", sents[i + 1] if i + 1 < len(sents) else "", p, cache)
-        raw.append(p)
+            raw.append(p)
+        provider, fehler = "fake", []
+    else:
+        raw, provider, fehler = synth_all(sents, work, cache)
+    global STIMME
+    STIMME = provider + (" | Ersatzstimme, weil: " + " ; ".join(fehler) if fehler else "")
     trimmed = []
     for i, p in enumerate(raw):
         t = work / f"trim{i}.wav"
@@ -402,6 +473,12 @@ def main():
     assert len(spec["slides"]) == 6, "Genau 6 Slides erwartet"
     work = ROOT / "_work" / slug; work.mkdir(parents=True, exist_ok=True)
     out = ROOT / "out" / "reels"; out.mkdir(parents=True, exist_ok=True)
+    if "--tts-test" in sys.argv:
+        prov = sys.argv[sys.argv.index("--tts-test") + 1]
+        t = work / f"test_{prov}.mp3"
+        TTS_FUNCS[prov]("Warum ist die Straße von Hormus so wichtig? Hier fließen täglich rund zwanzig Millionen Barrel Öl durch.", "", "", t)
+        print(f"OK {prov}: {t.stat().st_size} Bytes, {dur(t):.1f} s")
+        return
     if "--cover-only" in sys.argv:
         build_cover(spec, work, out / f"{slug}_cover.jpg")
         return
@@ -416,6 +493,7 @@ def main():
     sh("ffmpeg", "-y", "-loglevel", "error", "-i", silent, "-i", audio, "-filter_complex", f"[1:a]{af}[a]", "-map", "0:v", "-map", "[a]",
        "-t", f"{total:.2f}", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", out / f"{slug}.mp4")
     build_cover(spec, work, out / f"{slug}_cover.jpg")
+    (out / f"{slug}_stimme.txt").write_text(STIMME + "\n", encoding="utf-8")
     (out / f"{slug}.txt").write_text(spec["caption"].strip() + "\n", encoding="utf-8")
     print("fertig:", out / f"{slug}.mp4")
 

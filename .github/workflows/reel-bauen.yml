@@ -6,6 +6,10 @@ on:
       slug:
         description: 'Name der Spec-Datei in reels/specs (ohne .json)'
         required: true
+      stimme:
+        description: 'Stimme erzwingen: elevenlabs, edge oder piper (leer = automatisch: ElevenLabs, bei Problemen kostenlose Ersatzstimme)'
+        required: false
+        default: ''
       voice:
         description: 'ElevenLabs-Stimmen-ID (Standard: Daniel, im Gratis-Tarif nutzbar)'
         required: false
@@ -25,12 +29,15 @@ jobs:
       - name: Abhängigkeiten
         run: |
           pip install pillow playwright
+          pip install edge-tts || echo "edge-tts nicht installierbar"
+          pip install piper-tts || echo "piper-tts nicht installierbar"
           sudo apt-get update -qq
           sudo apt-get install -y -qq fonts-noto-color-emoji ffmpeg
       - name: Reel bauen (Slides, Ton, Video)
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           ELEVENLABS_VOICE_ID: ${{ inputs.voice }}
+          TTS_PROVIDER: ${{ inputs.stimme }}
         run: python3 reels/build_reel.py "${{ inputs.slug }}"
       - name: Vorschau ins Repo legen
         run: |
