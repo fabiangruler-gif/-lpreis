@@ -4,7 +4,8 @@
 Aufruf:
   python3 reels/build_reel.py <slug>                 # echte Vertonung (ELEVENLABS_API_KEY nötig)
   python3 reels/build_reel.py <slug> --fake-audio    # Testlauf ohne Ton-API (Stille nach Wortzahl)
-Ergebnis: out/reels/<slug>.mp4, out/reels/<slug>_storyboard.jpg
+  python3 reels/build_reel.py <slug> --cover-only    # nur das Profil-Vorschaubild
+Ergebnis: out/reels/<slug>.mp4, <slug>_storyboard.jpg, <slug>_cover.jpg (Profil-Vorschau, wird per cover_url gesetzt)
 """
 import hashlib, html, json, os, pathlib, re, shutil, subprocess, sys, urllib.error, urllib.request
 
@@ -130,6 +131,31 @@ def s_cta(d):
             f'<div class="txt src">{esc(d.get("quelle"))}</div>')
 
 
+def cover_data(spec):
+    """Daten für das Profil-Vorschaubild. Optional in der Spec unter "cover": {titel, emoji, zahl, einheit}."""
+    c = dict(spec.get("cover") or {})
+    hook = spec["slides"][0]
+    c.setdefault("titel", hook.get("titel") or spec.get("titel", ""))
+    first = next((x for x in spec["slides"] if x["typ"] in ("stat", "compare")), None)
+    if first:
+        src = first["a"] if first["typ"] == "compare" else first
+        c.setdefault("emoji", src.get("emoji", "🛢️"))
+        c.setdefault("zahl", src.get("wert", ""))
+        c.setdefault("einheit", src.get("einheit", ""))
+    c.setdefault("emoji", "🛢️")
+    return c
+
+
+def s_cover(d):
+    n = len(re.sub(r"\*", "", d["titel"]))
+    size = 124 if n <= 30 else 108 if n <= 46 else 92
+    zahl = (f'<div class="cz{" long" if len(d["zahl"]) > 8 else ""}">{esc(d["zahl"])}</div><div class="ce">{esc(d.get("einheit"))}</div>' if d.get("zahl") else "")
+    return ('<div class="photo"></div><div class="vig"></div>'
+            '<div class="txt brand"><svg width="46" height="60" viewBox="0 0 40 52"><path fill="#f5b22f" d="M20 3C20 3 4 22 4 34a16 16 0 0 0 32 0C36 22 20 3 20 3Z"/></svg>ÖLPREIS DAILY</div>'
+            f'<h1 class="txt ct" style="font-size:{size}px">{gold(d["titel"])}</h1>'
+            f'<div class="txt cbox"><div class="flag cf">{d["emoji"]}</div><div>{zahl}</div></div>')
+
+
 TYPES = {"hook": s_hook, "stat": s_stat, "compare": s_compare, "list": s_list, "points": s_points, "cta": s_cta}
 
 CSS = r'''
@@ -192,6 +218,17 @@ h1,.big{font-family:'Poppins',sans-serif;font-weight:700}
 .cmt{top:1290px;display:flex;align-items:center;gap:24px;font:700 48px 'Poppins'}
 .btn{position:absolute;left:78px;right:78px;top:1390px;height:150px;border-radius:30px;background:var(--gold);color:#0a1218;display:flex;align-items:center;gap:30px;padding:0 44px;font:700 46px/1.2 'Poppins'}
 .src{left:78px;right:78px;top:1580px;font:400 29px/1.35 'Inter';color:var(--mut)}
+/* Profil-Vorschaubild: wichtiger Inhalt liegt in der Mitte (Raster zeigt ca. 3:4, Reels-Tab 4:5) */
+.s-cover{display:block;opacity:1}
+.s-cover .photo{height:1100px}
+.s-cover .brand{top:340px;display:flex;align-items:center;gap:18px;font:700 40px 'Poppins';color:var(--gold);letter-spacing:3px}
+.s-cover .ct{top:430px;line-height:1.06}
+.s-cover .cbox{top:1120px;display:flex;align-items:center;gap:34px;padding:34px 44px;border-radius:36px;
+ background:rgba(0,12,19,.82);border:3px solid var(--gold);text-shadow:none}
+.s-cover .cf{font-size:150px}
+.s-cover .cz{font:700 112px/1 'Poppins';color:var(--gold);white-space:nowrap}
+.s-cover .cz.long{font-size:84px}
+.s-cover .ce{font:600 44px/1.2 'Inter';margin-top:10px}
 '''
 
 JS = r'''
@@ -338,6 +375,23 @@ def render(htmlp, total, frames, storyboard):
     sheet.save(storyboard, quality=88)
 
 
+def build_cover(spec, work, outfile):
+    """Rendert das Profil-Vorschaubild (1080x1920 JPEG) für cover_url der Instagram-API."""
+    from playwright.sync_api import sync_playwright
+    A = (ROOT / "assets").as_uri()
+    doc = ('<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><style>' + CSS.replace("{A}", A) + '</style></head><body>'
+           f'<section class="slide s-cover">{s_cover(cover_data(spec))}</section></body></html>')
+    h = work / "cover.html"; h.write_text(doc, encoding="utf-8")
+    with sync_playwright() as p:
+        c = chrome()
+        b = p.chromium.launch(executable_path=c, args=["--no-sandbox"]) if c else p.chromium.launch(args=["--no-sandbox"])
+        pg = b.new_page(viewport={"width": 1080, "height": 1920})
+        pg.goto(h.as_uri()); pg.wait_for_timeout(800)
+        pg.screenshot(path=str(outfile), type="jpeg", quality=92)
+        b.close()
+    print("Cover:", outfile)
+
+
 def main():
     a = [x for x in sys.argv[1:] if not x.startswith("--")]
     fake = "--fake-audio" in sys.argv
@@ -348,6 +402,9 @@ def main():
     assert len(spec["slides"]) == 6, "Genau 6 Slides erwartet"
     work = ROOT / "_work" / slug; work.mkdir(parents=True, exist_ok=True)
     out = ROOT / "out" / "reels"; out.mkdir(parents=True, exist_ok=True)
+    if "--cover-only" in sys.argv:
+        build_cover(spec, work, out / f"{slug}_cover.jpg")
+        return
     audio, TL, total = make_audio(spec, work, fake)
     print("Timeline:", TL, "Gesamt:", round(total, 2))
     htmlp = work / "slides.html"; build_html(spec, TL, htmlp)
@@ -358,6 +415,7 @@ def main():
     af = f"loudnorm=I=-16:TP=-1.5:LRA=11,afade=t=out:st={total-0.5:.2f}:d=0.5,apad"
     sh("ffmpeg", "-y", "-loglevel", "error", "-i", silent, "-i", audio, "-filter_complex", f"[1:a]{af}[a]", "-map", "0:v", "-map", "[a]",
        "-t", f"{total:.2f}", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", out / f"{slug}.mp4")
+    build_cover(spec, work, out / f"{slug}_cover.jpg")
     (out / f"{slug}.txt").write_text(spec["caption"].strip() + "\n", encoding="utf-8")
     print("fertig:", out / f"{slug}.mp4")
 

@@ -17,4 +17,7 @@ jobs:
           IG_TOKEN: ${{ secrets.IG_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
         run: |
-          python3 publish_reel.py --video-url "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/out/reels/${{ inputs.slug }}.mp4" --caption-file "out/reels/${{ inputs.slug }}.txt"
+          RAW="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${GITHUB_SHA}/out/reels"
+          COVER=""
+          if [ -f "out/reels/${{ inputs.slug }}_cover.jpg" ]; then COVER="$RAW/${{ inputs.slug }}_cover.jpg"; else echo "WARNUNG: kein Cover vorhanden, Instagram nimmt das erste Videobild"; fi
+          python3 publish_reel.py --video-url "$RAW/${{ inputs.slug }}.mp4" --caption-file "out/reels/${{ inputs.slug }}.txt" --cover-url "$COVER"

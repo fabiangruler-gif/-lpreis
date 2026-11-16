@@ -22,6 +22,7 @@ def call(method, url, params=None):
 ap = argparse.ArgumentParser()
 ap.add_argument("--video-url", required=True)
 ap.add_argument("--caption-file", required=True)
+ap.add_argument("--cover-url", default="", help="Profil-Vorschaubild (JPEG, 9:16), wird per cover_url gesetzt")
 a = ap.parse_args()
 token, ig_id = os.environ["IG_TOKEN"], os.environ["IG_USER_ID"]
 caption = open(a.caption_file, encoding="utf-8").read().strip()
@@ -36,8 +37,11 @@ for _ in range(12):
 else:
     sys.exit("Video-URL nicht öffentlich erreichbar.")
 
-cont = call("POST", f"{BASE}/{ig_id}/media", {"media_type": "REELS", "video_url": a.video_url,
-            "caption": caption, "share_to_feed": "true", "access_token": token})["id"]
+params = {"media_type": "REELS", "video_url": a.video_url,
+          "caption": caption, "share_to_feed": "true", "access_token": token}
+if a.cover_url:
+    params["cover_url"] = a.cover_url
+cont = call("POST", f"{BASE}/{ig_id}/media", params)["id"]
 print("Container:", cont)
 for _ in range(60):
     st = call("GET", f"{BASE}/{cont}", {"fields": "status_code,status", "access_token": token})
