@@ -127,16 +127,19 @@ def s_chart(d):
     """Liniendiagramm, das sich beim Abspielen von links nach rechts aufbaut (zwei Serien, Werte in Cent je Liter)."""
     jahre, serien = d["jahre"], d["serien"]
     lo, hi = d.get("ymin", 100), d.get("ymax", 200)
+    fm = {"teiler": 100, "dez": 2, "suffix": " €", "step": 25, "label_alle": 50, **(d.get("format") or {})}
     X = lambda i: CH_L + (CH_R - CH_L) * i / (len(jahre) - 1)
     Y = lambda v: CH_B - (v - lo) / (hi - lo) * (CH_B - CH_T)
     g = ""
-    for v in range(lo, hi + 1, 25):
-        lab = f'{v / 100:.2f}'.replace(".", ",") + " €" if v % 50 == 0 else ""
+    for v in range(lo, hi + 1, fm["step"]):
+        lab = f'{v / fm["teiler"]:.{0 if d.get("yeinheit") else fm["dez"]}f}'.replace(".", ",") + ("" if d.get("yeinheit") else fm["suffix"].rstrip()) if v % fm["label_alle"] == 0 else ""
         g += (f'<line x1="{CH_L}" x2="{CH_R}" y1="{Y(v):.1f}" y2="{Y(v):.1f}" stroke="rgba(255,255,255,{.22 if v % 50 == 0 else .09})" stroke-width="2"/>'
               f'<text x="{CH_L - 16}" y="{Y(v) + 10:.1f}" text-anchor="end" class="ct">{lab}</text>')
     for i, j in enumerate(jahre):
-        if i % 3 == 0 or i == len(jahre) - 1:
+        if len(jahre) <= 5 or i % 3 == 0 or i == len(jahre) - 1:
             g += f'<text x="{X(i):.1f}" y="{CH_B + 52}" text-anchor="middle" class="ct">{j}</text>'
+    if d.get("yeinheit"):
+        g += f'<text x="{CH_L - 16}" y="{CH_T - 34}" text-anchor="end" class="ct">{esc(d["yeinheit"])}</text>'
     paths, dots = "", ""
     for k, sr in enumerate(serien):
         pts = [(X(i), Y(v)) for i, v in enumerate(sr["werte"])]
@@ -150,14 +153,14 @@ def s_chart(d):
         top = min(Y(sr["werte"][mi]) for sr in serien)
         mx = min(max(X(mi), CH_L + 150), CH_R - 150)
         paths += (f'<g class="cmark" data-i="{mi}"><line x1="{X(mi):.1f}" x2="{X(mi):.1f}" y1="{top - 8:.1f}" y2="{CH_B}" stroke="rgba(255,255,255,.35)" '
-                  f'stroke-width="2" stroke-dasharray="8 8"/><text x="{mx:.1f}" y="{max(top - 26, 22):.1f}" text-anchor="middle" class="cm">{esc(mk["text"])}</text></g>')
+                  f'stroke-width="2" stroke-dasharray="8 8"/><text x="{mx:.1f}" y="{(top + 68) if mk.get("unten") else max(top - 26, 22):.1f}" text-anchor="middle" class="cm">{esc(mk["text"])}</text></g>')
     legend = "".join(f'<div class="lg"><i style="background:{sr.get("farbe", "#f5b22f")}"></i><span class="ln">{esc(sr["name"])}</span>'
                      f'<b class="lv" data-k="{k}">–</b></div>' for k, sr in enumerate(serien))
-    data = html.escape(json.dumps({"jahre": jahre, "serien": [s["werte"] for s in serien]}), quote=True)
+    data = html.escape(json.dumps({"jahre": jahre, "serien": [s["werte"] for s in serien], "fmt": fm}), quote=True)
     return ('<div class="photo"></div><div class="vig"></div>'
             f'<h1 class="txt">{gold(d["titel"])}</h1>'
             f'<div class="chartbox" data-chart="{data}"><svg viewBox="0 0 {CHART_W} {CHART_H}" width="{CHART_W}" height="{CHART_H}">{g}{paths}{dots}</svg>'
-            f'<div class="cyear">{jahre[0]}</div></div>'
+            f'<div class="cyear" style="top:{d.get("jahr_top", 6)}px">{jahre[0]}</div></div>'
             f'<div class="legend">{legend}</div>'
             f'<div class="txt src">{esc(d.get("quelle"))}</div>')
 
@@ -284,7 +287,7 @@ h1,.big{font-family:'Poppins',sans-serif;font-weight:700}
 .lg{flex:1;display:flex;flex-direction:column;gap:4px;padding:22px 26px;border-radius:24px;background:rgba(0,12,19,.78);border:2px solid rgba(245,178,47,.5)}
 .lg i{width:46px;height:9px;border-radius:5px;display:block;margin-bottom:8px}
 .lg .ln{font:600 34px 'Inter';color:var(--mut)}
-.lg .lv{font:700 76px/1.05 'Poppins'}
+.lg .lv{font:700 62px/1.15 'Poppins';white-space:nowrap}
 .s-chart .src{top:1580px}
 .s-cta .photo{height:760px;opacity:.5}
 .s-cta h1{font-size:90px;line-height:1.1;top:300px}
@@ -326,7 +329,7 @@ function chartAt(sl,u,d0){
  const f=p*(n-1),i0=Math.min(n-2,Math.floor(f)),fr=f-i0;
  cb.querySelector('.cyear').textContent=D.jahre[Math.round(f)];
  sl.querySelectorAll('.lv').forEach(el=>{const a=D.serien[+el.dataset.k];const v=a[i0]+(a[i0+1]-a[i0])*fr;
-  el.textContent=(v/100).toFixed(2).replace('.',',')+' €';el.style.color=cb.querySelector('.cdraw[data-k="'+el.dataset.k+'"]').getAttribute('stroke');});
+  el.textContent=(v/D.fmt.teiler).toFixed(D.fmt.dez).replace('.',',')+(D.fmt.suffix||'');el.style.color=cb.querySelector('.cdraw[data-k="'+el.dataset.k+'"]').getAttribute('stroke');});
  cb.querySelectorAll('.cmark').forEach(m=>{m.style.opacity=f>=+m.dataset.i-0.05?1:0;});
 }
 window.seek=function(t){

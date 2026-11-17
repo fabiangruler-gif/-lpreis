@@ -1,6 +1,6 @@
 {
  "titel": "Wie viel verdient der Staat am Sprit?",
- "ziel_sekunden": 22,
+ "ziel_sekunden": 20,
  "cover": {
   "titel": "Wie viel *verdient* der Staat am Sprit?",
   "emoji": "⛽",
@@ -16,59 +16,53 @@
   },
   {
    "typ": "chart",
-   "titel": "Spritpreise in *10 Jahren*",
+   "titel": "Energiesteuer und *CO2-Preis* seit 2021",
    "jahre": [
-    2016,
-    2017,
-    2018,
-    2019,
-    2020,
     2021,
     2022,
     2023,
-    2024,
-    2025
+    2024
    ],
    "serien": [
     {
-     "name": "Benzin (Super E10)",
-     "farbe": "#fefefe",
+     "name": "Energiesteuer",
+     "farbe": "#f5b22f",
      "werte": [
-      128.1,
-      134.7,
-      142.8,
-      140.5,
-      125.5,
-      152.2,
-      186.0,
-      179.1,
-      173.9,
-      168.8
+      37.191,
+      33.341,
+      36.796,
+      36.579
      ]
     },
     {
-     "name": "Diesel",
-     "farbe": "#f5b22f",
+     "name": "CO2-Preis",
+     "farbe": "#fefefe",
      "werte": [
-      107.8,
-      116.1,
-      128.3,
-      126.2,
-      111.1,
-      138.5,
-      194.6,
-      172.2,
-      164.9,
-      161.1
+      7.65,
+      8.666,
+      8.484,
+      13.285
      ]
     }
    ],
    "marker": {
     "jahr": 2022,
-    "text": "2022: Diesel teurer als Benzin"
+    "text": "2022: Tankrabatt",
+    "unten": true
    },
-   "quelle": "Quelle: ADAC, Jahresdurchschnitt in Euro pro Liter; Steueranteil 2025: Benzin rund 64 %, Diesel rund 56 %.",
-   "sprech": "Zehn Jahre Spritpreise: Diesel war billiger, bis er 2022 über Benzin sprang. Beim Benzin sind rund 64 Prozent Steuern und Abgaben."
+   "quelle": "Quelle: Destatis, Einnahmen in Mrd. €. Energiesteuer inkl. Heizöl und Gas; CO2-Preis = nationaler Emissionshandel.",
+   "sprech": "Die Energiesteuer bleibt bei gut 36 Milliarden Euro, nur 2022 sank sie wegen des Tankrabatts. Der CO2-Preis bringt seit 2021 drei Viertel mehr.",
+   "ymin": 0,
+   "ymax": 40,
+   "format": {
+    "teiler": 1,
+    "dez": 1,
+    "suffix": " Mrd. €",
+    "step": 10,
+    "label_alle": 10
+   },
+   "yeinheit": "Mrd. €",
+   "jahr_top": 190
   },
   {
    "typ": "points",
