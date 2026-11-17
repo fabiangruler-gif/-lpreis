@@ -122,6 +122,13 @@ BARRELS = ('<svg class="barrels" viewBox="0 0 1080 420"><defs><linearGradient id
 
 
 def s_cta(d):
+    if d.get("stil") == "ruhig":
+        # Ruhiger Abschluss (jedes zweite Reel): Kernaussage statt Frage, kein Folge-Button.
+        hint = d.get("hinweis", "Täglich das Ölpreis-Update")
+        return ('<div class="photo"></div><div class="vig"></div>'
+                f'<h1 class="txt">{gold(d["titel"])}</h1>{BARRELS}'
+                f'<div class="txt calm"><span class="dot"></span>@oil_preis_daily<span class="sepd">•</span>{esc(hint)}</div>'
+                f'<div class="txt src">{esc(d.get("quelle"))}</div>')
     return ('<div class="photo"></div><div class="vig"></div>'
             f'<h1 class="txt">{gold(d["titel"])}</h1>{BARRELS}'
             '<div class="txt cmt"><svg width="86" height="86" viewBox="0 0 48 48" fill="none" stroke="#f5b22f" stroke-width="2.6" stroke-linejoin="round">'
@@ -218,6 +225,8 @@ h1,.big{font-family:'Poppins',sans-serif;font-weight:700}
 .s-cta .barrels{position:absolute;left:0;right:0;top:830px;height:420px}
 .cmt{top:1290px;display:flex;align-items:center;gap:24px;font:700 48px 'Poppins'}
 .btn{position:absolute;left:78px;right:78px;top:1390px;height:150px;border-radius:30px;background:var(--gold);color:#0a1218;display:flex;align-items:center;gap:30px;padding:0 44px;font:700 46px/1.2 'Poppins'}
+.calm{top:1400px;left:78px;right:78px;display:flex;align-items:center;gap:18px;font:600 36px 'Inter';color:var(--gold)}
+.calm .dot{width:14px;height:14px;border-radius:50%;background:var(--gold);flex:none}.calm .sepd{opacity:.6}
 .src{left:78px;right:78px;top:1580px;font:400 29px/1.35 'Inter';color:var(--mut)}
 /* Profil-Vorschaubild: wichtiger Inhalt liegt in der Mitte (Raster zeigt ca. 3:4, Reels-Tab 4:5) */
 .s-cover{display:block;opacity:1}

@@ -17,3 +17,8 @@
 
 ## Status in der Themenliste
 `neu` → `geplant` (im Plan, wartet auf den Tag) → `veröffentlicht`. `in arbeit` und `vorschau` setzt du selbst, diese Themen überspringt die automatische Auswahl.
+
+## Letzte Folie: abwechselnd Frage oder ruhiger Abschluss
+- **Jedes zweite Reel** bekommt einen ruhigen Abschluss: in der Spec bei der letzten Folie (`typ: "cta"`) `"stil": "ruhig"` setzen. Statt Frage und gelbem Folge-Button steht dort eine Kernaussage als Titel (Schlüsselwort in `*Sternchen*` wird gold) und klein darunter „@oil_preis_daily • Täglich das Ölpreis-Update“ (Text anpassbar mit `"hinweis"`).
+- Beim Bauen gilt: war das letzte Reel mit Frage und Button, kommt jetzt ein ruhiges, und umgekehrt (`spritpreis-zusammensetzung` und `strasse-von-hormus` haben Frage und Button, das nächste Reel ist also ruhig).
+- Bei ruhigen Reels in der Beschreibung (`caption`) die Frage und die „Folge …“-Zeile weglassen; stattdessen höchstens ein weicher Satz wie „Speichern, falls du es später brauchst.“
