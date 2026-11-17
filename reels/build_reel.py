@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Baut ein Reel aus reels/specs/<slug>.json (6 Slides, Gold auf Schwarz, Sprecher per ElevenLabs).
+"""Baut ein Reel aus reels/specs/<slug>.json (4 bis 6 Slides, Gold auf Schwarz, Sprecher per ElevenLabs).
 
 Aufruf:
   python3 reels/build_reel.py <slug>                 # echte Vertonung (ELEVENLABS_API_KEY nötig)
@@ -109,6 +109,59 @@ def s_points(d):
     return f'<h1 class="txt">{gold(d["titel"])}</h1><img class="map" src="{{MAP}}"><div class="cols">{cols}</div>'
 
 
+def _kurve(pts):
+    """Glatte Kurve (Catmull-Rom -> Bezier) durch die Punkte."""
+    d = f"M{pts[0][0]:.1f},{pts[0][1]:.1f}"
+    for i in range(len(pts) - 1):
+        p0, p1, p2, p3 = pts[max(i - 1, 0)], pts[i], pts[i + 1], pts[min(i + 2, len(pts) - 1)]
+        c1 = (p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6)
+        c2 = (p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6)
+        d += f" C{c1[0]:.1f},{c1[1]:.1f} {c2[0]:.1f},{c2[1]:.1f} {p2[0]:.1f},{p2[1]:.1f}"
+    return d
+
+
+CHART_W, CHART_H, CH_L, CH_R, CH_T, CH_B = 924, 640, 96, 904, 24, 580
+
+
+def s_chart(d):
+    """Liniendiagramm, das sich beim Abspielen von links nach rechts aufbaut (zwei Serien, Werte in Cent je Liter)."""
+    jahre, serien = d["jahre"], d["serien"]
+    lo, hi = d.get("ymin", 100), d.get("ymax", 200)
+    X = lambda i: CH_L + (CH_R - CH_L) * i / (len(jahre) - 1)
+    Y = lambda v: CH_B - (v - lo) / (hi - lo) * (CH_B - CH_T)
+    g = ""
+    for v in range(lo, hi + 1, 25):
+        lab = f'{v / 100:.2f}'.replace(".", ",") + " €" if v % 50 == 0 else ""
+        g += (f'<line x1="{CH_L}" x2="{CH_R}" y1="{Y(v):.1f}" y2="{Y(v):.1f}" stroke="rgba(255,255,255,{.22 if v % 50 == 0 else .09})" stroke-width="2"/>'
+              f'<text x="{CH_L - 16}" y="{Y(v) + 10:.1f}" text-anchor="end" class="ct">{lab}</text>')
+    for i, j in enumerate(jahre):
+        if i % 3 == 0 or i == len(jahre) - 1:
+            g += f'<text x="{X(i):.1f}" y="{CH_B + 52}" text-anchor="middle" class="ct">{j}</text>'
+    paths, dots = "", ""
+    for k, sr in enumerate(serien):
+        pts = [(X(i), Y(v)) for i, v in enumerate(sr["werte"])]
+        col = sr.get("farbe", "#f5b22f")
+        paths += (f'<path class="cdraw" data-k="{k}" d="{_kurve(pts)}" pathLength="1" fill="none" stroke="{col}" stroke-width="9" '
+                  f'stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1" stroke-dashoffset="1"/>')
+        dots += f'<circle class="cdot" data-k="{k}" r="15" fill="{col}" stroke="#000c13" stroke-width="5" cx="{pts[0][0]:.1f}" cy="{pts[0][1]:.1f}"/>'
+    mk = d.get("marker")
+    if mk:
+        mi = jahre.index(mk["jahr"])
+        top = min(Y(sr["werte"][mi]) for sr in serien)
+        mx = min(max(X(mi), CH_L + 150), CH_R - 150)
+        paths += (f'<g class="cmark" data-i="{mi}"><line x1="{X(mi):.1f}" x2="{X(mi):.1f}" y1="{top - 8:.1f}" y2="{CH_B}" stroke="rgba(255,255,255,.35)" '
+                  f'stroke-width="2" stroke-dasharray="8 8"/><text x="{mx:.1f}" y="{max(top - 26, 22):.1f}" text-anchor="middle" class="cm">{esc(mk["text"])}</text></g>')
+    legend = "".join(f'<div class="lg"><i style="background:{sr.get("farbe", "#f5b22f")}"></i><span class="ln">{esc(sr["name"])}</span>'
+                     f'<b class="lv" data-k="{k}">–</b></div>' for k, sr in enumerate(serien))
+    data = html.escape(json.dumps({"jahre": jahre, "serien": [s["werte"] for s in serien]}), quote=True)
+    return ('<div class="photo"></div><div class="vig"></div>'
+            f'<h1 class="txt">{gold(d["titel"])}</h1>'
+            f'<div class="chartbox" data-chart="{data}"><svg viewBox="0 0 {CHART_W} {CHART_H}" width="{CHART_W}" height="{CHART_H}">{g}{paths}{dots}</svg>'
+            f'<div class="cyear">{jahre[0]}</div></div>'
+            f'<div class="legend">{legend}</div>'
+            f'<div class="txt src">{esc(d.get("quelle"))}</div>')
+
+
 BARRELS = ('<svg class="barrels" viewBox="0 0 1080 420"><defs><linearGradient id="bl" x1="0" x2="1"><stop offset="0" stop-color="#0b0f12"/>'
            '<stop offset=".45" stop-color="#2a3238"/><stop offset="1" stop-color="#05080a"/></linearGradient></defs>'
            '<g><rect x="130" y="60" width="400" height="330" rx="30" fill="url(#bl)"/><rect x="130" y="110" width="400" height="12" fill="#06090b"/>'
@@ -164,7 +217,7 @@ def s_cover(d):
             f'<div class="txt cbox"><div class="flag cf">{d["emoji"]}</div><div>{zahl}</div></div>')
 
 
-TYPES = {"hook": s_hook, "stat": s_stat, "compare": s_compare, "list": s_list, "points": s_points, "cta": s_cta}
+TYPES = {"hook": s_hook, "stat": s_stat, "compare": s_compare, "list": s_list, "points": s_points, "chart": s_chart, "cta": s_cta}
 
 CSS = r'''
 @font-face{font-family:'Poppins';src:url({A}/fonts/Poppins-Bold.ttf);font-weight:100 900}
@@ -220,6 +273,19 @@ h1,.big{font-family:'Poppins',sans-serif;font-weight:700}
 .col:first-child{border-left:none}
 .col svg{width:112px;height:112px;margin:0 auto 16px;display:block}
 .col div{font:600 33px/1.25 'Inter'}
+.s-chart .photo{height:760px;opacity:.28}
+.s-chart h1{font-size:84px;line-height:1.1;top:260px}
+.chartbox{position:absolute;left:78px;top:600px;width:924px;height:640px}
+.chartbox svg{overflow:visible}
+.ct{font:500 30px 'Inter';fill:#d3dce1}
+.cm{font:700 32px 'Poppins';fill:#f5b22f}
+.cyear{position:absolute;left:100px;top:6px;font:700 96px/1 'Poppins';color:rgba(255,255,255,.9);text-shadow:0 3px 14px rgba(0,0,0,.7)}
+.legend{position:absolute;left:78px;right:78px;top:1330px;display:flex;gap:28px}
+.lg{flex:1;display:flex;flex-direction:column;gap:4px;padding:22px 26px;border-radius:24px;background:rgba(0,12,19,.78);border:2px solid rgba(245,178,47,.5)}
+.lg i{width:46px;height:9px;border-radius:5px;display:block;margin-bottom:8px}
+.lg .ln{font:600 34px 'Inter';color:var(--mut)}
+.lg .lv{font:700 76px/1.05 'Poppins'}
+.s-chart .src{top:1580px}
 .s-cta .photo{height:760px;opacity:.5}
 .s-cta h1{font-size:90px;line-height:1.1;top:300px}
 .s-cta .barrels{position:absolute;left:0;right:0;top:830px;height:420px}
@@ -243,13 +309,26 @@ h1,.big{font-family:'Poppins',sans-serif;font-weight:700}
 
 JS = r'''
 const TL=__TL__;
-const SEL='h1,.sub,.rank,.nm,.val,.unit,.note,.fl,.bigflag,.line,.row,.foot,.col,.barrels,.cmt,.btn,.src,.blk>*,.t>*';
+const SEL='h1,.sub,.rank,.nm,.val,.unit,.note,.fl,.bigflag,.line,.row,.foot,.col,.barrels,.cmt,.btn,.src,.chartbox,.legend,.blk>*,.t>*';
 const slides=[...document.querySelectorAll('.slide')];
 const E=x=>1-Math.pow(1-Math.min(1,Math.max(0,x)),3);
 const items=slides.map(sl=>{const els=[...sl.querySelectorAll(SEL)].filter(e=>!e.closest('.photo'));
   return els.map(e=>({e,cnt:e.matches('.val,.v')?e.textContent:null}));});
 function fmt(txt,p){const m=txt.match(/^([\d,]+)(.*)$/);if(!m)return txt;const dec=(m[1].split(',')[1]||'').length;
   const v=parseFloat(m[1].replace(',','.'))*p;return v.toFixed(dec).replace('.',',')+m[2];}
+function chartAt(sl,u,d0){
+ const cb=sl.querySelector('.chartbox'); if(!cb)return;
+ const D=JSON.parse(cb.dataset.chart),n=D.jahre.length;
+ let p=Math.min(1,Math.max(0,(u-0.45)/Math.max(0.5,d0*0.82-0.45))); p=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+ cb.querySelectorAll('.cdraw').forEach(el=>el.style.strokeDashoffset=1-p);
+ cb.querySelectorAll('.cdot').forEach(el=>{const path=cb.querySelector('.cdraw[data-k="'+el.dataset.k+'"]');
+  const pt=path.getPointAtLength(p*path.getTotalLength());el.setAttribute('cx',pt.x);el.setAttribute('cy',pt.y);el.style.opacity=p>0?1:0;});
+ const f=p*(n-1),i0=Math.min(n-2,Math.floor(f)),fr=f-i0;
+ cb.querySelector('.cyear').textContent=D.jahre[Math.round(f)];
+ sl.querySelectorAll('.lv').forEach(el=>{const a=D.serien[+el.dataset.k];const v=a[i0]+(a[i0+1]-a[i0])*fr;
+  el.textContent=(v/100).toFixed(2).replace('.',',')+' €';el.style.color=cb.querySelector('.cdraw[data-k="'+el.dataset.k+'"]').getAttribute('stroke');});
+ cb.querySelectorAll('.cmark').forEach(m=>{m.style.opacity=f>=+m.dataset.i-0.05?1:0;});
+}
 window.seek=function(t){
  slides.forEach((sl,i)=>{const [a,b]=TL[i];const u=t-a;const d0=b-a;
   const inn=E(u/0.2),out=1-E((u-(d0-0.2))/0.25);
@@ -260,6 +339,7 @@ window.seek=function(t){
   items[i].forEach((o,k)=>{const d=0.04+Math.min(k,8)*0.11;const p=E((u-d)/0.5);
     o.e.style.opacity=p;o.e.style.transform=(o.e.classList.contains('bigflag')?'rotate(-6deg) ':'')+'translateY('+(1-p)*45+'px)';
     if(o.cnt!==null){o.e.textContent=fmt(o.cnt,E((u-d)/1.1));}});
+  chartAt(sl,u,d0);
  });
 };
 const q=new URLSearchParams(location.search).get('s');
@@ -513,7 +593,7 @@ def main():
         sys.exit(__doc__)
     slug = a[0]
     spec = json.loads((ROOT / "reels" / "specs" / f"{slug}.json").read_text(encoding="utf-8"))
-    assert len(spec["slides"]) == 6, "Genau 6 Slides erwartet"
+    assert 4 <= len(spec["slides"]) <= 6, "4 bis 6 Slides erwartet"
     wahl_abschluss(slug, spec)
     work = ROOT / "_work" / slug; work.mkdir(parents=True, exist_ok=True)
     out = ROOT / "out" / "reels"; out.mkdir(parents=True, exist_ok=True)

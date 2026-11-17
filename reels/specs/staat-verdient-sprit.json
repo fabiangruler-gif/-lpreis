@@ -1,0 +1,102 @@
+{
+ "titel": "Wie viel verdient der Staat am Sprit?",
+ "ziel_sekunden": 22,
+ "cover": {
+  "titel": "Wie viel *verdient* der Staat am Sprit?",
+  "emoji": "⛽",
+  "zahl": "33,3 Mrd. €",
+  "einheit": "Energiesteuer auf Benzin und Diesel 2025"
+ },
+ "slides": [
+  {
+   "typ": "hook",
+   "titel": "*33 Milliarden Euro* kassiert der Staat am Sprit",
+   "sub": "Energiesteuer auf Benzin und Diesel, 2025",
+   "sprech": "Über 33 Milliarden Euro Energiesteuer kassiert der Staat 2025 allein an Benzin und Diesel."
+  },
+  {
+   "typ": "chart",
+   "titel": "Spritpreise in *10 Jahren*",
+   "jahre": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "serien": [
+    {
+     "name": "Benzin (Super E10)",
+     "farbe": "#fefefe",
+     "werte": [
+      128.1,
+      134.7,
+      142.8,
+      140.5,
+      125.5,
+      152.2,
+      186.0,
+      179.1,
+      173.9,
+      168.8
+     ]
+    },
+    {
+     "name": "Diesel",
+     "farbe": "#f5b22f",
+     "werte": [
+      107.8,
+      116.1,
+      128.3,
+      126.2,
+      111.1,
+      138.5,
+      194.6,
+      172.2,
+      164.9,
+      161.1
+     ]
+    }
+   ],
+   "marker": {
+    "jahr": 2022,
+    "text": "2022: Diesel teurer als Benzin"
+   },
+   "quelle": "Quelle: ADAC, Jahresdurchschnitt in Euro pro Liter; Steueranteil 2025: Benzin rund 64 %, Diesel rund 56 %.",
+   "sprech": "Zehn Jahre Spritpreise: Diesel war billiger, bis er 2022 über Benzin sprang. Beim Benzin sind rund 64 Prozent Steuern und Abgaben."
+  },
+  {
+   "typ": "points",
+   "titel": "Was macht der Staat mit dem *Geld*?",
+   "punkte": [
+    {
+     "icon": "euro",
+     "text": "Energiesteuer → Bundeshaushalt"
+    },
+    {
+     "icon": "globe",
+     "text": "CO2-Preis (16 Mrd. €) → Klimafonds"
+    },
+    {
+     "icon": "pie",
+     "text": "Mehrwertsteuer: nur 47 % für den Bund"
+    }
+   ],
+   "sprech": "Die Energiesteuer geht in den Haushalt, der CO2-Preis in den Klimafonds, und von der Mehrwertsteuer bekommt der Bund nur 47 Prozent."
+  },
+  {
+   "typ": "cta",
+   "titel": "Seit Oktober: *14 Cent* Tankrabatt pro Liter",
+   "hinweis": "Täglich das Ölpreis-Update",
+   "quelle": "Quellen: Destatis (Energiesteuer 2025), ADAC (Preise, Steueranteil), Umweltbundesamt (CO2-Preis, inkl. Heizöl und Gas), ZDFheute (Mehrwertsteuer), Stuttgarter Zeitung (Tankrabatt bis Ende 2026). Zahlen gerundet.",
+   "sprech": "Und seit Oktober senkt der Bund die Steuer sogar: 14 Cent Tankrabatt bis Jahresende.",
+   "stil": "ruhig"
+  }
+ ],
+ "caption": "Wie viel verdient der Staat eigentlich am Sprit? ⛽\n\nAllein die Energiesteuer brachte 2025 rund 33 Milliarden Euro: 15,5 Milliarden auf Benzin und 17,8 Milliarden auf Diesel. Dazu kommen die Mehrwertsteuer und der CO2-Preis. Der Staatsanteil am Preis lag 2025 bei etwa 64 Prozent beim Benzin und 56 Prozent beim Diesel.\n\nWohin das Geld fließt: Die Energiesteuer geht in den Bundeshaushalt, der CO2-Preis (2025 rund 16 Milliarden Euro, auch für Heizöl und Gas) in den Klima- und Transformationsfonds. Von der Mehrwertsteuer bekommt der Bund nur 47 Prozent, der Rest geht an Länder und Gemeinden. Seit Oktober gilt außerdem ein Tankrabatt: 14 Cent weniger Energiesteuer pro Liter, bis Ende 2026.\n\nQuellen: Destatis, ADAC, Umweltbundesamt, ZDFheute. Zahlen gerundet. Keine Anlageberatung.\n\n#spritpreis #benzinpreis #dieselpreis #energiesteuer #tankrabatt #co2preis #ölpreis #steuern #finanzen #wirtschaft"
+}
