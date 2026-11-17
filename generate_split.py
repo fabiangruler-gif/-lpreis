@@ -2,7 +2,7 @@
 """Tägliches Ölpreis-Update in 3 Stories: data.json -> <prefix>_1/2/3.png (1080x1920).
 1 = Preise + Prognose, 2 = Nachrichten, 3 = Szenarien + Worauf achten + Einschätzung.
 Aufruf: python3 generate_split.py data.json <prefix>"""
-import json, html, sys, base64, pathlib, shutil, os
+import json, html, sys, base64, pathlib, shutil, os, re
 
 ROOT = pathlib.Path(__file__).parent
 data = json.loads((ROOT / (sys.argv[1] if len(sys.argv) > 1 else "data.json")).read_text(encoding="utf-8"))
@@ -113,12 +113,23 @@ photo = base64.b64encode((ROOT / "assets/header_photo.png").read_bytes()).decode
 n, s, k, m = data["news"], data["szenarien"], data["prognose_kurz"], data["prognose_mittel"]
 
 
+POST_ZEIT = {2: "12:00", 3: "18:00"}  # Teil 1 behält die Zeit aus data.json (Berichtszeit)
+
+
+def datum_fuer(i):
+    """Datum für die Kopfzeile: Teil 2/3 zeigen ihre Veröffentlichungszeit (12:00 / 18:00)."""
+    d = data["datum"]
+    if i in POST_ZEIT:
+        d = re.sub(r"\d{1,2}:\d{2}", POST_ZEIT[i], d, count=1)
+    return d
+
+
 def head(i, label):
     dots = "".join(f'<i class="{"on" if j == i else ""}"></i>' for j in (1, 2, 3))
     return (f'<div class="head"><div class="ph"></div><div class="dropH">{ICONS["drop"]}</div>'
             f'<div class="t1">TÄGLICHES</div><div class="t2">ÖLPREIS-UPDATE</div>'
             f'<div class="t3">TEIL {i} VON 3 • {label}</div>'
-            f'<div class="dt">{ICONS["cal"]}<span>{e(data["datum"])}</span></div><div class="part">{dots}</div></div>')
+            f'<div class="dt">{ICONS["cal"]}<span>{e(datum_fuer(i))}</span></div><div class="part">{dots}</div></div>')
 
 
 def prow(name, p, top):
