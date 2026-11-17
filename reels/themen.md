@@ -89,3 +89,9 @@ Status: neu
 - Warum kaum Neues dazukommt: Felder werden leer, neue lohnen sich selten
 - Quelle: BVEG-Jahresbericht 2025 (bveg.de)
 - Typ: Reel
+
+## Wie viel verdient der Staat am Sprit?
+Status: geplant
+- Energiesteuer auf Benzin und Diesel 2016 bis 2026 (Destatis), 2026 geschätzt
+- Wohin das Geld fließt: Haushalt, Klimafonds, Mehrwertsteuer
+- Tankrabatt 2026
