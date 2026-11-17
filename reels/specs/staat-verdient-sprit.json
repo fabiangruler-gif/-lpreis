@@ -1,6 +1,6 @@
 {
  "titel": "Wie viel verdient der Staat am Sprit?",
- "ziel_sekunden": 22,
+ "ziel_sekunden": 24,
  "cover": {
   "titel": "Wie viel *verdient* der Staat am Sprit?",
   "emoji": "⛽",
@@ -12,7 +12,7 @@
    "typ": "hook",
    "titel": "*33 Milliarden Euro* kassiert der Staat am Sprit",
    "sub": "Energiesteuer auf Benzin und Diesel, 2025",
-   "sprech": "Über 33 Milliarden Euro Energiesteuer kassiert der Staat 2025 allein an Benzin und Diesel."
+   "sprech": "Über 33 Milliarden Euro Energiesteuer kassierte der Staat 2025 an Benzin und Diesel."
   },
   {
    "typ": "chart",
@@ -72,7 +72,7 @@
     "unten": true
    },
    "quelle": "Quelle: Destatis (73431-0001), netto, Mrd. €. *2026 geschätzt: Absatz Jan.–Juni 2026 (en2x: Benzin −0,6 %, Diesel −5,8 %) aufs Jahr gerechnet, Tankrabatt Mai/Juni und Okt.–Dez.",
-   "sprech": "Zehn Jahre Energiesteuer: Diesel bringt mehr als Benzin. 2026 sinken beide, geschätzt auf knapp 29 Milliarden Euro, wegen Tankrabatt und weniger Absatz.",
+   "sprech": "Diesel bringt mehr als Benzin. 2026 sinkt die Steuer auf geschätzt 29 Milliarden Euro.",
    "ymin": 0,
    "ymax": 25,
    "format": {
@@ -116,14 +116,14 @@
      "text": "Mehrwertsteuer: nur 47 % für den Bund"
     }
    ],
-   "sprech": "Die Energiesteuer geht in den Haushalt, der CO2-Preis in den Klimafonds, und von der Mehrwertsteuer bekommt der Bund nur 47 Prozent."
+   "sprech": "Energiesteuer: Haushalt. CO2-Preis: Klimafonds. Von der Mehrwertsteuer bekommt der Bund nur 47 Prozent."
   },
   {
    "typ": "cta",
    "titel": "Seit Oktober: *14 Cent* Tankrabatt pro Liter",
    "hinweis": "Täglich das Ölpreis-Update",
    "quelle": "Quellen: Destatis (Energiesteuerstatistik), ADAC (Preise, Steueranteil), Umweltbundesamt (CO2-Preis, inkl. Heizöl und Gas), ZDFheute (Mehrwertsteuer), Stuttgarter Zeitung (Tankrabatt bis Ende 2026). Zahlen gerundet.",
-   "sprech": "Und noch bis Jahresende gilt der Tankrabatt: 14 Cent weniger Steuer pro Liter.",
+   "sprech": "Dazu gilt bis Jahresende der Tankrabatt: 14 Cent pro Liter.",
    "stil": "ruhig"
   }
  ],
