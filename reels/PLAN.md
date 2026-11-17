@@ -20,5 +20,5 @@
 
 ## Letzte Folie: abwechselnd Frage oder ruhiger Abschluss
 - **Jedes zweite Reel** bekommt einen ruhigen Abschluss: in der Spec bei der letzten Folie (`typ: "cta"`) `"stil": "ruhig"` setzen. Statt Frage und gelbem Folge-Button steht dort eine Kernaussage als Titel (Schlüsselwort in `*Sternchen*` wird gold) und klein darunter „@oil_preis_daily • Täglich das Ölpreis-Update“ (Text anpassbar mit `"hinweis"`).
-- Beim Bauen gilt: war das letzte Reel mit Frage und Button, kommt jetzt ein ruhiges, und umgekehrt (`spritpreis-zusammensetzung` und `strasse-von-hormus` haben Frage und Button, das nächste Reel ist also ruhig).
-- Bei ruhigen Reels in der Beschreibung (`caption`) die Frage und die „Folge …“-Zeile weglassen; stattdessen höchstens ein weicher Satz wie „Speichern, falls du es später brauchst.“
+- **Automatisch:** `reels/build_reel.py` wählt beim Bauen selbst: war das vorige Reel im Plan mit Frage und Button, wird das neue ruhig, und umgekehrt. Die Wahl wird als `"stil"` in der Spec gespeichert (ein erneutes Bauen ändert sie nicht). Wer einen bestimmten Abschluss will, trägt `"stil": "ruhig"` oder `"stil": "frage"` selbst ein.
+- Bei ruhigen Reels lässt das Skript in der Beschreibung die Kommentar-Frage und die „Folge @…“-Zeile automatisch weg.

@@ -472,6 +472,40 @@ def build_cover(spec, work, outfile):
     print("Cover:", outfile)
 
 
+def wahl_abschluss(slug, spec):
+    """Letzte Folie wechselt automatisch: war das vorige Reel mit Frage und Button, wird dieses ruhig (und umgekehrt).
+    Steht in der Spec schon "stil" ("ruhig" oder "frage"), bleibt es dabei. Die Wahl wird in der Spec gespeichert."""
+    last = spec["slides"][-1]
+    if last.get("typ") != "cta" or last.get("stil") in ("ruhig", "frage"):
+        return
+    try:
+        plan = json.loads((ROOT / "reels" / "plan.json").read_text(encoding="utf-8"))["reels"]
+    except Exception:
+        plan = []
+    mine = next((r["datum"] for r in plan if r["slug"] == slug), None)
+    prev = [r for r in plan if r["slug"] != slug and (mine is None or r["datum"] < mine)]
+    prev.sort(key=lambda r: r["datum"])
+    stil_vorher = "frage"
+    for r in reversed(prev):
+        f = ROOT / "reels" / "specs" / f"{r['slug']}.json"
+        if f.exists():
+            sl = json.loads(f.read_text(encoding="utf-8"))["slides"][-1]
+            stil_vorher = sl.get("stil", "frage")
+            break
+    last["stil"] = "frage" if stil_vorher == "ruhig" else "ruhig"
+    (ROOT / "reels" / "specs" / f"{slug}.json").write_text(json.dumps(spec, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    print(f"Abschluss automatisch gewählt: {last['stil']} (voriges Reel: {stil_vorher})")
+
+
+def caption_text(spec):
+    """Beschreibung; bei ruhigem Abschluss ohne Kommentar-Frage und Folge-Zeile."""
+    cap = spec["caption"].strip()
+    if spec["slides"][-1].get("stil") == "ruhig":
+        absaetze = [a for a in cap.split("\n\n") if "in die Kommentare" not in a and not a.lstrip().startswith("Folge @")]
+        cap = "\n\n".join(absaetze)
+    return cap
+
+
 def main():
     a = [x for x in sys.argv[1:] if not x.startswith("--")]
     fake = "--fake-audio" in sys.argv
@@ -480,6 +514,7 @@ def main():
     slug = a[0]
     spec = json.loads((ROOT / "reels" / "specs" / f"{slug}.json").read_text(encoding="utf-8"))
     assert len(spec["slides"]) == 6, "Genau 6 Slides erwartet"
+    wahl_abschluss(slug, spec)
     work = ROOT / "_work" / slug; work.mkdir(parents=True, exist_ok=True)
     out = ROOT / "out" / "reels"; out.mkdir(parents=True, exist_ok=True)
     if "--tts-test" in sys.argv:
@@ -503,7 +538,7 @@ def main():
        "-t", f"{total:.2f}", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", out / f"{slug}.mp4")
     build_cover(spec, work, out / f"{slug}_cover.jpg")
     (out / f"{slug}_stimme.txt").write_text(STIMME + "\n", encoding="utf-8")
-    (out / f"{slug}.txt").write_text(spec["caption"].strip() + "\n", encoding="utf-8")
+    (out / f"{slug}.txt").write_text(caption_text(spec) + "\n", encoding="utf-8")
     print("fertig:", out / f"{slug}.mp4")
 
 
