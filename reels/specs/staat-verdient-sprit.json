@@ -27,7 +27,8 @@
     2022,
     2023,
     2024,
-    2025
+    2025,
+    2026
    ],
    "serien": [
     {
@@ -43,7 +44,8 @@
       12.636,
       15.002,
       15.259,
-      15.49
+      15.49,
+      14.02
      ]
     },
     {
@@ -59,7 +61,8 @@
       16.889,
       18.155,
       18.154,
-      17.825
+      17.825,
+      14.7
      ]
     }
    ],
@@ -68,8 +71,8 @@
     "text": "2022: Tankrabatt",
     "unten": true
    },
-   "quelle": "Quelle: Destatis, Energiesteuerstatistik (73431-0001); Steuerbetrag netto nach Entlastungen, in Mrd. €.",
-   "sprech": "Zehn Jahre Energiesteuer: Auf Diesel kassiert der Staat mehr als auf Benzin, doch beide Einnahmen sind seit 2019 gesunken, und 2022 gab es den Tankrabatt.",
+   "quelle": "Quelle: Destatis (73431-0001), netto, Mrd. €. *2026 geschätzt: Absatz Jan.–Juni 2026 (en2x: Benzin −0,6 %, Diesel −5,8 %) aufs Jahr gerechnet, Tankrabatt Mai/Juni und Okt.–Dez.",
+   "sprech": "Zehn Jahre Energiesteuer: Diesel bringt mehr als Benzin. 2026 sinken beide, geschätzt auf knapp 29 Milliarden Euro, wegen Tankrabatt und weniger Absatz.",
    "ymin": 0,
    "ymax": 25,
    "format": {
@@ -80,7 +83,21 @@
     "label_alle": 5
    },
    "yeinheit": "Mrd. €",
-   "jahr_top": 340
+   "jahr_top": 340,
+   "jahre_label": [
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026*"
+   ],
+   "schaetzung_ab": 10
   },
   {
    "typ": "points",
@@ -106,9 +123,9 @@
    "titel": "Seit Oktober: *14 Cent* Tankrabatt pro Liter",
    "hinweis": "Täglich das Ölpreis-Update",
    "quelle": "Quellen: Destatis (Energiesteuerstatistik), ADAC (Preise, Steueranteil), Umweltbundesamt (CO2-Preis, inkl. Heizöl und Gas), ZDFheute (Mehrwertsteuer), Stuttgarter Zeitung (Tankrabatt bis Ende 2026). Zahlen gerundet.",
-   "sprech": "Und seit Oktober senkt der Bund die Steuer sogar: 14 Cent Tankrabatt bis Jahresende.",
+   "sprech": "Und noch bis Jahresende gilt der Tankrabatt: 14 Cent weniger Steuer pro Liter.",
    "stil": "ruhig"
   }
  ],
- "caption": "Wie viel verdient der Staat eigentlich am Sprit? ⛽\n\nAllein die Energiesteuer brachte 2025 rund 33 Milliarden Euro: 15,5 Milliarden auf Benzin und 17,8 Milliarden auf Diesel. Dazu kommen die Mehrwertsteuer und der CO2-Preis. Der Staatsanteil am Preis lag 2025 bei etwa 64 Prozent beim Benzin und 56 Prozent beim Diesel.\n\nWohin das Geld fließt: Die Energiesteuer geht in den Bundeshaushalt, der CO2-Preis (2025 rund 16 Milliarden Euro, auch für Heizöl und Gas) in den Klima- und Transformationsfonds. Von der Mehrwertsteuer bekommt der Bund nur 47 Prozent, der Rest geht an Länder und Gemeinden. Seit Oktober gilt außerdem ein Tankrabatt: 14 Cent weniger Energiesteuer pro Liter, bis Ende 2026.\n\nQuellen: Destatis, ADAC, Umweltbundesamt, ZDFheute. Zahlen gerundet. Keine Anlageberatung.\n\n#spritpreis #benzinpreis #dieselpreis #energiesteuer #tankrabatt #co2preis #ölpreis #steuern #finanzen #wirtschaft"
+ "caption": "Wie viel verdient der Staat eigentlich am Sprit? ⛽\n\nAllein die Energiesteuer brachte 2025 rund 33 Milliarden Euro: 15,5 Milliarden auf Benzin und 17,8 Milliarden auf Diesel. Dazu kommen die Mehrwertsteuer und der CO2-Preis. Der Staatsanteil am Preis lag 2025 bei etwa 64 Prozent beim Benzin und 56 Prozent beim Diesel.\n\nWohin das Geld fließt: Die Energiesteuer geht in den Bundeshaushalt, der CO2-Preis (2025 rund 16 Milliarden Euro, auch für Heizöl und Gas) in den Klima- und Transformationsfonds. Von der Mehrwertsteuer bekommt der Bund nur 47 Prozent, der Rest geht an Länder und Gemeinden. Seit Oktober gilt außerdem ein Tankrabatt: 14 Cent weniger Energiesteuer pro Liter, bis Ende 2026. Für 2026 rechnen wir wegen Tankrabatt (Mai/Juni und Oktober bis Dezember) und geringerem Absatz mit knapp 29 Milliarden Euro Energiesteuer auf Benzin und Diesel (Schätzung).\n\nQuellen: Destatis, ADAC, Umweltbundesamt, ZDFheute. Zahlen gerundet. Keine Anlageberatung.\n\n#spritpreis #benzinpreis #dieselpreis #energiesteuer #tankrabatt #co2preis #ölpreis #steuern #finanzen #wirtschaft"
 }

@@ -109,10 +109,11 @@ def s_points(d):
     return f'<h1 class="txt">{gold(d["titel"])}</h1><img class="map" src="{{MAP}}"><div class="cols">{cols}</div>'
 
 
-def _kurve(pts):
-    """Glatte Kurve (Catmull-Rom -> Bezier) durch die Punkte."""
-    d = f"M{pts[0][0]:.1f},{pts[0][1]:.1f}"
-    for i in range(len(pts) - 1):
+def _kurve(pts, a=0, b=None):
+    """Glatte Kurve (Catmull-Rom -> Bezier) durch die Punkte a..b."""
+    b = len(pts) - 1 if b is None else b
+    d = f"M{pts[a][0]:.1f},{pts[a][1]:.1f}"
+    for i in range(a, b):
         p0, p1, p2, p3 = pts[max(i - 1, 0)], pts[i], pts[i + 1], pts[min(i + 2, len(pts) - 1)]
         c1 = (p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6)
         c2 = (p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6)
@@ -135,8 +136,10 @@ def s_chart(d):
         lab = f'{v / fm["teiler"]:.{0 if d.get("yeinheit") else fm["dez"]}f}'.replace(".", ",") + ("" if d.get("yeinheit") else fm["suffix"].rstrip()) if v % fm["label_alle"] == 0 else ""
         g += (f'<line x1="{CH_L}" x2="{CH_R}" y1="{Y(v):.1f}" y2="{Y(v):.1f}" stroke="rgba(255,255,255,{.22 if v % 50 == 0 else .09})" stroke-width="2"/>'
               f'<text x="{CH_L - 16}" y="{Y(v) + 10:.1f}" text-anchor="end" class="ct">{lab}</text>')
-    for i, j in enumerate(jahre):
-        if len(jahre) <= 5 or i % 3 == 0 or i == len(jahre) - 1:
+    labels = d.get("jahre_label") or [str(j) for j in jahre]
+    stp = 1 if len(jahre) <= 5 else 5 if len(jahre) >= 11 else 3
+    for i, j in enumerate(labels):
+        if i % stp == 0 or i == len(jahre) - 1 and stp == 1:
             g += f'<text x="{X(i):.1f}" y="{CH_B + 52}" text-anchor="middle" class="ct">{j}</text>'
     if d.get("yeinheit"):
         g += f'<text x="{CH_L - 16}" y="{CH_T - 34}" text-anchor="end" class="ct">{esc(d["yeinheit"])}</text>'
@@ -144,8 +147,13 @@ def s_chart(d):
     for k, sr in enumerate(serien):
         pts = [(X(i), Y(v)) for i, v in enumerate(sr["werte"])]
         col = sr.get("farbe", "#f5b22f")
-        paths += (f'<path class="cdraw" data-k="{k}" d="{_kurve(pts)}" pathLength="1" fill="none" stroke="{col}" stroke-width="9" '
-                  f'stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1" stroke-dashoffset="1"/>')
+        est = d.get("schaetzung_ab")  # Index des ersten geschätzten Punkts; Abschnitt davor→dieser Punkt wird gestrichelt
+        stroke = f'fill="none" stroke="{col}" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"'
+        if est:
+            paths += (f'<path class="cdraw" data-k="{k}" data-seg="0" d="{_kurve(pts, 0, est - 1)}" {stroke} clip-path="url(#chclip)"/>'
+                      f'<path class="cdraw" data-k="{k}" data-seg="1" d="{_kurve(pts, est - 1)}" {stroke} stroke-dasharray="16 14" clip-path="url(#chclip)"/>')
+        else:
+            paths += f'<path class="cdraw" data-k="{k}" data-seg="0" d="{_kurve(pts)}" {stroke} clip-path="url(#chclip)"/>'
         dots += f'<circle class="cdot" data-k="{k}" r="15" fill="{col}" stroke="#000c13" stroke-width="5" cx="{pts[0][0]:.1f}" cy="{pts[0][1]:.1f}"/>'
     mk = d.get("marker")
     if mk:
@@ -156,11 +164,11 @@ def s_chart(d):
                   f'stroke-width="2" stroke-dasharray="8 8"/><text x="{mx:.1f}" y="{(max(Y(sr["werte"][mi]) for sr in serien) + 68) if mk.get("unten") else max(top - 26, 22):.1f}" text-anchor="middle" class="cm">{esc(mk["text"])}</text></g>')
     legend = "".join(f'<div class="lg"><i style="background:{sr.get("farbe", "#f5b22f")}"></i><span class="ln">{esc(sr["name"])}</span>'
                      f'<b class="lv" data-k="{k}">–</b></div>' for k, sr in enumerate(serien))
-    data = html.escape(json.dumps({"jahre": jahre, "serien": [s["werte"] for s in serien], "fmt": fm}), quote=True)
+    data = html.escape(json.dumps({"jahre": jahre, "serien": [s["werte"] for s in serien], "fmt": fm, "labels": labels, "est": d.get("schaetzung_ab"), "x": [X(i) for i in range(len(jahre))]}), quote=True)
     return ('<div class="photo"></div><div class="vig"></div>'
             f'<h1 class="txt">{gold(d["titel"])}</h1>'
-            f'<div class="chartbox" data-chart="{data}"><svg viewBox="0 0 {CHART_W} {CHART_H}" width="{CHART_W}" height="{CHART_H}">{g}{paths}{dots}</svg>'
-            f'<div class="cyear" style="top:{d.get("jahr_top", 6)}px">{jahre[0]}</div></div>'
+            f'<div class="chartbox" data-chart="{data}"><svg viewBox="0 0 {CHART_W} {CHART_H}" width="{CHART_W}" height="{CHART_H}"><defs><clipPath id="chclip"><rect id="chrect" x="0" y="-60" width="0" height="{CHART_H + 120}"/></clipPath></defs>{g}{paths}{dots}</svg>'
+            f'<div class="cyear" style="top:{d.get("jahr_top", 6)}px">{labels[0]}</div></div>'
             f'<div class="legend">{legend}</div>'
             f'<div class="txt src">{esc(d.get("quelle"))}</div>')
 
@@ -323,13 +331,19 @@ function chartAt(sl,u,d0){
  const cb=sl.querySelector('.chartbox'); if(!cb)return;
  const D=JSON.parse(cb.dataset.chart),n=D.jahre.length;
  let p=Math.min(1,Math.max(0,(u-0.45)/Math.max(0.5,d0*0.82-0.45))); p=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
- cb.querySelectorAll('.cdraw').forEach(el=>el.style.strokeDashoffset=1-p);
- cb.querySelectorAll('.cdot').forEach(el=>{const path=cb.querySelector('.cdraw[data-k="'+el.dataset.k+'"]');
-  const pt=path.getPointAtLength(p*path.getTotalLength());el.setAttribute('cx',pt.x);el.setAttribute('cy',pt.y);el.style.opacity=p>0?1:0;});
- const f=p*(n-1),i0=Math.min(n-2,Math.floor(f)),fr=f-i0;
- cb.querySelector('.cyear').textContent=D.jahre[Math.round(f)];
+ const f=p*(n-1),X=D.x,i0=Math.min(n-2,Math.floor(f)),fr=f-i0,xc=X[i0]+(X[i0+1]-X[i0])*fr;
+ cb.querySelector('#chrect').setAttribute('width',p>0?xc+8:0);
+ cb.querySelectorAll('.cdot').forEach(el=>{
+  const paths=[...cb.querySelectorAll('.cdraw[data-k="'+el.dataset.k+'"]')];
+  for(const path of paths){const L=path.getTotalLength(),a=path.getPointAtLength(0),b=path.getPointAtLength(L);
+   if(xc<=b.x+0.5||path===paths[paths.length-1]){let lo=0,hi=L;for(let t=0;t<22;t++){const m=(lo+hi)/2;path.getPointAtLength(m).x<xc?lo=m:hi=m;}
+    const pt=path.getPointAtLength((lo+hi)/2);el.setAttribute('cx',pt.x);el.setAttribute('cy',pt.y);break;}}
+  el.style.opacity=p>0?1:0;});
+ cb.querySelector('.cyear').textContent=D.labels[Math.round(f)];
  sl.querySelectorAll('.lv').forEach(el=>{const a=D.serien[+el.dataset.k];const v=a[i0]+(a[i0+1]-a[i0])*fr;
-  el.textContent=(v/D.fmt.teiler).toFixed(D.fmt.dez).replace('.',',')+(D.fmt.suffix||'');el.style.color=cb.querySelector('.cdraw[data-k="'+el.dataset.k+'"]').getAttribute('stroke');});
+  const est=D.est&&f>D.est-1+1e-6;
+  el.textContent=(est?'≈ ':'')+(v/D.fmt.teiler).toFixed(D.fmt.dez).replace('.',',')+(D.fmt.suffix||'');
+  el.style.color=cb.querySelector('.cdraw[data-k="'+el.dataset.k+'"]').getAttribute('stroke');});
  cb.querySelectorAll('.cmark').forEach(m=>{m.style.opacity=f>=+m.dataset.i-0.05?1:0;});
 }
 window.seek=function(t){
