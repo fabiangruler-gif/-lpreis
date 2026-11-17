@@ -1,6 +1,6 @@
 {
  "titel": "Wie viel verdient der Staat am Sprit?",
- "ziel_sekunden": 20,
+ "ziel_sekunden": 22,
  "cover": {
   "titel": "Wie viel *verdient* der Staat am Sprit?",
   "emoji": "⛽",
@@ -16,32 +16,50 @@
   },
   {
    "typ": "chart",
-   "titel": "Energiesteuer und *CO2-Preis* seit 2021",
+   "titel": "Energiesteuer auf *Sprit*, 10 Jahre",
    "jahre": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
     2021,
     2022,
     2023,
-    2024
+    2024,
+    2025
    ],
    "serien": [
     {
-     "name": "Energiesteuer",
-     "farbe": "#f5b22f",
+     "name": "Benzin",
+     "farbe": "#fefefe",
      "werte": [
-      37.191,
-      33.341,
-      36.796,
-      36.579
+      15.855,
+      15.876,
+      16.112,
+      16.31,
+      14.922,
+      14.063,
+      12.636,
+      15.002,
+      15.259,
+      15.49
      ]
     },
     {
-     "name": "CO2-Preis",
-     "farbe": "#fefefe",
+     "name": "Diesel",
+     "farbe": "#f5b22f",
      "werte": [
-      7.65,
-      8.666,
-      8.484,
-      13.285
+      20.836,
+      21.252,
+      20.96,
+      20.928,
+      19.554,
+      18.901,
+      16.889,
+      18.155,
+      18.154,
+      17.825
      ]
     }
    ],
@@ -50,19 +68,19 @@
     "text": "2022: Tankrabatt",
     "unten": true
    },
-   "quelle": "Quelle: Destatis, Einnahmen in Mrd. €. Energiesteuer inkl. Heizöl und Gas; CO2-Preis = nationaler Emissionshandel.",
-   "sprech": "Die Energiesteuer bleibt bei gut 36 Milliarden Euro, nur 2022 sank sie wegen des Tankrabatts. Der CO2-Preis bringt seit 2021 drei Viertel mehr.",
+   "quelle": "Quelle: Destatis, Energiesteuerstatistik (73431-0001); Steuerbetrag netto nach Entlastungen, in Mrd. €.",
+   "sprech": "Zehn Jahre Energiesteuer: Auf Diesel kassiert der Staat mehr als auf Benzin, doch beide Einnahmen sind seit 2019 gesunken, und 2022 gab es den Tankrabatt.",
    "ymin": 0,
-   "ymax": 40,
+   "ymax": 25,
    "format": {
     "teiler": 1,
     "dez": 1,
     "suffix": " Mrd. €",
-    "step": 10,
-    "label_alle": 10
+    "step": 5,
+    "label_alle": 5
    },
    "yeinheit": "Mrd. €",
-   "jahr_top": 190
+   "jahr_top": 340
   },
   {
    "typ": "points",
@@ -87,7 +105,7 @@
    "typ": "cta",
    "titel": "Seit Oktober: *14 Cent* Tankrabatt pro Liter",
    "hinweis": "Täglich das Ölpreis-Update",
-   "quelle": "Quellen: Destatis (Energiesteuer 2025), ADAC (Preise, Steueranteil), Umweltbundesamt (CO2-Preis, inkl. Heizöl und Gas), ZDFheute (Mehrwertsteuer), Stuttgarter Zeitung (Tankrabatt bis Ende 2026). Zahlen gerundet.",
+   "quelle": "Quellen: Destatis (Energiesteuerstatistik), ADAC (Preise, Steueranteil), Umweltbundesamt (CO2-Preis, inkl. Heizöl und Gas), ZDFheute (Mehrwertsteuer), Stuttgarter Zeitung (Tankrabatt bis Ende 2026). Zahlen gerundet.",
    "sprech": "Und seit Oktober senkt der Bund die Steuer sogar: 14 Cent Tankrabatt bis Jahresende.",
    "stil": "ruhig"
   }

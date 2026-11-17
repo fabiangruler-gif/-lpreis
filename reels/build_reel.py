@@ -153,7 +153,7 @@ def s_chart(d):
         top = min(Y(sr["werte"][mi]) for sr in serien)
         mx = min(max(X(mi), CH_L + 150), CH_R - 150)
         paths += (f'<g class="cmark" data-i="{mi}"><line x1="{X(mi):.1f}" x2="{X(mi):.1f}" y1="{top - 8:.1f}" y2="{CH_B}" stroke="rgba(255,255,255,.35)" '
-                  f'stroke-width="2" stroke-dasharray="8 8"/><text x="{mx:.1f}" y="{(top + 68) if mk.get("unten") else max(top - 26, 22):.1f}" text-anchor="middle" class="cm">{esc(mk["text"])}</text></g>')
+                  f'stroke-width="2" stroke-dasharray="8 8"/><text x="{mx:.1f}" y="{(max(Y(sr["werte"][mi]) for sr in serien) + 68) if mk.get("unten") else max(top - 26, 22):.1f}" text-anchor="middle" class="cm">{esc(mk["text"])}</text></g>')
     legend = "".join(f'<div class="lg"><i style="background:{sr.get("farbe", "#f5b22f")}"></i><span class="ln">{esc(sr["name"])}</span>'
                      f'<b class="lv" data-k="{k}">–</b></div>' for k, sr in enumerate(serien))
     data = html.escape(json.dumps({"jahre": jahre, "serien": [s["werte"] for s in serien], "fmt": fm}), quote=True)
