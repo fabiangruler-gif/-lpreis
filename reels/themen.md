@@ -131,3 +131,9 @@ Typ: Reel
 - Leichtes Heizöl und Diesel sind chemisch sehr ähnlich
 - Energiesteuer Heizöl 6,14 ct/l, Diesel 47,04 ct/l
 - Beide folgen dem Rohölpreis mit Verzögerung
+
+## Wie viele Ölaktien zahlen deine Tankrechnung?
+Status: geplant
+Typ: Reel
+- Dividende von Shell, Chevron, Exxon, Petrobras
+- Wie viele Aktien nötig, um 150 € Sprit im Monat zu bezahlen

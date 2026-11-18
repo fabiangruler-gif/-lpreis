@@ -1,0 +1,94 @@
+{
+ "titel": "Wie viele Ölaktien zahlen deine Tankrechnung?",
+ "ziel_sekunden": 27,
+ "cover": {
+  "titel": "Tankrechnung mit *Dividenden* zahlen?",
+  "emoji": "⛽",
+  "zahl": "278 Aktien",
+  "einheit": "Chevron zahlen 150 € Sprit im Monat"
+ },
+ "slides": [
+  {
+   "typ": "hook",
+   "titel": "Wie viele *Ölaktien* zahlen deine Tankrechnung?",
+   "sub": "Shell, Chevron, Exxon, Petrobras im Check.",
+   "sprech": "Wie viele Ölaktien brauchst du, um deine Tankrechnung zu bezahlen?"
+  },
+  {
+   "typ": "stat",
+   "emoji": "⛽",
+   "label": "Beispiel-Tankrechnung",
+   "name": "150 € im Monat",
+   "wert": "1.800 €",
+   "einheit": "Sprit pro Jahr",
+   "note": "Etwa 75 Liter Super E10 pro Monat",
+   "sprech": "Angenommen, du tankst für hundertfünfzig Euro im Monat. Das sind achtzehnhundert Euro im Jahr."
+  },
+  {
+   "typ": "compare",
+   "a": {
+    "emoji": "🛢️",
+    "label": "Chevron",
+    "name": "7,12 $ Dividende/Jahr",
+    "wert": "278",
+    "einheit": "Aktien nötig"
+   },
+   "b": {
+    "emoji": "🛢️",
+    "label": "Exxon",
+    "name": "4,28 $ Dividende/Jahr",
+    "wert": "462",
+    "einheit": "Aktien nötig"
+   },
+   "foot": "Letzte Quartalsdividende mal vier, vor Steuern.",
+   "sprech": "Bei Chevron reichen rund zweihundertachtzig Aktien, bei Exxon rund vierhundertsechzig."
+  },
+  {
+   "typ": "compare",
+   "a": {
+    "emoji": "🛢️",
+    "label": "Shell",
+    "name": "1,56 $ Dividende/Jahr",
+    "wert": "1.266",
+    "einheit": "Aktien nötig"
+   },
+   "b": {
+    "emoji": "🛢️",
+    "label": "Petrobras",
+    "name": "4,75 R$ Dividende/Jahr",
+    "wert": "2.408",
+    "einheit": "Aktien nötig"
+   },
+   "foot": "Kurse 17.11.: 1,0989 $/€, 6,3539 R$/€.",
+   "sprech": "Bei Shell sind es rund zwölfhundertsiebzig Aktien, bei Petrobras über zweitausend."
+  },
+  {
+   "typ": "points",
+   "titel": "Das *Kleingedruckte*",
+   "punkte": [
+    {
+     "icon": "euro",
+     "text": "Dividenden sind vor Steuern"
+    },
+    {
+     "icon": "chart",
+     "text": "Sie schwanken, vor allem Petrobras"
+    },
+    {
+     "icon": "warn",
+     "text": "Keine Anlageberatung"
+    }
+   ],
+   "sprech": "Aber Dividenden schwanken und sind vor Steuern. Keine Anlageberatung."
+  },
+  {
+   "typ": "cta",
+   "titel": "Würdest du so *Sprit* bezahlen?",
+   "kommentar": "Schreib es in die Kommentare!",
+   "quelle": "Quellen: Shell (29.10.2026), Chevron (30.1.2026), ExxonMobil (30.10.2026), Petrobras (Q3 2026), EZB-Kurse 17.11. Zahlen gerundet.",
+   "sprech": "Würdest du dein Tanken mit Dividenden bezahlen? Schreib es in die Kommentare!",
+   "stil": "frage"
+  }
+ ],
+ "caption": "Wie viele Ölaktien brauchst du, um deine Tankrechnung zu bezahlen? ⛽\n\nBeispiel: 150 € Sprit im Monat = 1.800 € im Jahr (ca. 75 Liter Super E10 bei 1,94 €, ADAC-Schnitt 18.11.2026).\n\nSo viele Aktien bräuchtest du (Dividende der letzten Quartalsausschüttung mal vier, brutto):\n🛢️ Chevron: 1,78 $ pro Quartal, ca. 278 Aktien\n🛢️ Exxon: 1,07 $ pro Quartal, ca. 462 Aktien\n🛢️ Shell: 0,3906 $ pro Quartal, ca. 1.266 Aktien\n🛢️ Petrobras: R$ 1,19 im 3. Quartal, ca. 2.408 Aktien (schwankt stark)\n\nWichtig: Die Rechnung ist vor Steuern, Dividenden können sinken oder steigen, und die Zahl der Aktien sagt nichts über das nötige Kapital. Kein Kauf- oder Anlagetipp.\n\nWürdest du dein Tanken mit Dividenden bezahlen? Schreib es in die Kommentare! 👇\n\nFolge @oil_preis_daily für das tägliche Ölpreis-Update.\n\nQuellen: Shell (29.10.2026), Chevron (30.1.2026), ExxonMobil (30.10.2026), Petrobras (Q3 2026), EZB-Kurse 17.11. Zahlen gerundet. Keine Anlageberatung.\n\n#dividende #ölaktien #shell #chevron #exxon #petrobras #tanken #aktien #finanzen #ölpreis"
+}
