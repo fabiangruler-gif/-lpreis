@@ -1,85 +1,85 @@
 {
- "titel": "Wie funktioniert eine Ölbohrinsel?",
+ "titel": "Wie funktioniert eine Ölbohrinsel? So tankst du günstiger",
  "ziel_sekunden": 27,
  "cover": {
-  "titel": "Wie tief *bohrt* man nach Öl?",
-  "emoji": "🛢️",
-  "zahl": "12,4 km",
-  "einheit": "längstes Ölbohrloch der Welt"
+  "titel": "Mit diesem *Trick* tankst du günstiger",
+  "emoji": "⛽",
+  "zahl": "20 Cent",
+  "einheit": "pro Liter sparen: vor 12 Uhr tanken"
  },
  "slides": [
   {
    "typ": "hook",
-   "titel": "Wie tief *bohrt* man nach Öl?",
-   "sub": "Die Antwort: bis zu 12 Kilometer.",
-   "sprech": "Wie tief bohrt man eigentlich nach Öl? Bis zu zwölf Kilometer."
+   "titel": "Eine Bohrinsel kostet *390.000 $* am Tag",
+   "sub": "So tankst du günstiger.",
+   "sprech": "Eine Ölbohrinsel kostet fast vierhunderttausend Dollar am Tag. So tankst du günstiger."
   },
   {
    "typ": "stat",
-   "emoji": "🌊",
-   "label": "Wassertiefe-Rekord",
-   "name": "Ondjaba-1, Angola",
-   "wert": "3.628 m",
-   "einheit": "Wasser über dem Bohrloch",
-   "note": "Weltrekord, TotalEnergies 2021",
-   "sprech": "Der Wassertiefen-Rekord liegt bei über dreitausendsechshundert Metern."
+   "emoji": "🛢️",
+   "label": "Längstes Bohrloch",
+   "name": "Z-44 Chayvo",
+   "wert": "12.376 m",
+   "einheit": "Länge des Bohrlochs",
+   "note": "Weltrekord, Sachalin 2012",
+   "sprech": "Das längste Bohrloch der Welt ist über zwölf Kilometer lang."
   },
   {
    "typ": "compare",
    "a": {
-    "emoji": "🌊",
-    "label": "Tiefstes Wasser",
-    "name": "Ondjaba-1",
-    "wert": "3.628 m",
-    "einheit": "Wassertiefe"
+    "emoji": "🛢️",
+    "label": "Rohöl",
+    "name": "Brent",
+    "wert": "53 Cent",
+    "einheit": "pro Liter"
    },
    "b": {
-    "emoji": "🛢️",
-    "label": "Längstes Bohrloch",
-    "name": "Z-44 Chayvo",
-    "wert": "12.376 m",
-    "einheit": "Länge"
+    "emoji": "⛽",
+    "label": "Zapfsäule",
+    "name": "Super E10",
+    "wert": "1,94 €",
+    "einheit": "pro Liter"
    },
-   "foot": "Z-44 vor Sachalin (Russland), 2012.",
-   "sprech": "Das längste Bohrloch der Welt misst über zwölftausend Meter."
+   "foot": "Brent 93,14 $ ÷ 159 Liter, 1,0989 $/€ (17.11.).",
+   "sprech": "Das Rohöl kostet nur gut fünfzig Cent pro Liter. Du zahlst fast zwei Euro."
   },
   {
    "typ": "stat",
-   "emoji": "💵",
-   "label": "Bohrschiff mieten",
-   "name": "Pro Tag",
-   "wert": "390.000 $",
-   "einheit": "für ein modernes Bohrschiff",
-   "note": "Durchschnitt 2026, Stand Juni",
-   "sprech": "Ein modernes Bohrschiff kostet rund dreihundertneunzigtausend Dollar. Pro Tag."
+   "emoji": "⏰",
+   "label": "Spartipp",
+   "name": "Vor 12 Uhr tanken",
+   "wert": "20+ Cent",
+   "einheit": "pro Liter günstiger",
+   "note": "50 Liter: über 10 € Unterschied",
+   "sprech": "Der Trick: Tanke vor zwölf Uhr. Das spart teils über zwanzig Cent pro Liter."
   },
   {
    "typ": "points",
-   "titel": "So *funktioniert* es",
+   "titel": "So *sparst* du",
    "punkte": [
     {
-     "icon": "drop",
-     "text": "Meißel bohrt sich durchs Gestein"
+     "icon": "clock",
+     "text": "Zwischen 11 und 12 Uhr tanken"
     },
     {
-     "icon": "globe",
-     "text": "Spülung kühlt und trägt Schutt nach oben"
+     "icon": "euro",
+     "text": "Preise in der App vergleichen"
     },
     {
      "icon": "warn",
-     "text": "Ventile sichern das Bohrloch"
+     "text": "Direkt nach 12 Uhr meiden"
     }
    ],
-   "sprech": "Ein Meißel bohrt, Spülung trägt das Gestein hoch, Ventile sichern das Loch."
+   "sprech": "Zwischen elf und zwölf Uhr tanken, Preise vergleichen, direkt nach zwölf meiden."
   },
   {
    "typ": "cta",
-   "titel": "Würdest du auf einer *Bohrinsel* arbeiten?",
+   "titel": "Wann *tankst* du meistens?",
    "kommentar": "Schreib es in die Kommentare!",
-   "quelle": "Quellen: OE Digital (Ondjaba-1, 2021), Guinness World Records (Z-44), Westwood Energy (Juni 2026), JPT. Zahlen gerundet.",
-   "sprech": "Würdest du auf einer Bohrinsel arbeiten? Schreib es in die Kommentare!",
+   "quelle": "Quellen: ADAC (18.11.2026), Berliner Zeitung/ADAC, EZB (17.11.), Westwood (Juni 2026), Guinness World Records. Zahlen gerundet.",
+   "sprech": "Wann tankst du meistens? Schreib es in die Kommentare!",
    "stil": "frage"
   }
  ],
- "caption": "Wie funktioniert eine Ölbohrinsel? 🛢️\n\nWie tief bohrt man nach Öl? Der Rekord für die größte Wassertiefe liegt bei 3.628 Metern (Ondjaba-1 vor Angola, 2021). Das längste Ölbohrloch der Welt misst 12.376 Meter (Z-44 Chayvo vor Sachalin, 2012).\n\nUnd das kostet:\n💵 Ein modernes Bohrschiff kostet im Schnitt rund 390.000 $ pro Tag (Stand Juni 2026)\n🌊 Bohren in über 3.000 m Wassertiefe ist heute möglich\n🛢️ Ein Meißel bohrt, Spülung trägt das Gestein hoch, Ventile sichern das Loch\n\nWürdest du auf einer Bohrinsel arbeiten? Schreib es in die Kommentare! 👇\n\nFolge @oil_preis_daily für das tägliche Ölpreis-Update.\n\nQuellen: OE Digital (Ondjaba-1, 2021), Guinness World Records (Z-44), Westwood Energy (Juni 2026), JPT. Zahlen gerundet. Keine Anlageberatung.\n\n#ölpreis #bohrinsel #öl #offshore #energie #wirtschaft #finanzen #rekord"
+ "caption": "Eine Ölbohrinsel kostet rund 390.000 $ pro Tag – und du kannst trotzdem beim Tanken sparen ⛽\n\nSo viel kostet dich der Sprit wirklich (Stand 18. November 2026):\n🛢️ Rohöl: nur ca. 53 Cent pro Liter (Brent 93 $/Barrel, 159 Liter pro Barrel)\n⛽ Super E10 an der Zapfsäule: im Schnitt 1,938 € pro Liter\n⏰ Preise dürfen nur um 12 Uhr steigen: Wer zwischen 11 und 12 Uhr tankt, zahlt oft über 20 Cent weniger pro Liter. Bei 50 Litern sind das über 10 €.\n\nUnd zur Bohrtechnik: Das längste Bohrloch der Welt ist 12.376 m lang (Z-44 Chayvo, Sachalin, 2012). Ein modernes Bohrschiff kostet im Schnitt rund 390.000 $ pro Tag (Westwood, Juni 2026).\n\nWann tankst du meistens? Schreib es in die Kommentare! 👇\n\nFolge @oil_preis_daily für das tägliche Ölpreis-Update.\n\nQuellen: ADAC (18.11.2026), Berliner Zeitung/ADAC, EZB (17.11.), Westwood (Juni 2026), Guinness World Records. Zahlen gerundet. Keine Anlageberatung.\n\n#tanken #spritpreise #sparen #benzin #ölpreis #adac #bohrinsel #energie #finanzen"
 }
