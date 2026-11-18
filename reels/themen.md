@@ -95,3 +95,39 @@ Status: geplant
 - Energiesteuer auf Benzin und Diesel 2016 bis 2026 (Destatis), 2026 geschätzt
 - Wohin das Geld fließt: Haushalt, Klimafonds, Mehrwertsteuer
 - Tankrabatt 2026
+
+## Diesel zahlt 18 Cent weniger Steuer als Benzin
+Status: neu
+Typ: Karussell
+- Energiesteuer: Benzin 65,45 ct/l, Diesel 47,04 ct/l (Differenz rund 18 ct)
+- Auf alles kommt noch 19 % Mehrwertsteuer
+- Warum Diesel trotzdem zeitweise teurer an der Zapfsäule ist (Verweis auf Diesel-Thema)
+- Zahlen vor Veröffentlichung mit Bundesfinanzministerium abgleichen
+
+## 159 Liter: Wie viel ist ein Barrel Öl wirklich?
+Status: neu
+Typ: Karussell
+- 1 Barrel = rund 159 Liter
+- Brent-Preis pro Barrel in Cent pro Liter umrechnen (aktuellen Kurs am Tag der Veröffentlichung einsetzen)
+- Vergleich: Rohöl pro Liter vs. Preis an der Zapfsäule
+
+## Morgens teuer, abends billig? Der Spritpreis-Trick
+Status: neu
+Typ: Reel
+- 12-Uhr-Regel seit 1. April 2026: Preiserhöhung nur einmal täglich um 12 Uhr
+- Preissenkungen sind jederzeit erlaubt
+- Humor-Hook: "Du tankst um 11:59 Uhr, dein Nachbar um 12:01"
+
+## Schwacher Euro, teures Öl: Warum der Dollar mitzahlt
+Status: neu
+Typ: Karussell
+- Rohöl wird weltweit in US-Dollar gehandelt
+- Wird der Euro schwächer, kostet dasselbe Barrel in Euro mehr
+- Beispiel mit aktuellem Kurs am Veröffentlichungstag nachrechnen
+
+## Heizöl ist fast Diesel: Warum beides gleich schwankt
+Status: neu
+Typ: Reel
+- Leichtes Heizöl und Diesel sind chemisch sehr ähnlich
+- Energiesteuer Heizöl 6,14 ct/l, Diesel 47,04 ct/l
+- Beide folgen dem Rohölpreis mit Verzögerung
