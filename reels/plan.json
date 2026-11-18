@@ -8,8 +8,8 @@
     },
     {
       "datum": "2026-11-19",
-      "slug": "staat-verdient-sprit",
-      "thema": "Wie viel verdient der Staat am Sprit?",
+      "slug": "dividenden-tankrechnung",
+      "thema": "Wie viele Ölaktien zahlen deine Tankrechnung?",
       "status": "bereit"
     },
     {
@@ -20,8 +20,8 @@
     },
     {
       "datum": "2026-11-22",
-      "slug": "dividenden-tankrechnung",
-      "thema": "Wie viele Ölaktien zahlen deine Tankrechnung?",
+      "slug": "staat-verdient-sprit",
+      "thema": "Wie viel verdient der Staat am Sprit?",
       "status": "bereit"
     }
   ]
