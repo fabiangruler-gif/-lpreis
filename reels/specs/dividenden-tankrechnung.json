@@ -12,7 +12,7 @@
    "typ": "hook",
    "titel": "Wie viele *Ölaktien* zahlen deine Tankrechnung?",
    "sub": "Shell, Chevron, Exxon, Petrobras im Check.",
-   "sprech": "Wie viele Ölaktien brauchst du, um deine Tankrechnung zu bezahlen?"
+   "sprech": "Wie viele Ölaktien zahlen deine Tankrechnung?"
   },
   {
    "typ": "stat",
@@ -22,7 +22,7 @@
    "wert": "1.800 €",
    "einheit": "Sprit pro Jahr",
    "note": "Etwa 75 Liter Super E10 pro Monat",
-   "sprech": "Angenommen, du tankst für hundertfünfzig Euro im Monat. Das sind achtzehnhundert Euro im Jahr."
+   "sprech": "Bei hundertfünfzig Euro Sprit im Monat sind das achtzehnhundert Euro im Jahr."
   },
   {
    "typ": "compare",
@@ -41,7 +41,7 @@
     "einheit": "Aktien, ca. 72.000 €"
    },
    "foot": "Gesamtinvest = Aktien mal Kurs (12.–16.11.).",
-   "sprech": "Chevron: rund zweihundertachtzig Aktien, etwa sechsundfünfzigtausend Euro. Exxon: rund vierhundertsechzig Aktien, etwa zweiundsiebzigtausend Euro."
+   "sprech": "Chevron: etwa sechsundfünfzigtausend Euro Invest. Exxon: etwa zweiundsiebzigtausend."
   },
   {
    "typ": "compare",
@@ -60,7 +60,7 @@
     "einheit": "Aktien, ca. 16.500 €"
    },
    "foot": "Kurse 12.–16.11., Wechselkurse 17.11.",
-   "sprech": "Shell: gut zwölfhundert Aktien, etwa sechsundfünfzigtausend Euro. Petrobras: über zweitausend Aktien, aber nur etwa sechzehntausendfünfhundert Euro."
+   "sprech": "Shell: etwa sechsundfünfzigtausend Euro. Petrobras: etwa sechzehntausendfünfhundert."
   },
   {
    "typ": "points",
@@ -79,14 +79,14 @@
      "text": "Keine Anlageberatung"
     }
    ],
-   "sprech": "Aber Dividenden und Kurse schwanken, und alles ist vor Steuern. Keine Anlageberatung."
+   "sprech": "Alles vor Steuern. Keine Anlageberatung."
   },
   {
    "typ": "cta",
    "titel": "Würdest du so *Sprit* bezahlen?",
    "kommentar": "Schreib es in die Kommentare!",
    "quelle": "Quellen: Shell, Chevron, ExxonMobil, Petrobras (Dividenden); StockAnalysis, MarketScreener, Guia do Investidor (Kurse); EZB 17.11. Zahlen gerundet.",
-   "sprech": "Würdest du dein Tanken mit Dividenden bezahlen? Schreib es in die Kommentare!",
+   "sprech": "Zahlst du so deinen Sprit? Schreib es in die Kommentare!",
    "stil": "frage"
   }
  ],
