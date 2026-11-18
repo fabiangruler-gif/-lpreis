@@ -17,8 +17,8 @@
   {
    "typ": "stat",
    "emoji": "⛽",
-   "label": "Beispiel-Tankrechnung",
-   "name": "150 € im Monat",
+   "label": "Beispiel",
+   "name": "150 €/Monat",
    "wert": "1.800 €",
    "einheit": "Sprit pro Jahr",
    "note": "Etwa 75 Liter Super E10 pro Monat",
@@ -29,18 +29,18 @@
    "a": {
     "emoji": "🛢️",
     "label": "Chevron",
-    "name": "7,12 $ Dividende/Jahr",
+    "name": "7,12 $/Jahr",
     "wert": "278",
     "einheit": "Aktien nötig"
    },
    "b": {
     "emoji": "🛢️",
     "label": "Exxon",
-    "name": "4,28 $ Dividende/Jahr",
+    "name": "4,28 $/Jahr",
     "wert": "462",
     "einheit": "Aktien nötig"
    },
-   "foot": "Letzte Quartalsdividende mal vier, vor Steuern.",
+   "foot": "Quartalsdividende mal vier.",
    "sprech": "Bei Chevron reichen rund zweihundertachtzig Aktien, bei Exxon rund vierhundertsechzig."
   },
   {
@@ -48,18 +48,18 @@
    "a": {
     "emoji": "🛢️",
     "label": "Shell",
-    "name": "1,56 $ Dividende/Jahr",
+    "name": "1,56 $/Jahr",
     "wert": "1.266",
     "einheit": "Aktien nötig"
    },
    "b": {
     "emoji": "🛢️",
     "label": "Petrobras",
-    "name": "4,75 R$ Dividende/Jahr",
+    "name": "4,75 R$/Jahr",
     "wert": "2.408",
     "einheit": "Aktien nötig"
    },
-   "foot": "Kurse 17.11.: 1,0989 $/€, 6,3539 R$/€.",
+   "foot": "Kurse 17.11. (EZB).",
    "sprech": "Bei Shell sind es rund zwölfhundertsiebzig Aktien, bei Petrobras über zweitausend."
   },
   {
