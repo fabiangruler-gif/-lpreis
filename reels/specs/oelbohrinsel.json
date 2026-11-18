@@ -1,0 +1,84 @@
+{
+ "titel": "Wie funktioniert eine Ölbohrinsel?",
+ "ziel_sekunden": 27,
+ "cover": {
+  "titel": "Wie tief *bohrt* man nach Öl?",
+  "emoji": "🛢️",
+  "zahl": "12,4 km",
+  "einheit": "längstes Ölbohrloch der Welt"
+ },
+ "slides": [
+  {
+   "typ": "hook",
+   "titel": "Wie tief *bohrt* man nach Öl?",
+   "sub": "Die Antwort: bis zu 12 Kilometer.",
+   "sprech": "Wie tief bohrt man eigentlich nach Öl? Bis zu zwölf Kilometer."
+  },
+  {
+   "typ": "stat",
+   "emoji": "🌊",
+   "label": "Wassertiefe-Rekord",
+   "name": "Ondjaba-1, Angola",
+   "wert": "3.628 m",
+   "einheit": "Wasser über dem Bohrloch",
+   "note": "Weltrekord, TotalEnergies 2021",
+   "sprech": "Der Wassertiefen-Rekord liegt bei über dreitausendsechshundert Metern."
+  },
+  {
+   "typ": "compare",
+   "a": {
+    "emoji": "🌊",
+    "label": "Tiefstes Wasser",
+    "name": "Ondjaba-1",
+    "wert": "3.628 m",
+    "einheit": "Wassertiefe"
+   },
+   "b": {
+    "emoji": "🛢️",
+    "label": "Längstes Bohrloch",
+    "name": "Z-44 Chayvo",
+    "wert": "12.376 m",
+    "einheit": "Länge"
+   },
+   "foot": "Z-44 vor Sachalin (Russland), 2012.",
+   "sprech": "Das längste Bohrloch der Welt misst über zwölftausend Meter."
+  },
+  {
+   "typ": "stat",
+   "emoji": "💵",
+   "label": "Bohrschiff mieten",
+   "name": "Pro Tag",
+   "wert": "390.000 $",
+   "einheit": "für ein modernes Bohrschiff",
+   "note": "Durchschnitt 2026, Stand Juni",
+   "sprech": "Ein modernes Bohrschiff kostet rund dreihundertneunzigtausend Dollar. Pro Tag."
+  },
+  {
+   "typ": "points",
+   "titel": "So *funktioniert* es",
+   "punkte": [
+    {
+     "icon": "drop",
+     "text": "Meißel bohrt sich durchs Gestein"
+    },
+    {
+     "icon": "globe",
+     "text": "Spülung kühlt und trägt Schutt nach oben"
+    },
+    {
+     "icon": "warn",
+     "text": "Ventile sichern das Bohrloch"
+    }
+   ],
+   "sprech": "Ein Meißel bohrt, Spülung trägt das Gestein hoch, Ventile sichern das Loch."
+  },
+  {
+   "typ": "cta",
+   "titel": "Würdest du auf einer *Bohrinsel* arbeiten?",
+   "kommentar": "Schreib es in die Kommentare!",
+   "quelle": "Quellen: OE Digital (Ondjaba-1, 2021), Guinness World Records (Z-44), Westwood Energy (Juni 2026), JPT. Zahlen gerundet.",
+   "sprech": "Würdest du auf einer Bohrinsel arbeiten? Schreib es in die Kommentare!"
+  }
+ ],
+ "caption": "Wie funktioniert eine Ölbohrinsel? 🛢️\n\nWie tief bohrt man nach Öl? Der Rekord für die größte Wassertiefe liegt bei 3.628 Metern (Ondjaba-1 vor Angola, 2021). Das längste Ölbohrloch der Welt misst 12.376 Meter (Z-44 Chayvo vor Sachalin, 2012).\n\nUnd das kostet:\n💵 Ein modernes Bohrschiff kostet im Schnitt rund 390.000 $ pro Tag (Stand Juni 2026)\n🌊 Bohren in über 3.000 m Wassertiefe ist heute möglich\n🛢️ Ein Meißel bohrt, Spülung trägt das Gestein hoch, Ventile sichern das Loch\n\nWürdest du auf einer Bohrinsel arbeiten? Schreib es in die Kommentare! 👇\n\nFolge @oil_preis_daily für das tägliche Ölpreis-Update.\n\nQuellen: OE Digital (Ondjaba-1, 2021), Guinness World Records (Z-44), Westwood Energy (Juni 2026), JPT. Zahlen gerundet. Keine Anlageberatung.\n\n#ölpreis #bohrinsel #öl #offshore #energie #wirtschaft #finanzen #rekord"
+}
