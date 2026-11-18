@@ -5,7 +5,7 @@
   "titel": "Tankrechnung mit *Dividenden* zahlen?",
   "emoji": "⛽",
   "zahl": "278 Aktien",
-  "einheit": "Chevron zahlen 150 € Sprit im Monat"
+  "einheit": "Chevron-Aktien, ca. 56.000 € Invest"
  },
  "slides": [
   {
@@ -31,17 +31,17 @@
     "label": "Chevron",
     "name": "7,12 $/Jahr",
     "wert": "278",
-    "einheit": "Aktien nötig"
+    "einheit": "Aktien, ca. 56.000 €"
    },
    "b": {
     "emoji": "🛢️",
     "label": "Exxon",
     "name": "4,28 $/Jahr",
     "wert": "462",
-    "einheit": "Aktien nötig"
+    "einheit": "Aktien, ca. 72.000 €"
    },
-   "foot": "Quartalsdividende mal vier.",
-   "sprech": "Bei Chevron reichen rund zweihundertachtzig Aktien, bei Exxon rund vierhundertsechzig."
+   "foot": "Gesamtinvest = Aktien mal Kurs (12.–16.11.).",
+   "sprech": "Chevron: rund zweihundertachtzig Aktien, etwa sechsundfünfzigtausend Euro. Exxon: rund vierhundertsechzig Aktien, etwa zweiundsiebzigtausend Euro."
   },
   {
    "typ": "compare",
@@ -50,17 +50,17 @@
     "label": "Shell",
     "name": "1,56 $/Jahr",
     "wert": "1.266",
-    "einheit": "Aktien nötig"
+    "einheit": "Aktien, ca. 56.000 €"
    },
    "b": {
     "emoji": "🛢️",
     "label": "Petrobras",
     "name": "4,75 R$/Jahr",
     "wert": "2.408",
-    "einheit": "Aktien nötig"
+    "einheit": "Aktien, ca. 16.500 €"
    },
-   "foot": "Kurse 17.11. (EZB).",
-   "sprech": "Bei Shell sind es rund zwölfhundertsiebzig Aktien, bei Petrobras über zweitausend."
+   "foot": "Kurse 12.–16.11., Wechselkurse 17.11.",
+   "sprech": "Shell: gut zwölfhundert Aktien, etwa sechsundfünfzigtausend Euro. Petrobras: über zweitausend Aktien, aber nur etwa sechzehntausendfünfhundert Euro."
   },
   {
    "typ": "points",
@@ -72,23 +72,23 @@
     },
     {
      "icon": "chart",
-     "text": "Sie schwanken, vor allem Petrobras"
+     "text": "Dividenden und Kurse schwanken"
     },
     {
      "icon": "warn",
      "text": "Keine Anlageberatung"
     }
    ],
-   "sprech": "Aber Dividenden schwanken und sind vor Steuern. Keine Anlageberatung."
+   "sprech": "Aber Dividenden und Kurse schwanken, und alles ist vor Steuern. Keine Anlageberatung."
   },
   {
    "typ": "cta",
    "titel": "Würdest du so *Sprit* bezahlen?",
    "kommentar": "Schreib es in die Kommentare!",
-   "quelle": "Quellen: Shell (29.10.2026), Chevron (30.1.2026), ExxonMobil (30.10.2026), Petrobras (Q3 2026), EZB-Kurse 17.11. Zahlen gerundet.",
+   "quelle": "Quellen: Shell, Chevron, ExxonMobil, Petrobras (Dividenden); StockAnalysis, MarketScreener, Guia do Investidor (Kurse); EZB 17.11. Zahlen gerundet.",
    "sprech": "Würdest du dein Tanken mit Dividenden bezahlen? Schreib es in die Kommentare!",
    "stil": "frage"
   }
  ],
- "caption": "Wie viele Ölaktien brauchst du, um deine Tankrechnung zu bezahlen? ⛽\n\nBeispiel: 150 € Sprit im Monat = 1.800 € im Jahr (ca. 75 Liter Super E10 bei 1,94 €, ADAC-Schnitt 18.11.2026).\n\nSo viele Aktien bräuchtest du (Dividende der letzten Quartalsausschüttung mal vier, brutto):\n🛢️ Chevron: 1,78 $ pro Quartal, ca. 278 Aktien\n🛢️ Exxon: 1,07 $ pro Quartal, ca. 462 Aktien\n🛢️ Shell: 0,3906 $ pro Quartal, ca. 1.266 Aktien\n🛢️ Petrobras: R$ 1,19 im 3. Quartal, ca. 2.408 Aktien (schwankt stark)\n\nWichtig: Die Rechnung ist vor Steuern, Dividenden können sinken oder steigen, und die Zahl der Aktien sagt nichts über das nötige Kapital. Kein Kauf- oder Anlagetipp.\n\nWürdest du dein Tanken mit Dividenden bezahlen? Schreib es in die Kommentare! 👇\n\nFolge @oil_preis_daily für das tägliche Ölpreis-Update.\n\nQuellen: Shell (29.10.2026), Chevron (30.1.2026), ExxonMobil (30.10.2026), Petrobras (Q3 2026), EZB-Kurse 17.11. Zahlen gerundet. Keine Anlageberatung.\n\n#dividende #ölaktien #shell #chevron #exxon #petrobras #tanken #aktien #finanzen #ölpreis"
+ "caption": "Wie viele Ölaktien brauchst du, um deine Tankrechnung zu bezahlen? ⛽\n\nBeispiel: 150 € Sprit im Monat = 1.800 € im Jahr (ca. 75 Liter Super E10 bei 1,94 €, ADAC-Schnitt 18.11.2026).\n\nSo viele Aktien bräuchtest du (Dividende der letzten Quartalsausschüttung mal vier, brutto):\n🛢️ Chevron: 1,78 $ pro Quartal, ca. 278 Aktien, Invest ca. 56.000 €\n🛢️ Exxon: 1,07 $ pro Quartal, ca. 462 Aktien, Invest ca. 72.000 €\n🛢️ Shell: 0,3906 $ pro Quartal, ca. 1.266 Aktien, Invest ca. 56.000 €\n🛢️ Petrobras: R$ 1,19 im 3. Quartal, ca. 2.408 Aktien, Invest ca. 16.500 € (schwankt stark)\n\nWichtig: Die Rechnung ist vor Steuern, Dividenden können sinken oder steigen, und auch die Kurse ändern sich täglich. Gesamtinvest = Aktienzahl mal Aktienkurs (Schlusskurse 12. bis 16.11.2026, Wechselkurse EZB 17.11.). Kein Kauf- oder Anlagetipp.\n\nWürdest du dein Tanken mit Dividenden bezahlen? Schreib es in die Kommentare! 👇\n\nFolge @oil_preis_daily für das tägliche Ölpreis-Update.\n\nQuellen: Shell, Chevron, ExxonMobil, Petrobras (Dividenden); StockAnalysis, MarketScreener, Guia do Investidor (Kurse); EZB 17.11. Zahlen gerundet. Keine Anlageberatung.\n\n#dividende #ölaktien #shell #chevron #exxon #petrobras #tanken #aktien #finanzen #ölpreis"
 }
