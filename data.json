@@ -1,62 +1,62 @@
 {
-  "datum": "Dienstag, 17. November 2026 • 05:30 MEZ",
-  "headline": "Ölpreise brechen ein: Überschuss dominiert",
-  "subline": "Brent -3,6 % auf 92,44 $: Angebot wächst, Hormus-Meldungen verpuffen",
+  "datum": "Mittwoch, 18. November 2026 • 05:30 MEZ",
+  "headline": "Brent hält 93 $: Hormus-Angriffe vs. Überschuss",
+  "subline": "Brent +0,8 % auf 93,14 $: Tankerangriffe stützen, US-Lager belasten",
   "brent": {
-    "preis": "92,44",
-    "diff": "-3,40",
-    "pct": "-3,55",
-    "dir": "down"
+    "preis": "93,14",
+    "diff": "+0,70",
+    "pct": "+0,76",
+    "dir": "up"
   },
   "wti": {
-    "preis": "85,72",
-    "diff": "-2,84",
-    "pct": "-3,21",
-    "dir": "down"
+    "preis": "86,01",
+    "diff": "+0,29",
+    "pct": "+0,34",
+    "dir": "up"
   },
-  "preis_hinweis": "Frontmonat-Futures • Schlusskurse Mo., 16.11.2026 • keine Livekurse",
+  "preis_hinweis": "Frontmonat-Futures • Schlusskurse Di., 17.11.2026 • keine Livekurse",
   "news": [
-    {
-      "icon": "chart",
-      "titel": "Überschuss schlägt Risiko",
-      "text": "IEA: Angebot übersteigt Nachfrage. Saudi-Output hoch, Preissenkungen; Brent -3,6 %.",
-      "quelle": "Rigzone",
-      "quelle_datum": "16.11.",
-      "link_anzeige": "rigzone.com",
-      "link": "https://www.rigzone.com/news/oil_retreats_as_traders_weigh_supply_glut-16-nov-2026-185096-article"
-    },
     {
       "icon": "ship",
       "titel": "Tanker in Hormus getroffen",
-      "text": "Iran meldet brennende Tanker nach Minentreffern; unabhängig nicht bestätigt.",
-      "quelle": "Investing.com",
-      "quelle_datum": "16.11.",
-      "link_anzeige": "de.investing.com",
-      "link": "https://de.investing.com/news/stock-market-news/olpreis-tanker-brennen-in-der-strase-von-hormus--trotzdem-fallt-brent-3770753"
-    },
-    {
-      "icon": "bank",
-      "titel": "OPEC+ tagt am 29.11.",
-      "text": "Es geht um die Förderung 2027. US-Ölreserve mit 276 Mio. Barrel auf Tief seit 1982.",
-      "quelle": "HDFC Sky",
+      "text": "Iran-Drohnen trafen US-Radar in Bahrain; Schiff in Hormus zweimal getroffen.",
+      "quelle": "BigGo Finance",
       "quelle_datum": "17.11.",
-      "link_anzeige": "hdfcsky.com",
-      "link": "https://hdfcsky.com/news/brent-crude-oil-price-today-november-17-2026-brent-falls-0-7percent-to-91-8-wti-slips-to-85-2-as-surplus-looms"
+      "link_anzeige": "finance.biggo.com",
+      "link": "https://finance.biggo.com/news/fb107718-2833-4dbb-98cf-1ca40b6ef331"
     },
     {
       "icon": "barrel",
-      "titel": "Nahost-Exporte erholen sich",
-      "text": "US-Rohöl fällt auf rund 85 $, weil die Ausfuhren aus dem Nahen Osten zurückkehren.",
-      "quelle": "CNBC",
-      "quelle_datum": "16.11.",
-      "link_anzeige": "cnbc.com",
-      "link": "https://www.cnbc.com/2026/11/16/us-crude-oil-declines-to-87-a-barrel-on-recovering-middle-east-exports.html"
+      "titel": "US-Lager +5,3 Mio. Barrel",
+      "text": "API meldet Aufbau bei Rohöl, Benzin und Diesel; das drückt die Preise am Morgen.",
+      "quelle": "Business Recorder",
+      "quelle_datum": "18.11.",
+      "link_anzeige": "brecorder.com",
+      "link": "https://www.brecorder.com/news/40449497/oil-prices-fall-as-higher-us-crude-stocks-temper-supply-risks?v=zJYv_QXrwcR6qLYXRoYzdASw"
+    },
+    {
+      "icon": "bank",
+      "titel": "OPEC+ prüft Kapazitäten",
+      "text": "Audit vor möglichen Quoten ab 2027; Irak fährt Kirkuk-Pipeline nach Türkei wieder an.",
+      "quelle": "OilPrice.com",
+      "quelle_datum": "17.11.",
+      "link_anzeige": "oilprice.com",
+      "link": "https://oilprice.com/Energy/Energy-General/Brent-Stuck-Near-93-as-Hormuz-Tanker-Attacks-Offset-Gulf-Export-Surge.html"
+    },
+    {
+      "icon": "chart",
+      "titel": "IEA sieht Überschuss im Q4",
+      "text": "Förderung stieg im Oktober um 2,3 Mio. b/d; Nachfrage 2027 nur +2 Mio. b/d.",
+      "quelle": "Gulf News",
+      "quelle_datum": "18.11.",
+      "link_anzeige": "gulfnews.com",
+      "link": "https://gulfnews.com/business/energy/oil-slips-in-asia-led-by-murban-brent-wti-what-to-know-on-nov-18-2026-1.500751476"
     }
   ],
   "prognose_kurz": {
-    "label": "Leicht abwärts, 89–95 $",
-    "text": "Überschuss und Exporterholung drücken; Golf-Risiken bremsen den Absturz.",
-    "farbe": "red"
+    "label": "Seitwärts, 90–96 $",
+    "text": "Angriffe im Golf stützen, Lageraufbau und Überschuss deckeln den Anstieg.",
+    "farbe": "yellow"
   },
   "prognose_mittel": {
     "label": "Abwärts, Blick auf OPEC+",
@@ -64,15 +64,20 @@
     "farbe": "red"
   },
   "szenarien": {
-    "up": "Bestätigte Tanker-Schäden oder Hormus-Sperre; Lager sinken weiter.",
-    "side": "Kurse stabilisieren sich; Überschuss und Risiko halten sich die Waage.",
-    "down": "Mehr Gulf-Exporte, OPEC+ erhöht 2027 die Förderung, Überschuss wächst."
+    "up": "Weitere Tankertreffer, Hormus-Sperre, Pipeline-Angriffe der Huthi.",
+    "side": "Risikoprämie und Überschuss halten sich die Waage; Kurse pendeln.",
+    "down": "Deeskalation, weitere Lageraufbauten, mehr Gulf-Exporte."
   },
   "watch": [
     {
       "icon": "ship",
       "titel": "Golf-Sicherheit",
-      "text": "Minen- und Angriffsmeldungen, Tankerverkehr"
+      "text": "Angriffe auf Tanker, Bahrain und Saudi-Pipeline"
+    },
+    {
+      "icon": "barrel",
+      "titel": "EIA-Lagerdaten",
+      "text": "Heute: Bestätigt sich der API-Aufbau?"
     },
     {
       "icon": "hand",
@@ -80,30 +85,25 @@
       "text": "Signal für die Förderpolitik 2027"
     },
     {
-      "icon": "barrel",
-      "titel": "EIA-Lagerdaten",
-      "text": "Mittwoch: Bauen sich die Vorräte weiter auf?"
-    },
-    {
       "icon": "chart",
       "titel": "Kursmarken",
-      "text": "Brent 89/95 $ • WTI 83/89 $ (Orientierungszonen)"
+      "text": "Brent 90/96 $ • WTI 83/89 $ (Orientierungszonen)"
     }
   ],
-  "einschaetzung": "Der Überschuss dominiert, Golf-Risiken stützen nur noch wenig.\nKurzfristig leicht abwärts; bestätigte Tankerschäden wären der Joker.",
-  "quellen": "Quellen: Rigzone (16.11.) • Investing.com (16.11.) • HDFC Sky (17.11.) • CNBC (16.11.)\nPreisvergleich: Schlusskurse Mo., 16.11.2026 vs. Fr., 13.11. • Stand 17.11.2026, 05:30 MEZ",
+  "einschaetzung": "Risiko und Überschuss halten sich aktuell die Waage.\nKurzfristig seitwärts; EIA-Lager und Golf-Lage entscheiden.",
+  "quellen": "Quellen: BigGo (17.11.) • Business Recorder (18.11.) • OilPrice.com (17.11.) • Gulf News (18.11.)\nPreisvergleich: Schlusskurse Di., 17.11.2026 vs. Mo., 16.11. • Stand 18.11.2026, 05:30 MEZ",
   "szenarien_vergleich": {
     "up": {
-      "trend": "same",
-      "text": "Hormus-Meldungen unbestätigt"
+      "trend": "more",
+      "text": "Mehr Angriffe auf Schiffe, Bahrain"
     },
     "side": {
-      "trend": "less",
-      "text": "Abwärtsdruck wächst"
+      "trend": "same",
+      "text": "Kurse pendeln um 93 $"
     },
     "down": {
-      "trend": "more",
-      "text": "Überschuss, Exporte erholen sich"
+      "trend": "less",
+      "text": "Gegenwind: Hormus-Risiko steigt"
     }
   }
 }
