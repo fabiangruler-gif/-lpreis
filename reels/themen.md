@@ -133,7 +133,7 @@ Typ: Reel
 - Beide folgen dem Rohölpreis mit Verzögerung
 
 ## Wie viele Ölaktien zahlen deine Tankrechnung?
-Status: geplant
+Status: veröffentlicht
 Typ: Reel
 - Dividende von Shell, Chevron, Exxon, Petrobras
 - Wie viele Aktien nötig, um 150 € Sprit im Monat zu bezahlen
