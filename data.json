@@ -1,70 +1,70 @@
 {
-  "datum": "Donnerstag, 19. November 2026 • 05:30 MEZ",
-  "headline": "Brent 92 $: Lagerbau drückt, Golf stützt",
-  "subline": "Brent −1,3 %, WTI −3,2 % auf Tief seit August; US-Lager steigen",
+  "datum": "Freitag, 20. November 2026 • 05:30 MEZ",
+  "headline": "Brent 92 $: Seitwärts vor dem Wochenende",
+  "subline": "Brent kaum verändert, WTI auf Tief seit August; Minen in Hormus",
   "brent": {
-    "preis": "91,95",
-    "diff": "-1,19",
-    "pct": "-1,28",
-    "dir": "down"
+    "preis": "91,98",
+    "diff": "+0,03",
+    "pct": "+0,03",
+    "dir": "flat"
   },
   "wti": {
-    "preis": "83,26",
-    "diff": "-2,75",
-    "pct": "-3,20",
-    "dir": "down"
+    "preis": "83,21",
+    "diff": "-0,05",
+    "pct": "-0,06",
+    "dir": "flat"
   },
-  "preis_hinweis": "Frontmonat-Futures • Schlusskurse Mi., 18.11.2026 • keine Livekurse",
+  "preis_hinweis": "Frontmonat-Futures • Schlusskurse Do., 19.11.2026 • keine Livekurse",
   "news": [
+    {
+      "icon": "ship",
+      "titel": "Zwei Tanker auf Minen",
+      "text": "Iran: Tanker in Hormus explodiert (unbestätigt); Huthi-Raketen auf Riad.",
+      "quelle": "Reuters",
+      "quelle_datum": "19.11.",
+      "link_anzeige": "investing.com",
+      "link": "https://au.investing.com/news/commodities-news/oil-prices-steady-as-supply-surplus-softens-sentiment-though-gulf-war-supports-4782046"
+    },
     {
       "icon": "barrel",
       "titel": "US-Rohöllager +3,4 Mio. Barrel",
-      "text": "EIA: Aufbau statt erwarteter +0,06 Mio.; auch Benzin und Diesel legen zu.",
-      "quelle": "Euronext",
-      "quelle_datum": "18.11.",
-      "link_anzeige": "live.euronext.com",
-      "link": "https://live.euronext.com/en/financial-news/oil-prices-settle-lower-traders-weigh-surplus-supply-outlook"
-    },
-    {
-      "icon": "ship",
-      "titel": "Angriffe am Golf gehen weiter",
-      "text": "ADNOC-Schiff in Hormus getroffen; Iran griff US-Basen in Kuwait an.",
-      "quelle": "FXEmpire",
-      "quelle_datum": "18.11.",
-      "link_anzeige": "fxempire.com",
-      "link": "https://www.fxempire.com/forecasts/article/oil-news-crude-oil-falls-as-traders-weigh-inventory-data-and-middle-east-risks-1645385"
-    },
-    {
-      "icon": "bank",
-      "titel": "Huthi-Drohnen auf Pipeline",
-      "text": "Drohnen auf Pumpstationen der Ost-West-Leitung; Gespräche via Oman, Katar.",
-      "quelle": "HDFC Sky",
-      "quelle_datum": "18.11.",
-      "link_anzeige": "hdfcsky.com",
-      "link": "https://hdfcsky.com/news/brent-crude-oil-price-today-november-18-2026-brent-falls-0-5percent-to-92-6-wti-drops-1-15percent-as-us-stockpiles-rise-middle-east-risks-limit-losses"
+      "text": "EIA: Bestand 417,8 Mio.; Raffinerien zu 95,7 % ausgelastet.",
+      "quelle": "TradingNEWS",
+      "quelle_datum": "19.11.",
+      "link_anzeige": "tradingnews.com",
+      "link": "https://tradingnews.com/news/wti-holds-8378-brent-9269-as-hormuz-attacks-fight-iea-surplus-8750-usd-and-9570-usd-in-view"
     },
     {
       "icon": "chart",
-      "titel": "Überschuss ~2 Mio. b/d",
-      "text": "IEA sieht Angebot im Quartal über Nachfrage; Ölpreise auf Kurs zu −20 % im Monat.",
-      "quelle": "Angel One",
+      "titel": "Tankerstörungen stützen",
+      "text": "Hormus-Störungen gleichen Überschuss-Ausblick aus; Ölpreise leicht höher.",
+      "quelle": "CNBC",
       "quelle_datum": "19.11.",
-      "link_anzeige": "angelone.in",
-      "link": "https://www.angelone.in/news/commodities/crude-oil-prices-gain-as-middle-east-attacks-offset-supply-glut-concerns-november-19-2026"
+      "link_anzeige": "cnbc.com",
+      "link": "https://www.cnbc.com/2026/11/19/oil-brent-wti-price-hormuz.html"
+    },
+    {
+      "icon": "bank",
+      "titel": "WTI hält über 82,50 $",
+      "text": "Nahost-Spannung hält Überschussängste in Schach; Seitwärtshandel.",
+      "quelle": "FXStreet",
+      "quelle_datum": "20.11.",
+      "link_anzeige": "fxstreet.com",
+      "link": "https://www.fxstreet.com/news/wti-steadies-above-8250-as-middle-east-tensions-offset-surplus-supply-outlook-202611200045"
     }
   ],
   "prognose_kurz": {
     "label": "Seitwärts, 89–95 $",
-    "text": "Angriffe am Golf stützen, Lageraufbau und Überschuss bremsen Erholungen.",
+    "text": "Hormus-Risiken stützen, Überschuss und Lageraufbau bremsen; dritter Wochenverlust droht.",
     "farbe": "yellow"
   },
   "prognose_mittel": {
     "label": "Abwärts, Blick auf OPEC+",
-    "text": "Überangebot und steigende Exporte drücken; Golf-Ausfälle könnten drehen.",
+    "text": "Überangebot (IEA: Q4 +1,7 Mio. b/d) belastet; Golf-Ausfälle könnten drehen.",
     "farbe": "red"
   },
   "szenarien": {
-    "up": "Weitere Tankertreffer, Hormus-Störung, Angriffe auf Pipelines.",
+    "up": "Mehr Tankertreffer, Hormus-Sperre, Angriffe auf Saudi-Anlagen.",
     "side": "Risikoprämie und Überschuss halten sich die Waage; Kurse pendeln.",
     "down": "Deeskalation, weitere Lageraufbauten, mehr Golf-Exporte."
   },
@@ -72,17 +72,17 @@
     {
       "icon": "ship",
       "titel": "Golf-Sicherheit",
-      "text": "Angriffe auf Tanker, Kuwait und Saudi-Pipeline"
+      "text": "Minen in Hormus, Huthi-Raketen auf Riad"
     },
     {
       "icon": "barrel",
       "titel": "Nächste Lagerdaten",
-      "text": "API/EIA: Hält der Aufbau bei Rohöl an?"
+      "text": "API/EIA: Hält der Rohöl-Aufbau an?"
     },
     {
       "icon": "hand",
-      "titel": "OPEC+ am 29.11.",
-      "text": "Signal für die Förderpolitik 2027"
+      "titel": "OPEC+-Signale",
+      "text": "Förderpolitik 2027 im Blick"
     },
     {
       "icon": "chart",
@@ -90,20 +90,20 @@
       "text": "Brent 89/95 $ • WTI 80/87 $ (Orientierungszonen)"
     }
   ],
-  "einschaetzung": "Überschuss und Lageraufbau überwiegen leicht den Golf-Risikoaufschlag.\nKurzfristig seitwärts bis schwächer; Golf-Lage bleibt Joker.",
-  "quellen": "Quellen: Euronext (18.11.) • FXEmpire (18.11.) • HDFC Sky (18.11.) • Angel One (19.11.)\nPreisvergleich: Schlusskurse Mi., 18.11.2026 vs. Di., 17.11. • Stand 19.11.2026, 05:30 MEZ",
+  "einschaetzung": "Überschuss und Lageraufbau überwiegen leicht das Golf-Risiko.\nBis Wochenende seitwärts bis schwächer; Hormus bleibt Joker.",
+  "quellen": "Quellen: Reuters (19.11.) • TradingNEWS (19.11.) • CNBC (19.11.) • FXStreet (20.11.)\nPreisvergleich: Schlusskurse Do., 19.11.2026 vs. Mi., 18.11. • Stand 20.11.2026, 05:30 MEZ",
   "szenarien_vergleich": {
     "up": {
       "trend": "same",
-      "text": "Angriffe weiter, kein Ausfall bestätigt"
+      "text": "Minen gemeldet, aber unbestätigt"
     },
     "side": {
-      "trend": "same",
-      "text": "Kurse pendeln um 92 $"
+      "trend": "more",
+      "text": "Brent fast unverändert zum Vortag"
     },
     "down": {
-      "trend": "more",
-      "text": "Lager steigen, WTI auf Augusttief"
+      "trend": "same",
+      "text": "WTI auf Augusttief, Brent stabil"
     }
   }
 }
