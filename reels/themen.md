@@ -16,7 +16,7 @@ Status: veröffentlicht
 - Trend: China und Indien wachsen
 
 ## Wie funktioniert eine Ölbohrinsel?
-Status: geplant
+Status: veröffentlicht
 - Wie tief wird gebohrt
 - Kosten pro Tag
 - Wie viele Menschen arbeiten dort
