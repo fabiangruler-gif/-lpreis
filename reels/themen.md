@@ -91,7 +91,7 @@ Status: neu
 - Typ: Reel
 
 ## Wie viel verdient der Staat am Sprit?
-Status: geplant
+Status: veröffentlicht
 - Energiesteuer auf Benzin und Diesel 2016 bis 2026 (Destatis), 2026 geschätzt
 - Wohin das Geld fließt: Haushalt, Klimafonds, Mehrwertsteuer
 - Tankrabatt 2026
