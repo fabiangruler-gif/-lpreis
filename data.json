@@ -1,7 +1,7 @@
 {
-  "datum": "Samstag, 21. November 2026 • 05:30 MEZ",
-  "headline": "Brent 92,57 $: Leichte Erholung zum Wochenende",
-  "subline": "Minentreffer in Hormus stützen, dritter Wochenverlust in Folge",
+  "datum": "Montag, 23. November 2026 • 05:30 MEZ",
+  "headline": "Brent 92,57 $: Wochenstart mit Huthi-Angriffen",
+  "subline": "Angriff auf Saudi-Raffinerie, Brent Montagfrüh leicht im Minus",
   "brent": {
     "preis": "92,57",
     "diff": "+0,59",
@@ -18,71 +18,71 @@
   "news": [
     {
       "icon": "ship",
-      "titel": "Tanker auf Minen gelaufen",
-      "text": "Zwei Tanker in Hormus getroffen; Huthis warnen vor Angriffen auf Saudi-Häfen.",
-      "quelle": "OK Energy Today",
-      "quelle_datum": "20.11.",
-      "link_anzeige": "okenergytoday.com",
-      "link": "https://okenergytoday.com/2026/11/itchy-trigger-fingers-sparked-friday-gain-in-oil-prices/"
-    },
-    {
-      "icon": "chart",
-      "titel": "Dritter Wochenverlust",
-      "text": "Brent und WTI vor drittem Wochenminus in Folge; Nahost-Exporte laufen.",
-      "quelle": "CNBC",
-      "quelle_datum": "20.11.",
-      "link_anzeige": "cnbc.com",
-      "link": "https://www.cnbc.com/amp/2026/11/20/oil-wti-brent-hormuz.html"
-    },
-    {
-      "icon": "bank",
-      "titel": "US-Blockade verschärft",
-      "text": "Iran-Öl auf See umgeladen; CENTCOM droht Empfängerschiffen mit Angriffen.",
-      "quelle": "gCaptain",
-      "quelle_datum": "20.11.",
-      "link_anzeige": "gcaptain.com",
-      "link": "https://gcaptain.com/iranian-oil-transferred-between-tankers-as-us-widens-blockade/"
+      "titel": "Iran-Angriffe, Exporte laufen",
+      "text": "Iran attackiert Bahrain; Golf-Exporte fließen trotz Schiffsangriffen weiter.",
+      "quelle": "Investing.com",
+      "quelle_datum": "23.11.",
+      "link_anzeige": "investing.com",
+      "link": "https://uk.investing.com/news/commodities-news/oil-falls-as-robust-gulf-exports-offset-iran-escalation-supply-glut-risks-4998133"
     },
     {
       "icon": "barrel",
-      "titel": "Tankerangriffe fast täglich",
-      "text": "Angriffsrekord im Oktober, im November kaum Pause; Überangebot drückt Preis.",
-      "quelle": "OilPrice.com",
-      "quelle_datum": "20.11.",
-      "link_anzeige": "oilprice.com",
-      "link": "https://oilprice.com/Latest-Energy-News/World-News/Iran-Steps-Up-Hormuz-Tanker-Attacks-as-Oil-Prices-Slide.html"
+      "titel": "Huthi-Angriff auf Raffinerie",
+      "text": "Huthis melden Schlag gegen Saudi-Raffinerie; Brent Montagfrüh bei 92,29 $.",
+      "quelle": "Business Recorder",
+      "quelle_datum": "23.11.",
+      "link_anzeige": "brecorder.com",
+      "link": "https://www.brecorder.com/news/40450306/oil-prices-fall-amid-equity-selloff-though-iran-war-attacks-limit-losses"
+    },
+    {
+      "icon": "chart",
+      "titel": "Aktienrutsch drückt Ölpreis",
+      "text": "KI-Aktienverkauf belastet; Brent knapp 92 $, WTI um 83 $ am Montagmorgen.",
+      "quelle": "Gulf News",
+      "quelle_datum": "23.11.",
+      "link_anzeige": "gulfnews.com",
+      "link": "https://gulfnews.com/business/energy/oil-natural-gas-slip-as-gold-jumps-over-15-in-monday-trade-1.500757397"
+    },
+    {
+      "icon": "bank",
+      "titel": "OPEC+ tagt am 29.11.",
+      "text": "Entscheid zu 2027-Quoten steht an; Brent mit drittem Wochenminus (-3,4 %).",
+      "quelle": "FinanceFeeds",
+      "quelle_datum": "22.11.",
+      "link_anzeige": "financefeeds.com",
+      "link": "https://financefeeds.com/brent-crude-oil-price-92-57-sunday-week-ahead-opec-plus-29-november-2027-quotas-bull-97-bear-88/"
     }
   ],
   "prognose_kurz": {
     "label": "Seitwärts, 89–95 $",
-    "text": "Hormus-Risiko und US-Flotte stützen, Überangebot bremst; Wochenstart offen.",
+    "text": "Huthi-Angriffe stützen, Aktienschwäche und Überangebot bremsen den Wochenstart.",
     "farbe": "yellow"
   },
   "prognose_mittel": {
     "label": "Abwärts, Überangebot",
-    "text": "Erwartetes Überangebot belastet; Eskalation am Golf könnte drehen.",
+    "text": "IEA sieht Q4-Überschuss um 2 Mio. b/d; OPEC+-Entscheid am 29.11. als Joker.",
     "farbe": "red"
   },
   "szenarien": {
-    "up": "Weitere Minentreffer, Huthi-Angriffe auf Saudi-Häfen, US-Schlag gegen Iran.",
+    "up": "Weitere Huthi-Schläge auf Saudi-Ziele, Hormus-Eskalation, US-Angriff.",
     "side": "Risikoprämie und Überangebot halten sich die Waage; Kurse pendeln.",
-    "down": "Deeskalation, stabile Golf-Exporte, anhaltender Lageraufbau."
+    "down": "Deeskalation, stabile Golf-Exporte, OPEC+-Signal, Aktienschwäche hält an."
   },
   "watch": [
     {
       "icon": "ship",
       "titel": "Golf-Sicherheit",
-      "text": "Minen in Hormus, Huthi-Drohung an Saudi-Häfen"
+      "text": "Huthi-Angriffe auf Saudi-Ziele, Schiffe nahe Hormus"
     },
     {
       "icon": "hand",
-      "titel": "US-Iran-Blockade",
-      "text": "Wird der Druck auf Iran weiter erhöht?"
+      "titel": "Trump & Iran",
+      "text": "Neue Schläge nach Neujahr angedeutet – was folgt?"
     },
     {
       "icon": "barrel",
-      "titel": "Nächste Lagerdaten",
-      "text": "API/EIA: Hält der Rohöl-Aufbau an?"
+      "titel": "OPEC+ am 29.11.",
+      "text": "Quoten 2027: Förderung halten oder anheben?"
     },
     {
       "icon": "chart",
@@ -90,20 +90,20 @@
       "text": "Brent 89/95 $ • WTI 80/87 $ (Orientierungszonen)"
     }
   ],
-  "einschaetzung": "Geopolitik stützt kurzfristig, Überangebot bleibt der Gegenwind.\nZum Wochenstart seitwärts; Hormus und US-Iran-Konflikt als Joker.",
-  "quellen": "Quellen: OK Energy Today (20.11.) • CNBC (20.11.) • gCaptain (20.11.) • OilPrice.com (20.11.)\nPreisvergleich: Schlusskurse Fr., 20.11.2026 vs. Do., 19.11. • Stand 21.11.2026, 05:30 MEZ",
+  "einschaetzung": "Geopolitik stützt, Überangebot und Börsenschwäche bremsen.\nWochenstart seitwärts; OPEC+ am 29.11. als nächster Taktgeber.",
+  "quellen": "Quellen: Investing.com (23.11.) • Business Recorder (23.11.) • Gulf News (23.11.) • FinanceFeeds (22.11.)\nPreisvergleich: Schlusskurse Fr., 20.11.2026 vs. Do., 19.11. • Stand 23.11.2026, 05:30 MEZ",
   "szenarien_vergleich": {
     "up": {
       "trend": "more",
-      "text": "Minentreffer, Huthi-Warnung, US-Träger"
+      "text": "Huthi-Angriffe auf Saudi-Raffinerie"
     },
     "side": {
       "trend": "same",
-      "text": "Brent nach Rebound weiter in Spanne"
+      "text": "Brent weiter in Spanne 89–95 $"
     },
     "down": {
-      "trend": "less",
-      "text": "Erholung am Freitag, Eskalation steigt"
+      "trend": "same",
+      "text": "Exporte laufen, Überangebot bleibt"
     }
   }
 }
