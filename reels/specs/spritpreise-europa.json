@@ -1,0 +1,98 @@
+{
+ "titel": "Wo tankt man in Europa am günstigsten?",
+ "ziel_sekunden": 27,
+ "cover": {
+  "titel": "Wo tankt man in *Europa* am günstigsten?",
+  "emoji": "⛽",
+  "zahl": "68 Cent",
+  "einheit": "pro Liter günstiger: Polen statt Deutschland"
+ },
+ "slides": [
+  {
+   "typ": "hook",
+   "titel": "In Polen kostet Sprit *68 Cent* weniger",
+   "sub": "Super 95 im Vergleich zu Deutschland, 16.11.2026",
+   "sprech": "In Polen kostet Sprit achtundsechzig Cent weniger als bei uns."
+  },
+  {
+   "typ": "compare",
+   "a": {
+    "emoji": "🇩🇪",
+    "label": "Deutschland",
+    "name": "Super",
+    "wert": "2,03 €",
+    "einheit": "pro Liter"
+   },
+   "b": {
+    "emoji": "🇵🇱",
+    "label": "Polen",
+    "name": "Super 95",
+    "wert": "1,35 €",
+    "einheit": "pro Liter"
+   },
+   "foot": "Landesdurchschnitt am 16.11.2026, inkl. Steuern.",
+   "sprech": "Super kostet bei uns zwei Euro drei, in Polen nur eins fünfunddreißig."
+  },
+  {
+   "typ": "list",
+   "titel": "Super pro Liter: Die *Rangliste*",
+   "foot": "Durchschnittspreise am 16.11.2026.",
+   "zeilen": [
+    {
+     "emoji": "🇵🇱",
+     "name": "Polen: 1,35 €"
+    },
+    {
+     "emoji": "🇨🇿",
+     "name": "Tschechien: 1,61 €"
+    },
+    {
+     "emoji": "🇦🇹",
+     "name": "Österreich: 1,61 €"
+    },
+    {
+     "emoji": "🇩🇪",
+     "name": "Deutschland: 2,03 €"
+    }
+   ],
+   "sprech": "Tschechien und Österreich liegen bei eins einundsechzig."
+  },
+  {
+   "typ": "stat",
+   "emoji": "💶",
+   "label": "Ersparnis",
+   "name": "Einmal volltanken",
+   "wert": "34 €",
+   "einheit": "günstiger in Polen",
+   "note": "50 Liter Super, Polen statt Deutschland",
+   "sprech": "Bei fünfzig Litern sparst du in Polen vierunddreißig Euro."
+  },
+  {
+   "typ": "points",
+   "titel": "Was du *wissen* solltest",
+   "punkte": [
+    {
+     "icon": "drop",
+     "text": "Diesel Polen: 1,68 € statt 2,22 €"
+    },
+    {
+     "icon": "warn",
+     "text": "Österreich: Diesel nur 18 Cent billiger"
+    },
+    {
+     "icon": "chart",
+     "text": "Durchschnitt, vor Ort kann es abweichen"
+    }
+   ],
+   "sprech": "Diesel ist in Polen sehr günstig, in Österreich aber kaum."
+  },
+  {
+   "typ": "cta",
+   "titel": "Fährst du *zum Tanken* ins Ausland?",
+   "kommentar": "Schreib es in die Kommentare!",
+   "quelle": "Quellen: Destatis und EU-Kommission (Weekly Oil Bulletin, Stand 16.11.2026), fuel-prices.eu. Deutschland: Super E5. Zahlen gerundet.",
+   "sprech": "Fährst du zum Tanken ins Ausland? Schreib es in die Kommentare!"
+  }
+ ],
+ "caption": "Wo tankt man in Europa am günstigsten? ⛽\n\nIn Polen kostete Super 95 zuletzt im Schnitt nur 1,35 Euro pro Liter, in Deutschland 2,03 Euro (Super E5). Das sind 68 Cent Unterschied: Bei 50 Litern sparst du rund 34 Euro. Tschechien und Österreich liegen mit je 1,61 Euro dazwischen.\n\nBeim Diesel: Polen 1,68 Euro, Tschechien 1,82 Euro, Österreich 2,04 Euro, Deutschland 2,22 Euro. Österreich ist hier nur 18 Cent günstiger als bei uns.\n\nAlle Werte sind Landesdurchschnitte am 16.11.2026 inkl. Steuern, an einzelnen Tankstellen kann es abweichen.\n\nQuellen: Destatis und EU-Kommission (Weekly Oil Bulletin), fuel-prices.eu. Zahlen gerundet. Keine Anlageberatung.\n\nFährst du zum Tanken ins Ausland? Schreib es in die Kommentare! Folge @oil_preis_daily für dein tägliches Ölpreis-Update.\n\n#spritpreis #benzinpreis #dieselpreis #tanken #europa #polen #österreich #tschechien #ölpreis #sparen"
+}
