@@ -47,7 +47,7 @@ Status: veröffentlicht
 - Ende des Tankrabatts im Juli
 
 ## Wo tankt man in Europa am günstigsten?
-Status: neu
+Status: geplant
 - Polen, Tschechien, Österreich im Vergleich zu Deutschland
 - Tipp für Urlaubsfahrten
 
