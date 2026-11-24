@@ -1,109 +1,109 @@
 {
-  "datum": "Montag, 23. November 2026 • 05:30 MEZ",
-  "headline": "Brent 92,57 $: Wochenstart mit Huthi-Angriffen",
-  "subline": "Angriff auf Saudi-Raffinerie, Brent Montagfrüh leicht im Minus",
+  "datum": "Dienstag, 24. November 2026 • 05:30 MEZ",
+  "headline": "Brent 89,37 $: Tiefster Stand seit August",
+  "subline": "Libyens Sharara-Leitung läuft wieder; Brent -3,5 %, WTI -3,9 %",
   "brent": {
-    "preis": "92,57",
-    "diff": "+0,59",
-    "pct": "+0,64",
-    "dir": "up"
+    "preis": "89,37",
+    "diff": "-3,20",
+    "pct": "-3,46",
+    "dir": "down"
   },
   "wti": {
-    "preis": "83,98",
-    "diff": "+0,77",
-    "pct": "+0,93",
-    "dir": "up"
+    "preis": "80,17",
+    "diff": "-3,24",
+    "pct": "-3,88",
+    "dir": "down"
   },
-  "preis_hinweis": "Frontmonat-Futures • Schlusskurse Fr., 20.11.2026 • keine Livekurse",
+  "preis_hinweis": "Frontmonat-Futures • Schlusskurse Mo., 23.11.2026 • keine Livekurse",
   "news": [
     {
-      "icon": "ship",
-      "titel": "Iran-Angriffe, Exporte laufen",
-      "text": "Iran attackiert Bahrain; Golf-Exporte fließen trotz Schiffsangriffen weiter.",
-      "quelle": "Investing.com",
-      "quelle_datum": "23.11.",
-      "link_anzeige": "investing.com",
-      "link": "https://uk.investing.com/news/commodities-news/oil-falls-as-robust-gulf-exports-offset-iran-escalation-supply-glut-risks-4998133"
+      "icon": "barrel",
+      "titel": "Libyen-Pipeline wieder offen",
+      "text": "Sharara-Leitung läuft wieder; Brent -3,46 % auf 89,37 $, tiefster Stand seit August.",
+      "quelle": "Nation Thailand",
+      "quelle_datum": "24.11.",
+      "link_anzeige": "nationthailand.com",
+      "link": "https://www.nationthailand.com/news/world/40073845"
     },
     {
-      "icon": "barrel",
-      "titel": "Huthi-Angriff auf Raffinerie",
-      "text": "Huthis melden Schlag gegen Saudi-Raffinerie; Brent Montagfrüh bei 92,29 $.",
-      "quelle": "Business Recorder",
+      "icon": "ship",
+      "titel": "Golf-Angriffe ohne Wirkung",
+      "text": "Huthi-Angriff und Tankerattacken lassen Preise kalt; Kriegsprämie verblasst.",
+      "quelle": "TradingNews",
       "quelle_datum": "23.11.",
-      "link_anzeige": "brecorder.com",
-      "link": "https://www.brecorder.com/news/40450306/oil-prices-fall-amid-equity-selloff-though-iran-war-attacks-limit-losses"
+      "link_anzeige": "tradingnews.com",
+      "link": "https://www.tradingnews.com/news/wti-sinks-4-to-8010-and-brent-34-to-8942-as-gulf-barrels-return-8650-and-96-usd-targets"
     },
     {
       "icon": "chart",
-      "titel": "Aktienrutsch drückt Ölpreis",
-      "text": "KI-Aktienverkauf belastet; Brent knapp 92 $, WTI um 83 $ am Montagmorgen.",
-      "quelle": "Gulf News",
+      "titel": "US-Lagerbestände steigen",
+      "text": "EIA: Rohöllager +3,4 Mio. Barrel auf 417,8 Mio.; stärkerer Dollar belastet.",
+      "quelle": "Rio Times",
       "quelle_datum": "23.11.",
-      "link_anzeige": "gulfnews.com",
-      "link": "https://gulfnews.com/business/energy/oil-natural-gas-slip-as-gold-jumps-over-15-in-monday-trade-1.500757397"
+      "link_anzeige": "riotimesonline.com",
+      "link": "https://www.riotimesonline.com/oil-markets-latam-monday-november-23-2026"
     },
     {
       "icon": "bank",
       "titel": "OPEC+ tagt am 29.11.",
-      "text": "Entscheid zu 2027-Quoten steht an; Brent mit drittem Wochenminus (-3,4 %).",
-      "quelle": "FinanceFeeds",
+      "text": "Entscheid zu 2027-Quoten; IEA sieht 2027 Überschuss von rund 3,8 Mio. b/d.",
+      "quelle": "DiscoveryAlert",
       "quelle_datum": "22.11.",
-      "link_anzeige": "financefeeds.com",
-      "link": "https://financefeeds.com/brent-crude-oil-price-92-57-sunday-week-ahead-opec-plus-29-november-2027-quotas-bull-97-bear-88/"
+      "link_anzeige": "discoveryalert.com",
+      "link": "https://discoveryalert.com/analysis/crude-oil-price-outlook-brent-opec-november-2026/"
     }
   ],
   "prognose_kurz": {
-    "label": "Seitwärts, 89–95 $",
-    "text": "Huthi-Angriffe stützen, Aktienschwäche und Überangebot bremsen den Wochenstart.",
-    "farbe": "yellow"
+    "label": "Schwach, Spanne 87–93 $",
+    "text": "Unterstützung 87–89 $ im Fokus; Erholung bis 91–93 $ möglich, Angebot drückt.",
+    "farbe": "red"
   },
   "prognose_mittel": {
-    "label": "Abwärts, Überangebot",
-    "text": "IEA sieht Q4-Überschuss um 2 Mio. b/d; OPEC+-Entscheid am 29.11. als Joker.",
+    "label": "Abwärts, Überschuss",
+    "text": "JPMorgan sieht hohe 70 $ in H1 2027; OPEC+ am 29.11. als Joker.",
     "farbe": "red"
   },
   "szenarien": {
-    "up": "Weitere Huthi-Schläge auf Saudi-Ziele, Hormus-Eskalation, US-Angriff.",
-    "side": "Risikoprämie und Überangebot halten sich die Waage; Kurse pendeln.",
-    "down": "Deeskalation, stabile Golf-Exporte, OPEC+-Signal, Aktienschwäche hält an."
+    "up": "Eskalation am Golf oder OPEC+-Kürzung; Rückprall auf 93–96 $.",
+    "side": "Angebot und Risikoprämie im Gleichgewicht; Brent 87–93 $.",
+    "down": "OPEC+ erhöht Quoten, mehr Libyen-Öl; Brent testet 84–87 $."
   },
   "watch": [
     {
-      "icon": "ship",
-      "titel": "Golf-Sicherheit",
-      "text": "Huthi-Angriffe auf Saudi-Ziele, Schiffe nahe Hormus"
+      "icon": "barrel",
+      "titel": "Libyen-Förderung",
+      "text": "Sharara läuft wieder – wie viel Öl kommt?"
     },
     {
-      "icon": "hand",
-      "titel": "Trump & Iran",
-      "text": "Neue Schläge nach Neujahr angedeutet – was folgt?"
+      "icon": "ship",
+      "titel": "Golf-Sicherheit",
+      "text": "Tanker bei Hormus, Huthi-Schläge auf Saudis"
     },
     {
       "icon": "barrel",
       "titel": "OPEC+ am 29.11.",
-      "text": "Quoten 2027: Förderung halten oder anheben?"
+      "text": "2027-Quoten: Förderung halten oder erhöhen?"
     },
     {
       "icon": "chart",
       "titel": "Kursmarken",
-      "text": "Brent 89/95 $ • WTI 80/87 $ (Orientierungszonen)"
+      "text": "Brent 87/93 $ • WTI 78/84 $ (Orientierungszonen)"
     }
   ],
-  "einschaetzung": "Geopolitik stützt, Überangebot und Börsenschwäche bremsen.\nWochenstart seitwärts; OPEC+ am 29.11. als nächster Taktgeber.",
-  "quellen": "Quellen: Investing.com (23.11.) • Business Recorder (23.11.) • Gulf News (23.11.) • FinanceFeeds (22.11.)\nPreisvergleich: Schlusskurse Fr., 20.11.2026 vs. Do., 19.11. • Stand 23.11.2026, 05:30 MEZ",
+  "einschaetzung": "Libyen-Öl und Überangebot drücken Brent auf Tief seit August.\nNächster Taktgeber: OPEC+ am 29.11. – Kurse bleiben volatil.",
+  "quellen": "Quellen: Nation Thailand (24.11.) • TradingNews (23.11.) • Rio Times (23.11.) • DiscoveryAlert (22.11.)\nPreisvergleich: Schlusskurse Mo., 23.11.2026 vs. Fr., 20.11. • Stand 24.11.2026, 05:30 MEZ",
   "szenarien_vergleich": {
     "up": {
-      "trend": "more",
-      "text": "Huthi-Angriffe auf Saudi-Raffinerie"
+      "trend": "less",
+      "text": "Gulf-Angriffe ohne Preiseffekt"
     },
     "side": {
-      "trend": "same",
-      "text": "Brent weiter in Spanne 89–95 $"
+      "trend": "less",
+      "text": "Spanne 89–95 $ nach unten verlassen"
     },
     "down": {
-      "trend": "same",
-      "text": "Exporte laufen, Überangebot bleibt"
+      "trend": "more",
+      "text": "Libyen-Öl, Lagerplus, starker Dollar"
     }
   }
 }
