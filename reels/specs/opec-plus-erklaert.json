@@ -18,7 +18,7 @@
    "typ": "stat",
    "emoji": "🌍",
    "label": "Marktmacht",
-   "name": "Anteil von OPEC+",
+   "name": "OPEC+",
    "wert": "46 %",
    "einheit": "der weltweiten Rohölförderung",
    "note": "Wert für 2025 (EIA), mit den Vereinigten Arabischen Emiraten",
@@ -64,7 +64,7 @@
   },
   {
    "typ": "stat",
-   "emoji": "📅",
+   "emoji": "🤝",
    "label": "Nächster Termin",
    "name": "Alle Mitglieder tagen",
    "wert": "29. Nov.",
@@ -75,7 +75,7 @@
   {
    "typ": "cta",
    "titel": "Das Treffen am *29. November* kann den Ölpreis bewegen",
-   "hinweis": "@oil_preis_daily • Täglich das Ölpreis-Update",
+   "hinweis": "Täglich das Ölpreis-Update",
    "kommentar": "Was erwartest du vom OPEC+-Treffen? Schreib es in die Kommentare!",
    "quelle": "Quellen: OPEC (Pressemitteilung 1.11.2026), Enerdata (3.11.2026), Reuters/Daily Sabah (1.11.2026), EIA (23.6.2026). Zahlen gerundet.",
    "sprech": "Ein Treffen kann also den Ölpreis bewegen.",
