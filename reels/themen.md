@@ -52,7 +52,7 @@ Status: veröffentlicht
 - Tipp für Urlaubsfahrten
 
 ## OPEC+ erklärt: Wer entscheidet über die Förderung?
-Status: neu
+Status: geplant
 - Mitglieder, Quoten, Treffen
 - Förderziele für Dezember 2026 unverändert
 - Warum ein Treffen den Preis bewegt
