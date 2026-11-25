@@ -1,109 +1,109 @@
 {
-  "datum": "Dienstag, 24. November 2026 • 05:30 MEZ",
-  "headline": "Brent 89,37 $: Tiefster Stand seit August",
-  "subline": "Libyens Sharara-Leitung läuft wieder; Brent -3,5 %, WTI -3,9 %",
+  "datum": "Mittwoch, 25. November 2026 • 05:30 MEZ",
+  "headline": "Brent 91,40 $: Erholung vom Tief seit August",
+  "subline": "Hormus-Angriffe treiben Preise; Brent +2,3 %, WTI +2,4 %",
   "brent": {
-    "preis": "89,37",
-    "diff": "-3,20",
-    "pct": "-3,46",
-    "dir": "down"
+    "preis": "91,40",
+    "diff": "+2,03",
+    "pct": "+2,27",
+    "dir": "up"
   },
   "wti": {
-    "preis": "80,17",
-    "diff": "-3,24",
-    "pct": "-3,88",
-    "dir": "down"
+    "preis": "82,05",
+    "diff": "+1,88",
+    "pct": "+2,35",
+    "dir": "up"
   },
-  "preis_hinweis": "Frontmonat-Futures • Schlusskurse Mo., 23.11.2026 • keine Livekurse",
+  "preis_hinweis": "Frontmonat-Futures • Schlusskurse Di., 24.11.2026 • keine Livekurse",
   "news": [
     {
-      "icon": "barrel",
-      "titel": "Libyen-Pipeline wieder offen",
-      "text": "Sharara-Leitung läuft wieder; Brent -3,46 % auf 89,37 $, tiefster Stand seit August.",
-      "quelle": "Nation Thailand",
-      "quelle_datum": "24.11.",
-      "link_anzeige": "nationthailand.com",
-      "link": "https://www.nationthailand.com/news/world/40073845"
-    },
-    {
       "icon": "ship",
-      "titel": "Golf-Angriffe ohne Wirkung",
-      "text": "Huthi-Angriff und Tankerattacken lassen Preise kalt; Kriegsprämie verblasst.",
-      "quelle": "TradingNews",
-      "quelle_datum": "23.11.",
-      "link_anzeige": "tradingnews.com",
-      "link": "https://www.tradingnews.com/news/wti-sinks-4-to-8010-and-brent-34-to-8942-as-gulf-barrels-return-8650-and-96-usd-targets"
+      "titel": "Hormus: Tanker getroffen",
+      "text": "Schiffe auf Minen, Iran verschärft Kontrolle; Brent +2,3 % auf 91,40 $.",
+      "quelle": "Rigzone",
+      "quelle_datum": "24.11.",
+      "link_anzeige": "rigzone.com",
+      "link": "https://www.rigzone.com/news/wire/oil_climbs_despite_growing_oversupply_fears-24-nov-2026-185160-article/"
     },
     {
-      "icon": "chart",
-      "titel": "US-Lagerbestände steigen",
-      "text": "EIA: Rohöllager +3,4 Mio. Barrel auf 417,8 Mio.; stärkerer Dollar belastet.",
-      "quelle": "Rio Times",
-      "quelle_datum": "23.11.",
-      "link_anzeige": "riotimesonline.com",
-      "link": "https://www.riotimesonline.com/oil-markets-latam-monday-november-23-2026"
+      "icon": "barrel",
+      "titel": "Libyen-Öl fließt wieder",
+      "text": "Sharara-Leitung nach Ventil-Stopp wieder offen; Öl fließt ins Lager Zawiya.",
+      "quelle": "UkrAgroConsult",
+      "quelle_datum": "24.11.",
+      "link_anzeige": "ukragroconsult.com",
+      "link": "https://ukragroconsult.com/en/news/global-crude-oil-prices-fall-to-three-month-lows-amid-rising-supply/"
     },
     {
       "icon": "bank",
-      "titel": "OPEC+ tagt am 29.11.",
-      "text": "Entscheid zu 2027-Quoten; IEA sieht 2027 Überschuss von rund 3,8 Mio. b/d.",
-      "quelle": "DiscoveryAlert",
-      "quelle_datum": "22.11.",
-      "link_anzeige": "discoveryalert.com",
-      "link": "https://discoveryalert.com/analysis/crude-oil-price-outlook-brent-opec-november-2026/"
+      "titel": "Irak rügt OPEC+-Prüfung",
+      "text": "Irak will 6 Mio. b/d Kapazität anerkannt; Streit vor dem Treffen am Sonntag.",
+      "quelle": "OilPrice",
+      "quelle_datum": "24.11.",
+      "link_anzeige": "oilprice.com",
+      "link": "https://oilprice.com/Latest-Energy-News/World-News/Iraq-Refuses-to-Accept-OPEC-Assessment-of-its-Production-Capacity.html"
+    },
+    {
+      "icon": "chart",
+      "titel": "IEA: Überschuss erwartet",
+      "text": "Golf-Exporte bei 74 % des Vorkriegsniveaus; Goldman warnt vor Glut 2027.",
+      "quelle": "Trading Economics",
+      "quelle_datum": "25.11.",
+      "link_anzeige": "tradingeconomics.com",
+      "link": "https://tradingeconomics.com/commodity/brent-crude-oil"
     }
   ],
   "prognose_kurz": {
-    "label": "Schwach, Spanne 87–93 $",
-    "text": "Unterstützung 87–89 $ im Fokus; Erholung bis 91–93 $ möglich, Angebot drückt.",
-    "farbe": "red"
+    "label": "Volatil, Spanne 88–94 $",
+    "text": "Hormus-Risiko stützt, Überschuss deckelt. Unterstützung 88–89 $, Widerstand 93–94 $.",
+    "farbe": "yellow"
   },
   "prognose_mittel": {
     "label": "Abwärts, Überschuss",
-    "text": "JPMorgan sieht hohe 70 $ in H1 2027; OPEC+ am 29.11. als Joker.",
+    "text": "IEA und Goldman sehen Überangebot; OPEC+ am 29.11. als Joker.",
     "farbe": "red"
   },
   "szenarien": {
-    "up": "Eskalation am Golf oder OPEC+-Kürzung; Rückprall auf 93–96 $.",
-    "side": "Angebot und Risikoprämie im Gleichgewicht; Brent 87–93 $.",
-    "down": "OPEC+ erhöht Quoten, mehr Libyen-Öl; Brent testet 84–87 $."
+    "up": "Hormus-Eskalation oder OPEC+-Kürzung; Brent 93–96 $.",
+    "side": "Risikoprämie und Überschuss im Gleichgewicht; Brent 88–94 $.",
+    "down": "OPEC+ ohne Disziplin oder Golf-Deal; Brent testet 86–88 $."
   },
   "watch": [
     {
+      "icon": "ship",
+      "titel": "Hormus",
+      "text": "Minen, Tanker in Brand, US-Blockade"
+    },
+    {
+      "icon": "bank",
+      "titel": "OPEC+ am Sonntag",
+      "text": "Irak-Streit, 2027-Quoten"
+    },
+    {
       "icon": "barrel",
       "titel": "Libyen-Förderung",
-      "text": "Sharara läuft wieder – wie viel Öl kommt?"
-    },
-    {
-      "icon": "ship",
-      "titel": "Golf-Sicherheit",
-      "text": "Tanker bei Hormus, Huthi-Schläge auf Saudis"
-    },
-    {
-      "icon": "barrel",
-      "titel": "OPEC+ am 29.11.",
-      "text": "2027-Quoten: Förderung halten oder erhöhen?"
+      "text": "Sharara läuft: wie schnell steigt der Output?"
     },
     {
       "icon": "chart",
       "titel": "Kursmarken",
-      "text": "Brent 87/93 $ • WTI 78/84 $ (Orientierungszonen)"
+      "text": "Brent 88/94 $ • WTI 79/85 $ (Orientierungszonen)"
     }
   ],
-  "einschaetzung": "Libyen-Öl und Überangebot drücken Brent auf Tief seit August.\nNächster Taktgeber: OPEC+ am 29.11. – Kurse bleiben volatil.",
-  "quellen": "Quellen: Nation Thailand (24.11.) • TradingNews (23.11.) • Rio Times (23.11.) • DiscoveryAlert (22.11.)\nPreisvergleich: Schlusskurse Mo., 23.11.2026 vs. Fr., 20.11. • Stand 24.11.2026, 05:30 MEZ",
+  "einschaetzung": "Hormus lässt Brent steigen, Überangebot bleibt.\nNächster Taktgeber: OPEC+ am Sonntag, Kurse volatil.",
+  "quellen": "Quellen: Rigzone (24.11.) • UkrAgroConsult (24.11.) • OilPrice (24.11.) • Trading Economics (25.11.)\nPreisvergleich: Schlusskurse Di., 24.11.2026 vs. Mo., 23.11. • Stand 25.11.2026, 05:30 MEZ",
   "szenarien_vergleich": {
     "up": {
-      "trend": "less",
-      "text": "Gulf-Angriffe ohne Preiseffekt"
+      "trend": "more",
+      "text": "Mehr Tanker-Treffer in Hormus"
     },
     "side": {
-      "trend": "less",
-      "text": "Spanne 89–95 $ nach unten verlassen"
+      "trend": "same",
+      "text": "Spanne 88–94 $ vorerst gültig"
     },
     "down": {
-      "trend": "more",
-      "text": "Libyen-Öl, Lagerplus, starker Dollar"
+      "trend": "less",
+      "text": "Preis vom Tief erholt"
     }
   }
 }
