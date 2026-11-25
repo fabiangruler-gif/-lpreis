@@ -1,0 +1,86 @@
+{
+ "titel": "OPEC+ erklärt: Wer entscheidet über die Förderung?",
+ "ziel_sekunden": 27,
+ "cover": {
+  "titel": "Wer entscheidet über die *Ölförderung*?",
+  "emoji": "🛢️",
+  "zahl": "46 %",
+  "einheit": "der weltweiten Ölförderung kontrolliert OPEC+"
+ },
+ "slides": [
+  {
+   "typ": "hook",
+   "titel": "*21 Länder* bestimmen, wie viel Öl fließt",
+   "sub": "OPEC+ erklärt, Stand 25.11.2026",
+   "sprech": "Einundzwanzig Länder bestimmen mit, wie viel Öl auf den Markt kommt."
+  },
+  {
+   "typ": "stat",
+   "emoji": "🌍",
+   "label": "Marktmacht",
+   "name": "Anteil von OPEC+",
+   "wert": "46 %",
+   "einheit": "der weltweiten Rohölförderung",
+   "note": "Wert für 2025 (EIA), mit den Vereinigten Arabischen Emiraten",
+   "sprech": "Zusammen fördern sie fast die Hälfte des weltweiten Rohöls."
+  },
+  {
+   "typ": "compare",
+   "a": {
+    "emoji": "🇸🇦",
+    "label": "Saudi-Arabien",
+    "name": "Förderziel",
+    "wert": "10,5",
+    "einheit": "Mio. Barrel pro Tag"
+   },
+   "b": {
+    "emoji": "🇷🇺",
+    "label": "Russland",
+    "name": "Förderziel",
+    "wert": "9,9",
+    "einheit": "Mio. Barrel pro Tag"
+   },
+   "foot": "Quoten für Dezember 2026, unverändert zu September.",
+   "sprech": "Saudi-Arabien und Russland führen die Gruppe an, mit rund zehn Millionen Barrel pro Tag."
+  },
+  {
+   "typ": "points",
+   "titel": "So läuft die *Entscheidung*",
+   "punkte": [
+    {
+     "icon": "clock",
+     "text": "Kerngruppe tagt monatlich online"
+    },
+    {
+     "icon": "chart",
+     "text": "Dezember: Förderziele unverändert"
+    },
+    {
+     "icon": "globe",
+     "text": "Quoten steuern das Angebot"
+    }
+   ],
+   "sprech": "Ein Kreis von sieben Ländern entscheidet monatlich, im Dezember bleibt alles gleich."
+  },
+  {
+   "typ": "stat",
+   "emoji": "📅",
+   "label": "Nächster Termin",
+   "name": "Alle Mitglieder tagen",
+   "wert": "29. Nov.",
+   "einheit": "Entscheidung über Quoten 2027",
+   "note": "Vorher: Prüfung der Förderkapazitäten (Reuters)",
+   "sprech": "Am neunundzwanzigsten November treffen sich alle und legen die Quoten für zwanzig siebenundzwanzig fest."
+  },
+  {
+   "typ": "cta",
+   "titel": "Das Treffen am *29. November* kann den Ölpreis bewegen",
+   "hinweis": "@oil_preis_daily • Täglich das Ölpreis-Update",
+   "kommentar": "Was erwartest du vom OPEC+-Treffen? Schreib es in die Kommentare!",
+   "quelle": "Quellen: OPEC (Pressemitteilung 1.11.2026), Enerdata (3.11.2026), Reuters/Daily Sabah (1.11.2026), EIA (23.6.2026). Zahlen gerundet.",
+   "sprech": "Ein Treffen kann also den Ölpreis bewegen.",
+   "stil": "ruhig"
+  }
+ ],
+ "caption": "OPEC+ erklärt: Wer entscheidet über die Ölförderung? 🛢️\n\nOPEC+ ist ein Bündnis von 21 Ländern, das gemeinsam steuert, wie viel Öl gefördert wird. Nach EIA-Daten kam 2025 rund 46 Prozent des weltweiten Rohöls aus OPEC+-Ländern (mit den Vereinigten Arabischen Emiraten, die die OPEC im Mai 2026 verlassen haben; ohne sie etwa 42 Prozent).\n\nDie Kerngruppe aus sieben Ländern (u. a. Saudi-Arabien mit 10,5 und Russland mit 9,9 Mio. Barrel pro Tag) tagt monatlich. Am 1. November beschloss sie, die Förderziele für Dezember 2026 unverändert zu lassen.\n\nAm 29. November treffen sich alle Mitglieder. Dort sollen laut Reuters die Quoten für 2027 festgelegt werden, nach einer Prüfung der Förderkapazitäten.\n\nQuellen: OPEC (Pressemitteilung vom 1.11.2026), Enerdata (3.11.2026), Reuters/Daily Sabah (1.11.2026), EIA (23.6.2026). Zahlen gerundet. Keine Anlageberatung.\n\nWas erwartest du vom OPEC+-Treffen? Schreib es in die Kommentare! Folge @oil_preis_daily für dein tägliches Ölpreis-Update.\n\n#opec #opecplus #ölpreis #öl #rohöl #saudiarabien #russland #spritpreis #energie #wirtschaft"
+}
