@@ -1,0 +1,95 @@
+{
+ "titel": "Kommt 2027 die große Ölschwemme?",
+ "ziel_sekunden": 27,
+ "cover": {
+  "titel": "Kommt 2027 die große *Ölschwemme*?",
+  "emoji": "🛢️",
+  "zahl": "3,8 Mio.",
+  "einheit": "Barrel pro Tag mehr Angebot als Nachfrage"
+ },
+ "slides": [
+  {
+   "typ": "hook",
+   "titel": "*3,8 Millionen* Barrel zu viel – jeden Tag?",
+   "sub": "Droht 2027 die Ölschwemme? Stand 26.11.2026",
+   "sprech": "Droht dem Ölmarkt 2027 eine Schwemme?"
+  },
+  {
+   "typ": "stat",
+   "emoji": "🚢",
+   "label": "Angebot 2027",
+   "name": "Weltweite Ölförderung",
+   "wert": "108,1 Mio.",
+   "einheit": "Barrel pro Tag",
+   "note": "Plus 6,6 Mio. Barrel pro Tag gegenüber 2026 (IEA)",
+   "sprech": "Die Förderung soll um sechs Komma sechs Millionen Barrel pro Tag steigen."
+  },
+  {
+   "typ": "compare",
+   "a": {
+    "emoji": "🛢️",
+    "label": "2027",
+    "name": "Angebot",
+    "wert": "108,1",
+    "einheit": "Mio. Barrel pro Tag"
+   },
+   "b": {
+    "emoji": "🏭",
+    "label": "2027",
+    "name": "Nachfrage",
+    "wert": "104,3",
+    "einheit": "Mio. Barrel pro Tag"
+   },
+   "foot": "Prognose der IEA, Stand November 2026. Differenz rund 3,8 Mio.",
+   "sprech": "Die Nachfrage wächst nur um zwei Millionen. Es bleibt viel Öl übrig."
+  },
+  {
+   "typ": "points",
+   "titel": "Warum *mehr Öl* kommt",
+   "punkte": [
+    {
+     "icon": "globe",
+     "text": "Golf-Förderung steigt um 5,3 Mio. Barrel"
+    },
+    {
+     "icon": "chart",
+     "text": "Nachfrage wächst nur um 2 Mio. Barrel"
+    },
+    {
+     "icon": "euro",
+     "text": "Hohe Preise dämpfen den Verbrauch"
+    }
+   ],
+   "sprech": "Der Golf fördert wieder mehr, aber hohe Preise bremsen die Nachfrage."
+  },
+  {
+   "typ": "list",
+   "titel": "Was *dagegen* sprechen könnte",
+   "foot": "Prognosen können sich schnell ändern.",
+   "zeilen": [
+    {
+     "emoji": "⚠️",
+     "name": "Angriffe auf Tanker und Schiffe"
+    },
+    {
+     "emoji": "🚢",
+     "name": "Gestörte Lieferungen aus dem Iran"
+    },
+    {
+     "emoji": "🛢️",
+     "name": "Niedrige Lagerbestände an Land"
+    }
+   ],
+   "sprech": "Das größte Risiko sind Angriffe auf Tanker."
+  },
+  {
+   "typ": "cta",
+   "titel": "Mehr Angebot als Nachfrage: Das könnte den *Ölpreis* 2027 drücken",
+   "hinweis": "Täglich das Ölpreis-Update",
+   "kommentar": "Glaubst du an sinkende Spritpreise 2027? Schreib es in die Kommentare!",
+   "quelle": "Quellen: IEA Oil Market Report November 2026, OGJ (13.11.2026), S&P Global (13.11.2026). Zahlen gerundet, Differenz berechnet.",
+   "sprech": "Mehr Angebot als Nachfrage könnte den Preis drücken. Glaubst du daran?"
+  }
+ ],
+ "caption": "Kommt 2027 die große Ölschwemme? 🛢️\n\nLaut IEA (Oil Market Report, November 2026) soll das weltweite Ölangebot 2027 um 6,6 Mio. Barrel pro Tag auf 108,1 Mio. steigen. Die Nachfrage wächst nur um rund 2 Mio. auf 104,3 Mio. Barrel pro Tag – rechnerisch bleiben rund 3,8 Mio. Barrel pro Tag übrig.\n\nDie Gründe:\n🌍 Die Förderung am Golf steigt um 5,3 Mio. Barrel pro Tag\n📈 Die Nachfrage wächst nur um etwa 2 Mio. Barrel pro Tag\n💶 Hohe Preise, Elektrifizierung und Effizienz dämpfen den Verbrauch\n\nRisiko: Angriffe auf Tanker und gestörte Lieferungen können das Bild schnell ändern.\n\nGlaubst du an sinkende Spritpreise 2027? Schreib es in die Kommentare! 👇\n\nFolge @oil_preis_daily für das tägliche Ölpreis-Update.\n\nQuellen: IEA Oil Market Report November 2026, OGJ (13.11.2026), S&P Global (13.11.2026). Zahlen gerundet, Differenz berechnet. Keine Anlageberatung.\n\n#ölpreis #ölschwemme #iea #rohöl #brent #spritpreise #energie #wirtschaft #finanzen #opec"
+}
