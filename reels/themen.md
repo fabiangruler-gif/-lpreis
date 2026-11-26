@@ -58,7 +58,7 @@ Status: veröffentlicht
 - Warum ein Treffen den Preis bewegt
 
 ## Kommt 2027 die große Ölschwemme?
-Status: neu
+Status: geplant
 - IEA: starker Angebotsanstieg 2027, kleiner Nachfrageanstieg
 - Was das für Preise und Autofahrer bedeuten könnte
 
