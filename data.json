@@ -1,109 +1,109 @@
 {
-  "datum": "Donnerstag, 26. November 2026 • 05:30 MEZ",
-  "headline": "Brent 94,61 $: Saudi-Raffinerie unter Beschuss",
-  "subline": "Houthi-Angriff und Hormus-Minen; Brent +3,5 %, WTI +2,0 %",
+  "datum": "Freitag, 27. November 2026 • 05:30 MEZ",
+  "headline": "Brent 96,57 $: Dritter Anstieg vor OPEC+",
+  "subline": "Minen im Hormus, Jazan-Raffinerie getroffen; Brent +2,1 %",
   "brent": {
-    "preis": "94,61",
-    "diff": "+3,21",
-    "pct": "+3,51",
+    "preis": "96,57",
+    "diff": "+1,96",
+    "pct": "+2,07",
     "dir": "up"
   },
   "wti": {
-    "preis": "83,68",
-    "diff": "+1,63",
-    "pct": "+1,99",
+    "preis": "84,84",
+    "diff": "+1,16",
+    "pct": "+1,39",
     "dir": "up"
   },
-  "preis_hinweis": "Frontmonat-Futures • Schlusskurse Mi., 25.11.2026 • keine Livekurse",
+  "preis_hinweis": "Brent Schluss Do., 26.11. • WTI ohne Settle (US-Feiertag)",
   "news": [
-    {
-      "icon": "barrel",
-      "titel": "Houthis: Ras Tanura",
-      "text": "Houthis melden Angriff auf Saudi-Raffinerie; Brent +3,5 % auf 94,61 $.",
-      "quelle": "CNBC",
-      "quelle_datum": "25.11.",
-      "link_anzeige": "cnbc.com",
-      "link": "https://www.cnbc.com/2026/11/25/oil-wti-brent-hormuz-middle-east.html"
-    },
     {
       "icon": "ship",
       "titel": "Hormus: Tanker auf Minen",
-      "text": "Iranische Medien: Tanker auf Mine, Brand an Bord; unabhängig nicht bestätigt.",
-      "quelle": "KRRO/Reuters",
-      "quelle_datum": "26.11.",
-      "link_anzeige": "krro.com",
-      "link": "https://krro.com/2026/11/25/oil-rises-on-supply-concerns-as-iran-claims-mine-strikes-on-ships/"
+      "text": "Iran: Zwei Tanker nach Minentreffern in Brand; einer mit über 2 Mio. Barrel Rohöl.",
+      "quelle": "Nation Thailand",
+      "quelle_datum": "27.11.",
+      "link_anzeige": "nationthailand.com",
+      "link": "https://www.nationthailand.com/news/world/40073981"
+    },
+    {
+      "icon": "barrel",
+      "titel": "Jazan-Raffinerie getroffen",
+      "text": "Houthi-Angriff: Raffinerie kurz stillgelegt; Ras Tanura-Drohnen abgefangen.",
+      "quelle": "Investing.com",
+      "quelle_datum": "27.11.",
+      "link_anzeige": "investing.com",
+      "link": "https://ph.investing.com/news/commodities-news/oil-set-for-first-weekly-gain-in-november-as-gulf-attacks-threaten-supply-recovery-2723152"
     },
     {
       "icon": "chart",
-      "titel": "Hormus bei 49 % Durchfluss",
-      "text": "ANZ: Durchsatz bei 49 % des Normalen, kaum freie Förderreserven.",
-      "quelle": "Investing.com",
-      "quelle_datum": "25.11.",
-      "link_anzeige": "investing.com",
-      "link": "https://www.investing.com/news/commodities-news/oil-steadies-as-hormuz-attacks-threaten-supply-recovery-inventory-build-weighs-5051937"
+      "titel": "Brent: dritter Gewinntag",
+      "text": "Brent +1,96 $ auf 96,57 $; rund 8 % seit Montag (89,37 $).",
+      "quelle": "GSM Global News",
+      "quelle_datum": "26.11.",
+      "link_anzeige": "gsmglobalnews.com",
+      "link": "https://gsmglobalnews.com/article/d20261126-brent96571.html"
     },
     {
       "icon": "bank",
       "titel": "OPEC+ tagt am 29.11.",
-      "text": "US-Lager +1,1 Mio. Barrel; OPEC+ entscheidet über Politik 2027.",
-      "quelle": "Nation Thailand",
+      "text": "Ziele wohl unverändert bis Q1 2027; Irak und Kasachstan fordern höhere Quoten.",
+      "quelle": "FinanceFeeds",
       "quelle_datum": "26.11.",
-      "link_anzeige": "nationthailand.com",
-      "link": "https://www.nationthailand.com/news/world/40073934"
+      "link_anzeige": "financefeeds.com",
+      "link": "https://financefeeds.com/brent-crude-oil-price-95-58-thursday-three-day-rally-before-opec-plus-sunday-bull-100-bear-91/"
     }
   ],
   "prognose_kurz": {
-    "label": "Volatil, Spanne 91–97 $",
-    "text": "Saudi-Risiko stützt, Überschuss deckelt. Unterstützung 91–92 $, Widerstand 96–97 $.",
+    "label": "Volatil, Spanne 93–99 $",
+    "text": "Gulf-Risiko stützt, Überschuss deckelt. Unterstützung 93–94 $, Widerstand 98–100 $.",
     "farbe": "yellow"
   },
   "prognose_mittel": {
     "label": "Abwärts, Überschuss",
-    "text": "Überangebot erwartet; OPEC+ am 29.11. setzt Quoten für 2027.",
+    "text": "IEA und Rystad sehen Überangebot; OPEC+ am Sonntag setzt den Ton für 2027.",
     "farbe": "red"
   },
   "szenarien": {
-    "up": "Saudi-Ausfall oder Hormus-Eskalation; Brent 97–100 $.",
-    "side": "Risikoprämie und Überschuss im Gleichgewicht; Brent 91–97 $.",
-    "down": "Schaden gering, OPEC+ ohne Disziplin; Brent 89–91 $."
+    "up": "Hormus-Eskalation oder Saudi-Ausfall; Brent 98–100 $.",
+    "side": "Risikoprämie und Überschuss im Gleichgewicht; Brent 93–98 $.",
+    "down": "OPEC+ ohne Disziplin, Angriffe flauen ab; Brent 90–93 $."
   },
   "watch": [
     {
-      "icon": "barrel",
-      "titel": "Ras Tanura",
-      "text": "Schaden und Exporte: Saudi/Aramco unbestätigt"
-    },
-    {
       "icon": "ship",
       "titel": "Hormus",
-      "text": "Minen, Tanker in Brand, 49 % Durchfluss"
+      "text": "Minen, brennende Tanker, Durchfluss prüfen"
+    },
+    {
+      "icon": "barrel",
+      "titel": "Jazan / Ras Tanura",
+      "text": "Schäden und Saudi-Exporte (Yanbu-Umleitung)"
     },
     {
       "icon": "bank",
       "titel": "OPEC+ am Sonntag",
-      "text": "Irak-Streit, 2027-Quoten, VAE ohne Bindung"
+      "text": "Quoten 2027, Irak-Streit, VAE ohne Bindung"
     },
     {
       "icon": "chart",
       "titel": "Kursmarken",
-      "text": "Brent 91/97 $ • WTI 81/87 $ (Orientierungszonen)"
+      "text": "Brent 93/99 $ • WTI 83/89 $ (Orientierungszonen)"
     }
   ],
-  "einschaetzung": "Saudi-Angriff und Hormus treiben Brent, Glut bleibt.\nNächster Taktgeber: OPEC+ am Sonntag.",
-  "quellen": "Quellen: CNBC (25.11.) • KRRO/Reuters (26.11.) • Investing.com (25.11.) • Nation Thailand (26.11.)\nPreisvergleich: Schlusskurse Mi., 25.11.2026 vs. Di., 24.11. • Stand 26.11.2026, 05:30 MEZ",
+  "einschaetzung": "Drei Gewinntage, Minen und Angriffe stützen Brent.\nSonntag setzt OPEC+ den nächsten Impuls.",
+  "quellen": "Quellen: Nation Thailand (27.11.) • Investing.com (27.11.) • GSM Global News (26.11.) • FinanceFeeds (26.11.)\nPreisvergleich: Brent Schluss 26.11. vs. 25.11. • WTI intraday • Stand 27.11.",
   "szenarien_vergleich": {
     "up": {
       "trend": "more",
-      "text": "Angriff auf Ras Tanura gemeldet"
+      "text": "Minentreffer, Jazan-Raffinerie getroffen"
     },
     "side": {
       "trend": "same",
-      "text": "Neue Spanne 91–97 $ vorerst gültig"
+      "text": "Neue Spanne 93–98 $ vorerst gültig"
     },
     "down": {
       "trend": "less",
-      "text": "Raffinerie-Angriff stützt Preis"
+      "text": "Dritter Gewinntag, Risiko steigt"
     }
   }
 }
