@@ -1,0 +1,97 @@
+{
+ "titel": "Strategische Ölreserven: Wie lange reicht das Öl?",
+ "ziel_sekunden": 27,
+ "cover": {
+  "titel": "Wie lange reicht das *Öl* noch?",
+  "emoji": "🛢️",
+  "zahl": "279,5 Mio.",
+  "einheit": "Barrel: US-Reserve so niedrig wie seit 1982 nicht"
+ },
+ "slides": [
+  {
+   "typ": "hook",
+   "titel": "Reicht das Öl noch *90 Tage*?",
+   "sub": "Strategische Ölreserven. Stand 28.11.2026",
+   "sprech": "Wie lange reicht das Öl, wenn nichts mehr ankommt?"
+  },
+  {
+   "typ": "stat",
+   "emoji": "🇺🇸",
+   "label": "USA, Woche bis 6.11.2026",
+   "name": "Staatliche Ölreserve",
+   "wert": "279,5 Mio.",
+   "einheit": "Barrel",
+   "note": "Niedrigster Stand seit 1982 (EIA-Wochendaten, S&P Global)",
+   "sprech": "Die US-Reserve ist auf knapp zweihundertachtzig Millionen Barrel gefallen. So wenig gab es seit neunzehnhundertzweiundachtzig nicht."
+  },
+  {
+   "typ": "compare",
+   "a": {
+    "emoji": "📈",
+    "label": "März 2026",
+    "name": "Höchststand",
+    "wert": "415",
+    "einheit": "Mio. Barrel"
+   },
+   "b": {
+    "emoji": "📉",
+    "label": "November 2026",
+    "name": "Jetzt",
+    "wert": "279,5",
+    "einheit": "Mio. Barrel"
+   },
+   "foot": "Abbau seit der Hormus-Krise im März. EIA, OilPriceAPI.",
+   "sprech": "Im März waren es noch über vierhundert Millionen."
+  },
+  {
+   "typ": "list",
+   "titel": "Reserven im *Vergleich*",
+   "foot": "China inkl. Industrie-Lager (EIA-Schätzung, Dez. 2025).",
+   "zeilen": [
+    {
+     "emoji": "🇨🇳",
+     "name": "China: knapp 1,4 Mrd. Barrel"
+    },
+    {
+     "emoji": "🇺🇸",
+     "name": "USA: 279,5 Mio. Barrel"
+    },
+    {
+     "emoji": "🇩🇪",
+     "name": "Deutschland: mind. 90 Tage Importe"
+    }
+   ],
+   "sprech": "China hortet fast eineinhalb Milliarden Barrel. Deutschland muss mindestens neunzig Tage Importe vorhalten."
+  },
+  {
+   "typ": "points",
+   "titel": "Warum das *wichtig* ist",
+   "punkte": [
+    {
+     "icon": "globe",
+     "text": "Reserven überbrücken Lieferausfälle"
+    },
+    {
+     "icon": "clock",
+     "text": "Deutschland: drei Monate ohne Importe"
+    },
+    {
+     "icon": "drop",
+     "text": "US-Barrel müssen bis 2029 zurück"
+    }
+   ],
+   "sprech": "Die Lager sind der Puffer für den Notfall. Und sie müssen wieder aufgefüllt werden.",
+   "stil": "ruhig"
+  },
+  {
+   "typ": "cta",
+   "titel": "Leere Lager *kosten* später Geld",
+   "hinweis": "Täglich das Ölpreis-Update",
+   "kommentar": "Sollte Deutschland mehr Öl lagern? Schreib es in die Kommentare!",
+   "quelle": "Quellen: EIA (Wochendaten, Today in Energy 20.4. und 30.4.2026), S&P Global (29.9.2026), OilPriceAPI (13.11.2026), OGJ (23.4.2026), ZDF (3.10.2026). Zahlen gerundet.",
+   "sprech": "Wenn die Lager wieder gefüllt werden, steigt die Nachfrage.",
+   "stil": "ruhig"
+  }
+ ],
+ "caption": "Strategische Ölreserven: Wie lange reicht das Öl? 🛢️\n\nDie staatliche US-Ölreserve ist laut EIA-Wochendaten auf 279,5 Mio. Barrel gefallen (Woche bis 6.11.2026) – so wenig wie seit 1982 nicht. Im März 2026 waren es noch rund 415 Mio. Barrel.\n\n🇨🇳 China hält nach EIA-Schätzung knapp 1,4 Mrd. Barrel (inkl. Industrie-Lager, Stand Dez. 2025)\n🇺🇸 USA: 279,5 Mio. Barrel\n🇩🇪 Deutschland: Pflicht zur Vorhaltung von mindestens 90 Tagen Nettoimporten\n\nDie US-Barrel wurden im Tausch abgegeben und müssen bis 2029 zurückgegeben werden.\n\nFolge @oil_preis_daily für das tägliche Ölpreis-Update.\n\nQuellen: EIA (20.4. und 30.4.2026), S&P Global (29.9.2026), OilPriceAPI (13.11.2026), OGJ (23.4.2026), ZDF (3.10.2026). Zahlen gerundet. Keine Anlageberatung.\n\n#ölpreis #ölreserve #strategischeölreserve #rohöl #brent #spritpreise #energie #wirtschaft #finanzen #opec"
+}
