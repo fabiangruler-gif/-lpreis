@@ -1,66 +1,66 @@
 {
-  "datum": "Freitag, 27. November 2026 • 05:30 MEZ",
-  "headline": "Brent 96,57 $: Dritter Anstieg vor OPEC+",
-  "subline": "Minen im Hormus, Jazan-Raffinerie getroffen; Brent +2,1 %",
+  "datum": "Samstag, 28. November 2026 • 05:30 MEZ",
+  "headline": "Brent 95,44 $: Minus vor OPEC+-Treffen",
+  "subline": "Brent -1,2 %, Woche +3 %; Tanker im Hormus unter Beschuss",
   "brent": {
-    "preis": "96,57",
-    "diff": "+1,96",
-    "pct": "+2,07",
-    "dir": "up"
+    "preis": "95,44",
+    "diff": "-1,13",
+    "pct": "-1,17",
+    "dir": "down"
   },
   "wti": {
-    "preis": "84,84",
-    "diff": "+1,16",
-    "pct": "+1,39",
-    "dir": "up"
+    "preis": "83,08",
+    "diff": "-0,60",
+    "pct": "-0,72",
+    "dir": "down"
   },
-  "preis_hinweis": "Brent Schluss Do., 26.11. • WTI ohne Settle (US-Feiertag)",
+  "preis_hinweis": "Schluss Fr., 27.11. • WTI-Änderung vs. Mi. (Feiertag)",
   "news": [
     {
       "icon": "ship",
-      "titel": "Hormus: Tanker auf Minen",
-      "text": "Iran: Zwei Tanker nach Minentreffern in Brand; einer mit über 2 Mio. Barrel Rohöl.",
-      "quelle": "Nation Thailand",
-      "quelle_datum": "27.11.",
-      "link_anzeige": "nationthailand.com",
-      "link": "https://www.nationthailand.com/news/world/40073981"
+      "titel": "Hormus: Neue Tankerangriffe",
+      "text": "IRGC meldet zwei weitere Tanker getroffen; unabhängig nicht bestätigt.",
+      "quelle": "IBTimes AU",
+      "quelle_datum": "28.11.",
+      "link_anzeige": "ibtimes.com.au",
+      "link": "https://www.ibtimes.com.au/oil-prices-brent-weekly-gain-middle-east-attacks-opec-1879508"
     },
     {
       "icon": "barrel",
-      "titel": "Jazan-Raffinerie getroffen",
-      "text": "Houthi-Angriff: Raffinerie kurz stillgelegt; Ras Tanura-Drohnen abgefangen.",
-      "quelle": "Investing.com",
+      "titel": "Jazan: Betrieb gestoppt",
+      "text": "Projektil traf Aramco-Raffinerie, ein Arbeiter starb; Houthis nennen Ras Tanura.",
+      "quelle": "The Circuitry",
       "quelle_datum": "27.11.",
-      "link_anzeige": "investing.com",
-      "link": "https://ph.investing.com/news/commodities-news/oil-set-for-first-weekly-gain-in-november-as-gulf-attacks-threaten-supply-recovery-2723152"
-    },
-    {
-      "icon": "chart",
-      "titel": "Brent: dritter Gewinntag",
-      "text": "Brent +1,96 $ auf 96,57 $; rund 8 % seit Montag (89,37 $).",
-      "quelle": "GSM Global News",
-      "quelle_datum": "26.11.",
-      "link_anzeige": "gsmglobalnews.com",
-      "link": "https://gsmglobalnews.com/article/d20261126-brent96571.html"
+      "link_anzeige": "thecircuitry.to",
+      "link": "https://thecircuitry.to/article/brent-settles-friday-at-9544-and-wti-at-8308-mwzhz7en"
     },
     {
       "icon": "bank",
-      "titel": "OPEC+ tagt am 29.11.",
-      "text": "Ziele wohl unverändert bis Q1 2027; Irak und Kasachstan fordern höhere Quoten.",
+      "titel": "OPEC+: Q1-Ziele bleiben",
+      "text": "Treffen am Sonntag: Ziele wohl unverändert; Irak fordert höhere Quote.",
       "quelle": "FinanceFeeds",
-      "quelle_datum": "26.11.",
+      "quelle_datum": "27.11.",
       "link_anzeige": "financefeeds.com",
-      "link": "https://financefeeds.com/brent-crude-oil-price-95-58-thursday-three-day-rally-before-opec-plus-sunday-bull-100-bear-91/"
+      "link": "https://financefeeds.com/brent-crude-oil-price-96-30-friday-opec-plus-set-to-hold-q1-output-sunday-bull-100-bear-92-57/"
+    },
+    {
+      "icon": "chart",
+      "titel": "IEA: Überangebot droht",
+      "text": "Rund 2 Mio. Barrel/Tag zu viel im Q4; Hormus-Flüsse laut Kpler nur ~31 %.",
+      "quelle": "Unbiased Headlines",
+      "quelle_datum": "27.11.",
+      "link_anzeige": "unbiasedheadlines.com",
+      "link": "https://unbiasedheadlines.com/article/brent-ends-week-near-95-as-opec-is-set-to-hold-q1-targets-and-iraq-presses"
     }
   ],
   "prognose_kurz": {
-    "label": "Volatil, Spanne 93–99 $",
-    "text": "Gulf-Risiko stützt, Überschuss deckelt. Unterstützung 93–94 $, Widerstand 98–100 $.",
+    "label": "Seitwärts, Spanne 93–98 $",
+    "text": "Gulf-Risiko stützt, Überschuss deckelt. Unterstützung 93 $, Widerstand 98 $.",
     "farbe": "yellow"
   },
   "prognose_mittel": {
     "label": "Abwärts, Überschuss",
-    "text": "IEA und Rystad sehen Überangebot; OPEC+ am Sonntag setzt den Ton für 2027.",
+    "text": "IEA sieht Überangebot; OPEC+ am Sonntag setzt den Ton für 2027.",
     "farbe": "red"
   },
   "szenarien": {
@@ -72,38 +72,38 @@
     {
       "icon": "ship",
       "titel": "Hormus",
-      "text": "Minen, brennende Tanker, Durchfluss prüfen"
+      "text": "Tankerangriffe, Durchfluss, IRGC-Meldungen"
     },
     {
       "icon": "barrel",
       "titel": "Jazan / Ras Tanura",
-      "text": "Schäden und Saudi-Exporte (Yanbu-Umleitung)"
+      "text": "Schäden und Saudi-Exporte"
     },
     {
       "icon": "bank",
       "titel": "OPEC+ am Sonntag",
-      "text": "Quoten 2027, Irak-Streit, VAE ohne Bindung"
+      "text": "Q1-Ziele, Irak-Quote, Austrittsdrohung"
     },
     {
       "icon": "chart",
       "titel": "Kursmarken",
-      "text": "Brent 93/99 $ • WTI 83/89 $ (Orientierungszonen)"
+      "text": "Brent 93/98 $ • WTI 81/86 $ (Orientierungszonen)"
     }
   ],
-  "einschaetzung": "Drei Gewinntage, Minen und Angriffe stützen Brent.\nSonntag setzt OPEC+ den nächsten Impuls.",
-  "quellen": "Quellen: Nation Thailand (27.11.) • Investing.com (27.11.) • GSM Global News (26.11.) • FinanceFeeds (26.11.)\nPreisvergleich: Brent Schluss 26.11. vs. 25.11. • WTI intraday • Stand 27.11.",
+  "einschaetzung": "Brent fällt nach drei Gewinntagen, Woche +3 %.\nOPEC+ und Hormus bleiben die Taktgeber.",
+  "quellen": "Quellen: IBTimes AU (28.11.) • The Circuitry (27.11.) • FinanceFeeds (27.11.) • Unbiased Headlines (27.11.)\nPreisvergleich: Schluss 27.11. vs. 26.11. (WTI vs. 25.11.) • Stand 28.11.",
   "szenarien_vergleich": {
     "up": {
-      "trend": "more",
-      "text": "Minentreffer, Jazan-Raffinerie getroffen"
+      "trend": "same",
+      "text": "Neue Angriffe, aber unbestätigt"
     },
     "side": {
-      "trend": "same",
-      "text": "Neue Spanne 93–98 $ vorerst gültig"
+      "trend": "more",
+      "text": "Brent fällt zurück in die Spanne"
     },
     "down": {
-      "trend": "less",
-      "text": "Dritter Gewinntag, Risiko steigt"
+      "trend": "same",
+      "text": "OPEC+ wohl ohne Kursänderung"
     }
   }
 }
