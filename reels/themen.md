@@ -63,7 +63,7 @@ Status: veröffentlicht
 - Was das für Preise und Autofahrer bedeuten könnte
 
 ## Strategische Ölreserven: Wie lange reicht das Öl?
-Status: neu
+Status: geplant
 - Reserven der großen Länder, Vorrat in Tagen
 - Überschuss 2027 als Chance, Lager aufzufüllen
 
