@@ -80,16 +80,15 @@
      "text": "US-Barrel müssen bis 2029 zurück"
     }
    ],
-   "sprech": "Die Lager sind der Puffer für den Notfall. Und sie müssen wieder aufgefüllt werden.",
-   "stil": "ruhig"
+   "sprech": "Die Lager sind der Puffer für den Notfall. Und sie müssen wieder aufgefüllt werden."
   },
   {
    "typ": "cta",
-   "titel": "Leere Lager *kosten* später Geld",
+   "titel": "Leere Lager müssen *wieder* gefüllt werden",
    "hinweis": "Täglich das Ölpreis-Update",
    "kommentar": "Sollte Deutschland mehr Öl lagern? Schreib es in die Kommentare!",
    "quelle": "Quellen: EIA (Wochendaten, Today in Energy 20.4. und 30.4.2026), S&P Global (29.9.2026), OilPriceAPI (13.11.2026), OGJ (23.4.2026), ZDF (3.10.2026). Zahlen gerundet.",
-   "sprech": "Wenn die Lager wieder gefüllt werden, steigt die Nachfrage.",
+   "sprech": "Leere Lager müssen irgendwann wieder gefüllt werden.",
    "stil": "ruhig"
   }
  ],
